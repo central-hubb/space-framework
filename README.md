@@ -11,13 +11,13 @@ processing than symfony)
 
 Space MVC is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Space MVC attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine].
-- [Powerful dependency injection container].
-- Multiple back-ends for [session] and [cache] storage.
-- Expressive, intuitive [database ORM].
-- Database agnostic [schema migrations].
-- [Robust background job processing].
-- [Real-time event broadcasting].
+- Simple, fast routing engine.
+- Powerful dependency injection container.
+- Multiple back-ends for session and cache storage.
+- Expressive, intuitive database ORM.
+- Database agnostic schema migrations.
+- Robust background job processing.
+- Real-time event broadcasting.
 
 Space MVC is accessible, yet powerful, providing tools needed for large, robust applications.
 
