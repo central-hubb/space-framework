@@ -1,0 +1,12 @@
+{
+    "name": "space-mvc/space-mvc",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Daniel Lee",
+            "email": "mrdaniellee2020@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
