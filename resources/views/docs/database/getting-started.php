@@ -15,7 +15,7 @@
 	</ul>
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
-	<p>Laravel makes interacting with databases extremely simple across a variety of database backends using either raw SQL, the <a href="/docs/5.7/queries">fluent query builder</a>, and the <a href="/docs/5.7/eloquent">Eloquent ORM</a>. Currently, Laravel supports four databases:</p>
+	<p>Space MVC makes interacting with databases extremely simple across a variety of database backends using either raw SQL, the <a href="/docs/5.7/queries">fluent query builder</a>, and the <a href="/docs/5.7/eloquent">Eloquent ORM</a>. Currently, Space MVC supports four databases:</p>
 	<div class="content-list">
 		<ul>
 			<li>MySQL</li>
@@ -27,7 +27,7 @@
 	<p><a name="configuration"></a></p>
 	<h3>Configuration</h3>
 	<p>The database configuration for your application is located at <code class=" language-php">config<span class="token operator">/</span>database<span class="token punctuation">.</span>php</code>. In this file you may define all of your database connections, as well as specify which connection should be used by default. Examples for most of the supported database systems are provided in this file.</p>
-	<p>By default, Laravel's sample <a href="/docs/5.7/configuration#environment-configuration">environment configuration</a> is ready to use with <a href="/docs/5.7/homestead">Laravel Homestead</a>, which is a convenient virtual machine for doing Laravel development on your local machine. Of course, you are free to modify this configuration as needed for your local database.</p>
+	<p>By default, Space MVC's sample <a href="/docs/5.7/configuration#environment-configuration">environment configuration</a> is ready to use with <a href="/docs/5.7/homestead">Space MVC Homestead</a>, which is a convenient virtual machine for doing Space MVC development on your local machine. Of course, you are free to modify this configuration as needed for your local database.</p>
 	<h4>SQLite Configuration</h4>
 	<p>After creating a new SQLite database using a command such as <code class=" language-php">touch database<span class="token operator">/</span>database<span class="token punctuation">.</span>sqlite</code>, you can easily configure your environment variables to point to this newly created database by using the database's absolute path:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token constant">DB_CONNECTION</span><span class="token operator">=</span>sqlite
@@ -39,7 +39,7 @@
 <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
 	<p><a name="read-and-write-connections"></a></p>
 	<h3>Read &amp; Write Connections</h3>
-	<p>Sometimes you may wish to use one database connection for SELECT statements, and another for INSERT, UPDATE, and DELETE statements. Laravel makes this a breeze, and the proper connections will always be used whether you are using raw queries, the query builder, or the Eloquent ORM.</p>
+	<p>Sometimes you may wish to use one database connection for SELECT statements, and another for INSERT, UPDATE, and DELETE statements. Space MVC makes this a breeze, and the proper connections will always be used whether you are using raw queries, the query builder, or the Eloquent ORM.</p>
 	<p>To see how read / write connections should be configured, let's look at this example:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token string">'mysql'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
     <span class="token string">'read'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>

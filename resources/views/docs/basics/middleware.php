@@ -14,9 +14,9 @@
 	</ul>
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
-	<p>Middleware provide a convenient mechanism for filtering HTTP requests entering your application. For example, Laravel includes a middleware that verifies the user of your application is authenticated. If the user is not authenticated, the middleware will redirect the user to the login screen. However, if the user is authenticated, the middleware will allow the request to proceed further into the application.</p>
+	<p>Middleware provide a convenient mechanism for filtering HTTP requests entering your application. For example, Space MVC includes a middleware that verifies the user of your application is authenticated. If the user is not authenticated, the middleware will redirect the user to the login screen. However, if the user is authenticated, the middleware will allow the request to proceed further into the application.</p>
 	<p>Of course, additional middleware can be written to perform a variety of tasks besides authentication. A CORS middleware might be responsible for adding the proper headers to all responses leaving your application. A logging middleware might log all incoming requests to your application.</p>
-	<p>There are several middleware included in the Laravel framework, including middleware for authentication and CSRF protection. All of these middleware are located in the <code class=" language-php">app<span class="token operator">/</span>Http<span class="token operator">/</span>Middleware</code> directory.</p>
+	<p>There are several middleware included in the Space MVC framework, including middleware for authentication and CSRF protection. All of these middleware are located in the <code class=" language-php">app<span class="token operator">/</span>Http<span class="token operator">/</span>Middleware</code> directory.</p>
 	<p><a name="defining-middleware"></a></p>
 	<h2><a href="#defining-middleware">Defining Middleware</a></h2>
 	<p>To create a new middleware, use the <code class=" language-php">make<span class="token punctuation">:</span>middleware</code> Artisan command:</p>
@@ -93,7 +93,7 @@
 	<p>If you want a middleware to run during every HTTP request to your application, list the middleware class in the <code class=" language-php"><span class="token variable">$middleware</span></code> property of your <code class=" language-php">app<span class="token operator">/</span>Http<span class="token operator">/</span>Kernel<span class="token punctuation">.</span>php</code> class.</p>
 	<p><a name="assigning-middleware-to-routes"></a></p>
 	<h3>Assigning Middleware To Routes</h3>
-	<p>If you would like to assign middleware to specific routes, you should first assign the middleware a key in your <code class=" language-php">app<span class="token operator">/</span>Http<span class="token operator">/</span>Kernel<span class="token punctuation">.</span>php</code> file. By default, the <code class=" language-php"><span class="token variable">$routeMiddleware</span></code> property of this class contains entries for the middleware included with Laravel. To add your own, append it to this list and assign it a key of your choosing:</p>
+	<p>If you would like to assign middleware to specific routes, you should first assign the middleware a key in your <code class=" language-php">app<span class="token operator">/</span>Http<span class="token operator">/</span>Kernel<span class="token punctuation">.</span>php</code> file. By default, the <code class=" language-php"><span class="token variable">$routeMiddleware</span></code> property of this class contains entries for the middleware included with Space MVC. To add your own, append it to this list and assign it a key of your choosing:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// Within App\Http\Kernel Class...
 </span>
 <span class="token keyword">protected</span> <span class="token variable">$routeMiddleware</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
@@ -124,7 +124,7 @@
 	<p><a name="middleware-groups"></a></p>
 	<h3>Middleware Groups</h3>
 	<p>Sometimes you may want to group several middleware under a single key to make them easier to assign to routes. You may do this using the <code class=" language-php"><span class="token variable">$middlewareGroups</span></code> property of your HTTP kernel.</p>
-	<p>Out of the box, Laravel comes with <code class=" language-php">web</code> and <code class=" language-php">api</code> middleware groups that contain common middleware you may want to apply to your web UI and API routes:</p>
+	<p>Out of the box, Space MVC comes with <code class=" language-php">web</code> and <code class=" language-php">api</code> middleware groups that contain common middleware you may want to apply to your web UI and API routes:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/**
  * The application's route middleware groups.
  *
@@ -192,7 +192,7 @@
 </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">middleware<span class="token punctuation">(</span></span><span class="token string">'role:editor'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="terminable-middleware"></a></p>
 	<h2><a href="#terminable-middleware">Terminable Middleware</a></h2>
-	<p>Sometimes a middleware may need to do some work after the HTTP response has been prepared. For example, the "session" middleware included with Laravel writes the session data to storage after the response has been fully prepared. If you define a <code class=" language-php">terminate</code> method on your middleware, it will automatically be called after the response is ready to be sent to the browser.</p>
+	<p>Sometimes a middleware may need to do some work after the HTTP response has been prepared. For example, the "session" middleware included with Space MVC writes the session data to storage after the response has been fully prepared. If you define a <code class=" language-php">terminate</code> method on your middleware, it will automatically be called after the response is ready to be sent to the browser.</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
 
 <span class="token keyword">namespace</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Session<span class="token punctuation">\</span>Middleware</span><span class="token punctuation">;</span>
@@ -212,5 +212,5 @@
 </span>    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 	<p>The <code class=" language-php">terminate</code> method should receive both the request and the response. Once you have defined a terminable middleware, you should add it to the list of route or global middleware in the <code class=" language-php">app<span class="token operator">/</span>Http<span class="token operator">/</span>Kernel<span class="token punctuation">.</span>php</code> file.</p>
-	<p>When calling the <code class=" language-php">terminate</code> method on your middleware, Laravel will resolve a fresh instance of the middleware from the <a href="/docs/5.7/container">service container</a>. If you would like to use the same middleware instance when the <code class=" language-php">handle</code> and <code class=" language-php">terminate</code> methods are called, register the middleware with the container using the container's <code class=" language-php">singleton</code> method.</p>
+	<p>When calling the <code class=" language-php">terminate</code> method on your middleware, Space MVC will resolve a fresh instance of the middleware from the <a href="/docs/5.7/container">service container</a>. If you would like to use the same middleware instance when the <code class=" language-php">handle</code> and <code class=" language-php">terminate</code> methods are called, register the middleware with the container using the container's <code class=" language-php">singleton</code> method.</p>
 </article>

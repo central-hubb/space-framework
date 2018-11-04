@@ -27,7 +27,7 @@
 	</ul>
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
-	<p>Laravel provides a powerful filesystem abstraction thanks to the wonderful <a href="https://github.com/thephpleague/flysystem">Flysystem</a> PHP package by Frank de Jonge. The Laravel Flysystem integration provides simple to use drivers for working with local filesystems, Amazon S3, and Rackspace Cloud Storage. Even better, it's amazingly simple to switch between these storage options as the API remains the same for each system.</p>
+	<p>Space MVC provides a powerful filesystem abstraction thanks to the wonderful <a href="https://github.com/thephpleague/flysystem">Flysystem</a> PHP package by Frank de Jonge. The Space MVC Flysystem integration provides simple to use drivers for working with local filesystems, Amazon S3, and Rackspace Cloud Storage. Even better, it's amazingly simple to switch between these storage options as the API remains the same for each system.</p>
 	<p><a name="configuration"></a></p>
 	<h2><a href="#configuration">Configuration</a></h2>
 	<p>The filesystem configuration file is located at <code class=" language-php">config<span class="token operator">/</span>filesystems<span class="token punctuation">.</span>php</code>. Within this file you may configure all of your "disks". Each disk represents a particular storage driver and storage location. Example configurations for each supported driver are included in the configuration file. So, modify the configuration to reflect your storage preferences and credentials.</p>
@@ -59,7 +59,7 @@
 	<h4>S3 Driver Configuration</h4>
 	<p>The S3 driver configuration information is located in your <code class=" language-php">config<span class="token operator">/</span>filesystems<span class="token punctuation">.</span>php</code> configuration file. This file contains an example configuration array for an S3 driver. You are free to modify this array with your own S3 configuration and credentials. For convenience, these environment variables match the naming convention used by the AWS CLI.</p>
 	<h4>FTP Driver Configuration</h4>
-	<p>Laravel's Flysystem integrations works great with FTP; however, a sample configuration is not included with the framework's default <code class=" language-php">filesystems<span class="token punctuation">.</span>php</code> configuration file. If you need to configure a FTP filesystem, you may use the example configuration below:</p>
+	<p>Space MVC's Flysystem integrations works great with FTP; however, a sample configuration is not included with the framework's default <code class=" language-php">filesystems<span class="token punctuation">.</span>php</code> configuration file. If you need to configure a FTP filesystem, you may use the example configuration below:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token string">'ftp'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
     <span class="token string">'driver'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'ftp'</span><span class="token punctuation">,</span>
     <span class="token string">'host'</span>     <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'ftp.example.com'</span><span class="token punctuation">,</span>
@@ -74,7 +74,7 @@
 </span>   <span class="token comment" spellcheck="true"> // 'timeout'  =&gt; 30,
 </span><span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
 	<h4>SFTP Driver Configuration</h4>
-	<p>Laravel's Flysystem integrations works great with SFTP; however, a sample configuration is not included with the framework's default <code class=" language-php">filesystems<span class="token punctuation">.</span>php</code> configuration file. If you need to configure a SFTP filesystem, you may use the example configuration below:</p>
+	<p>Space MVC's Flysystem integrations works great with SFTP; however, a sample configuration is not included with the framework's default <code class=" language-php">filesystems<span class="token punctuation">.</span>php</code> configuration file. If you need to configure a SFTP filesystem, you may use the example configuration below:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token string">'sftp'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
     <span class="token string">'driver'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'sftp'</span><span class="token punctuation">,</span>
     <span class="token string">'host'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'example.com'</span><span class="token punctuation">,</span>
@@ -91,7 +91,7 @@
 </span>   <span class="token comment" spellcheck="true"> // 'timeout' =&gt; 30,
 </span><span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
 	<h4>Rackspace Driver Configuration</h4>
-	<p>Laravel's Flysystem integrations works great with Rackspace; however, a sample configuration is not included with the framework's default <code class=" language-php">filesystems<span class="token punctuation">.</span>php</code> configuration file. If you need to configure a Rackspace filesystem, you may use the example configuration below:</p>
+	<p>Space MVC's Flysystem integrations works great with Rackspace; however, a sample configuration is not included with the framework's default <code class=" language-php">filesystems<span class="token punctuation">.</span>php</code> configuration file. If you need to configure a Rackspace filesystem, you may use the example configuration below:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token string">'rackspace'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
     <span class="token string">'driver'</span>    <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'rackspace'</span><span class="token punctuation">,</span>
     <span class="token string">'username'</span>  <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'your-username'</span><span class="token punctuation">,</span>
@@ -159,7 +159,7 @@
 <span class="token punctuation">]</span><span class="token punctuation">,</span></code></pre>
 	<p><a name="file-metadata"></a></p>
 	<h3>File Metadata</h3>
-	<p>In addition to reading and writing files, Laravel can also provide information about the files themselves. For example, the <code class=" language-php">size</code> method may be used to get the size of the file in bytes:</p>
+	<p>In addition to reading and writing files, Space MVC can also provide information about the files themselves. For example, the <code class=" language-php">size</code> method may be used to get the size of the file in bytes:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Storage</span><span class="token punctuation">;</span>
 
 <span class="token variable">$size</span> <span class="token operator">=</span> <span class="token scope">Storage<span class="token punctuation">::</span></span><span class="token function">size<span class="token punctuation">(</span></span><span class="token string">'file.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -174,7 +174,7 @@
 
 <span class="token scope">Storage<span class="token punctuation">::</span></span><span class="token function">put<span class="token punctuation">(</span></span><span class="token string">'file.jpg'</span><span class="token punctuation">,</span> <span class="token variable">$resource</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<h4>Automatic Streaming</h4>
-	<p>If you would like Laravel to automatically manage streaming a given file to your storage location, you may use the <code class=" language-php">putFile</code> or <code class=" language-php">putFileAs</code> method. This method accepts either a <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>File</span></code> or <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>UploadedFile</span></code> instance and will automatically stream the file to your desired location:</p>
+	<p>If you would like Space MVC to automatically manage streaming a given file to your storage location, you may use the <code class=" language-php">putFile</code> or <code class=" language-php">putFileAs</code> method. This method accepts either a <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>File</span></code> or <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>UploadedFile</span></code> instance and will automatically stream the file to your desired location:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>File</span><span class="token punctuation">;</span>
 <span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Storage</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">
@@ -198,7 +198,7 @@
 <span class="token scope">Storage<span class="token punctuation">::</span></span><span class="token function">move<span class="token punctuation">(</span></span><span class="token string">'old/file.jpg'</span><span class="token punctuation">,</span> <span class="token string">'new/file.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="file-uploads"></a></p>
 	<h3>File Uploads</h3>
-	<p>In web applications, one of the most common use-cases for storing files is storing user uploaded files such as profile pictures, photos, and documents. Laravel makes it very easy to store uploaded files using the <code class=" language-php">store</code> method on an uploaded file instance. Call the <code class=" language-php">store</code> method with the path at which you wish to store the uploaded file:</p>
+	<p>In web applications, one of the most common use-cases for storing files is storing user uploaded files such as profile pictures, photos, and documents. Space MVC makes it very easy to store uploaded files using the <code class=" language-php">store</code> method on an uploaded file instance. Call the <code class=" language-php">store</code> method with the path at which you wish to store the uploaded file:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
 
 <span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
@@ -240,7 +240,7 @@
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="file-visibility"></a></p>
 	<h3>File Visibility</h3>
-	<p>In Laravel's Flysystem integration, "visibility" is an abstraction of file permissions across multiple platforms. Files may either be declared <code class=" language-php"><span class="token keyword">public</span></code> or <code class=" language-php"><span class="token keyword">private</span></code>. When a file is declared <code class=" language-php"><span class="token keyword">public</span></code>, you are indicating that the file should generally be accessible to others. For example, when using the S3 driver, you may retrieve URLs for <code class=" language-php"><span class="token keyword">public</span></code> files.</p>
+	<p>In Space MVC's Flysystem integration, "visibility" is an abstraction of file permissions across multiple platforms. Files may either be declared <code class=" language-php"><span class="token keyword">public</span></code> or <code class=" language-php"><span class="token keyword">private</span></code>. When a file is declared <code class=" language-php"><span class="token keyword">public</span></code>, you are indicating that the file should generally be accessible to others. For example, when using the S3 driver, you may retrieve URLs for <code class=" language-php"><span class="token keyword">public</span></code> files.</p>
 	<p>You can set the visibility when setting the file via the <code class=" language-php">put</code> method:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Storage</span><span class="token punctuation">;</span>
 
@@ -284,7 +284,7 @@
 	<pre class=" language-php"><code class=" language-php"><span class="token scope">Storage<span class="token punctuation">::</span></span><span class="token function">deleteDirectory<span class="token punctuation">(</span></span><span class="token variable">$directory</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="custom-filesystems"></a></p>
 	<h2><a href="#custom-filesystems">Custom Filesystems</a></h2>
-	<p>Laravel's Flysystem integration provides drivers for several "drivers" out of the box; however, Flysystem is not limited to these and has adapters for many other storage systems. You can create a custom driver if you want to use one of these additional adapters in your Laravel application.</p>
+	<p>Space MVC's Flysystem integration provides drivers for several "drivers" out of the box; however, Flysystem is not limited to these and has adapters for many other storage systems. You can create a custom driver if you want to use one of these additional adapters in your Space MVC application.</p>
 	<p>In order to set up the custom filesystem you will need a Flysystem adapter. Let's add a community maintained Dropbox adapter to our project:</p>
 	<pre class=" language-php"><code class=" language-php">composer <span class="token keyword">require</span> spatie<span class="token operator">/</span>flysystem<span class="token operator">-</span>dropbox</code></pre>
 	<p>Next, you should create a <a href="/docs/5.7/providers">service provider</a> such as <code class=" language-php">DropboxServiceProvider</code>. In the provider's <code class=" language-php">boot</code> method, you may use the <code class=" language-php">Storage</code> facade's <code class=" language-php">extend</code> method to define the custom driver:</p>

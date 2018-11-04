@@ -30,13 +30,13 @@
 	</ul>
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
-	<p>Migrations are like version control for your database, allowing your team to easily modify and share the application's database schema. Migrations are typically paired with Laravel's schema builder to easily build your application's database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you've faced the problem that database migrations solve.</p>
-	<p>The Laravel <code class=" language-php">Schema</code> <a href="/docs/5.7/facades">facade</a> provides database agnostic support for creating and manipulating tables across all of Laravel's supported database systems.</p>
+	<p>Migrations are like version control for your database, allowing your team to easily modify and share the application's database schema. Migrations are typically paired with Space MVC's schema builder to easily build your application's database schema. If you have ever had to tell a teammate to manually add a column to their local database schema, you've faced the problem that database migrations solve.</p>
+	<p>The Space MVC <code class=" language-php">Schema</code> <a href="/docs/5.7/facades">facade</a> provides database agnostic support for creating and manipulating tables across all of Space MVC's supported database systems.</p>
 	<p><a name="generating-migrations"></a></p>
 	<h2><a href="#generating-migrations">Generating Migrations</a></h2>
 	<p>To create a migration, use the <code class=" language-php">make<span class="token punctuation">:</span>migration</code> <a href="/docs/5.7/artisan">Artisan command</a>:</p>
 	<pre class=" language-php"><code class=" language-php">php artisan make<span class="token punctuation">:</span>migration create_users_table</code></pre>
-	<p>The new migration will be placed in your <code class=" language-php">database<span class="token operator">/</span>migrations</code> directory. Each migration file name contains a timestamp which allows Laravel to determine the order of the migrations.</p>
+	<p>The new migration will be placed in your <code class=" language-php">database<span class="token operator">/</span>migrations</code> directory. Each migration file name contains a timestamp which allows Space MVC to determine the order of the migrations.</p>
 	<p>The <code class=" language-php"><span class="token operator">--</span>table</code> and <code class=" language-php"><span class="token operator">--</span>create</code> options may also be used to indicate the name of the table and whether the migration will be creating a new table. These options pre-fill the generated migration stub file with the specified table:</p>
 	<pre class=" language-php"><code class=" language-php">php artisan make<span class="token punctuation">:</span>migration create_users_table <span class="token operator">--</span>create<span class="token operator">=</span>users
 
@@ -45,7 +45,7 @@ php artisan make<span class="token punctuation">:</span>migration add_votes_to_u
 	<p><a name="migration-structure"></a></p>
 	<h2><a href="#migration-structure">Migration Structure</a></h2>
 	<p>A migration class contains two methods: <code class=" language-php">up</code> and <code class=" language-php">down</code>. The <code class=" language-php">up</code> method is used to add new tables, columns, or indexes to your database, while the <code class=" language-php">down</code> method should reverse the operations performed by the <code class=" language-php">up</code> method.</p>
-	<p>Within both of these methods you may use the Laravel schema builder to expressively create and modify tables. To learn about all of the methods available on the <code class=" language-php">Schema</code> builder, <a href="#creating-tables">check out its documentation</a>. For example, this migration example creates a <code class=" language-php">flights</code> table:</p>
+	<p>Within both of these methods you may use the Space MVC schema builder to expressively create and modify tables. To learn about all of the methods available on the <code class=" language-php">Schema</code> builder, <a href="#creating-tables">check out its documentation</a>. For example, this migration example creates a <code class=" language-php">flights</code> table:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
 
 <span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Schema</span><span class="token punctuation">;</span>
@@ -169,7 +169,7 @@ php artisan migrate<span class="token punctuation">:</span>fresh <span class="to
 
 <span class="token scope">Schema<span class="token punctuation">::</span></span><span class="token function">dropIfExists<span class="token punctuation">(</span></span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<h4>Renaming Tables With Foreign Keys</h4>
-	<p>Before renaming a table, you should verify that any foreign key constraints on the table have an explicit name in your migration files instead of letting Laravel assign a convention based name. Otherwise, the foreign key constraint name will refer to the old table name.</p>
+	<p>Before renaming a table, you should verify that any foreign key constraints on the table have an explicit name in your migration files instead of letting Space MVC assign a convention based name. Otherwise, the foreign key constraint name will refer to the old table name.</p>
 	<p><a name="columns"></a></p>
 	<h2><a href="#columns">Columns</a></h2>
 	<p><a name="creating-columns"></a></p>
@@ -566,7 +566,7 @@ php artisan migrate<span class="token punctuation">:</span>fresh <span class="to
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">unique<span class="token punctuation">(</span></span><span class="token string">'email'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p>You may even pass an array of columns to an index method to create a compound (or composite) index:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">index<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'account_id'</span><span class="token punctuation">,</span> <span class="token string">'created_at'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>Laravel will automatically generate a reasonable index name, but you may pass a second argument to the method to specify the name yourself:</p>
+	<p>Space MVC will automatically generate a reasonable index name, but you may pass a second argument to the method to specify the name yourself:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">unique<span class="token punctuation">(</span></span><span class="token string">'email'</span><span class="token punctuation">,</span> <span class="token string">'unique_email'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<h4>Available Index Types</h4>
 	<p>Each index method accepts an optional second argument to specify the name of the index. If omitted, the name will be derived from the names of the table and column(s).</p>
@@ -601,7 +601,7 @@ php artisan migrate<span class="token punctuation">:</span>fresh <span class="to
 		</tbody>
 	</table>
 	<h4>Index Lengths &amp; MySQL / MariaDB</h4>
-	<p>Laravel uses the <code class=" language-php">utf8mb4</code> character set by default, which includes support for storing "emojis" in the database. If you are running a version of MySQL older than the 5.7.7 release or MariaDB older than the 10.2.2 release, you may need to manually configure the default string length generated by migrations in order for MySQL to create indexes for them. You may configure this by calling the <code class=" language-php"><span class="token scope">Schema<span class="token punctuation">::</span></span>defaultStringLength</code> method within your <code class=" language-php">AppServiceProvider</code>:</p>
+	<p>Space MVC uses the <code class=" language-php">utf8mb4</code> character set by default, which includes support for storing "emojis" in the database. If you are running a version of MySQL older than the 5.7.7 release or MariaDB older than the 10.2.2 release, you may need to manually configure the default string length generated by migrations in order for MySQL to create indexes for them. You may configure this by calling the <code class=" language-php"><span class="token scope">Schema<span class="token punctuation">::</span></span>defaultStringLength</code> method within your <code class=" language-php">AppServiceProvider</code>:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>Schema</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
@@ -620,7 +620,7 @@ php artisan migrate<span class="token punctuation">:</span>fresh <span class="to
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">renameIndex<span class="token punctuation">(</span></span><span class="token string">'from'</span><span class="token punctuation">,</span> <span class="token string">'to'</span><span class="token punctuation">)</span></code></pre>
 	<p><a name="dropping-indexes"></a></p>
 	<h3>Dropping Indexes</h3>
-	<p>To drop an index, you must specify the index's name. By default, Laravel automatically assigns a reasonable name to the indexes. Concatenate the table name, the name of the indexed column, and the index type. Here are some examples:</p>
+	<p>To drop an index, you must specify the index's name. By default, Space MVC automatically assigns a reasonable name to the indexes. Concatenate the table name, the name of the indexed column, and the index type. Here are some examples:</p>
 	<table>
 		<thead>
 		<tr>
@@ -653,7 +653,7 @@ php artisan migrate<span class="token punctuation">:</span>fresh <span class="to
 </span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="foreign-key-constraints"></a></p>
 	<h3>Foreign Key Constraints</h3>
-	<p>Laravel also provides support for creating foreign key constraints, which are used to force referential integrity at the database level. For example, let's define a <code class=" language-php">user_id</code> column on the <code class=" language-php">posts</code> table that references the <code class=" language-php">id</code> column on a <code class=" language-php">users</code> table:</p>
+	<p>Space MVC also provides support for creating foreign key constraints, which are used to force referential integrity at the database level. For example, let's define a <code class=" language-php">user_id</code> column on the <code class=" language-php">posts</code> table that references the <code class=" language-php">id</code> column on a <code class=" language-php">users</code> table:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token scope">Schema<span class="token punctuation">::</span></span><span class="token function">table<span class="token punctuation">(</span></span><span class="token string">'posts'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>Blueprint <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">unsignedInteger<span class="token punctuation">(</span></span><span class="token string">'user_id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 

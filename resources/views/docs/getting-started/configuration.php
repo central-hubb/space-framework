@@ -2,7 +2,7 @@
     <h1>Configuration</h1>
     <p><a name="introduction"></a></p>
     <h2><a href="#introduction">Introduction</a></h2>
-    <p>All of the configuration files for the Laravel framework are stored in the <code
+    <p>All of the configuration files for the Space MVC framework are stored in the <code
                 class=" language-php">config</code> directory. Each option is documented, so feel free to look through
         the files and get familiar with the options available to you.</p>
     <p><a name="environment-configuration"></a></p>
@@ -10,10 +10,10 @@
     <p>It is often helpful to have different configuration values based on the environment where the application is
         running. For example, you may wish to use a different cache driver locally than you do on your production
         server.</p>
-    <p>To make this a cinch, Laravel utilizes the <a href="https://github.com/vlucas/phpdotenv">DotEnv</a> PHP library
-        by Vance Lucas. In a fresh Laravel installation, the root directory of your application will contain a <code
+    <p>To make this a cinch, Space MVC utilizes the <a href="https://github.com/vlucas/phpdotenv">DotEnv</a> PHP library
+        by Vance Lucas. In a fresh Space MVC installation, the root directory of your application will contain a <code
                 class=" language-php"><span class="token punctuation">.</span>env<span
-                    class="token punctuation">.</span>example</code> file. If you install Laravel via Composer, this
+                    class="token punctuation">.</span>example</code> file. If you install Space MVC via Composer, this
         file will automatically be renamed to <code class=" language-php"><span
                     class="token punctuation">.</span>env</code>. Otherwise, you should rename the file manually.</p>
     <p>Your <code class=" language-php"><span class="token punctuation">.</span>env</code> file should not be committed
@@ -102,7 +102,7 @@
     <p>All of the variables listed in this file will be loaded into the <code class=" language-php"><span
                     class="token global">$_ENV</span></code> PHP super-global when your application receives a request.
         However, you may use the <code class=" language-php">env</code> helper to retrieve values from these variables
-        in your configuration files. In fact, if you review the Laravel configuration files, you will notice several of
+        in your configuration files. In fact, if you review the Space MVC configuration files, you will notice several of
         the options already using this helper:</p>
     <pre class=" language-php"><code class=" language-php"><span class="token string">'debug'</span> <span
                     class="token operator">=</span><span class="token operator">&gt;</span> <span

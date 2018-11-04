@@ -43,11 +43,11 @@
     </ul>
     <p><a name="introduction"></a></p>
     <h2><a href="#introduction">Introduction</a></h2>
-    <p>The default Laravel application structure is intended to provide a great starting point for both large and small
-        applications. Of course, you are free to organize your application however you like. Laravel imposes almost no
+    <p>The default Space MVC application structure is intended to provide a great starting point for both large and small
+        applications. Of course, you are free to organize your application however you like. Space MVC imposes almost no
         restrictions on where any given class is located - as long as Composer can autoload the class.</p>
     <h4>Where Is The Models Directory?</h4>
-    <p>When getting started with Laravel, many developers are confused by the lack of a <code class=" language-php">models</code>
+    <p>When getting started with Space MVC, many developers are confused by the lack of a <code class=" language-php">models</code>
         directory. However, the lack of such a directory is intentional. We find the word "models" ambiguous since it
         means many different things to many different people. Some developers refer to an application's "model" as the
         totality of all of its business logic, while others refer to "models" as classes that interact with a relational
@@ -89,7 +89,7 @@
     <p><a name="the-routes-directory"></a></p>
     <h4>The Routes Directory</h4>
     <p>The <code class=" language-php">routes</code> directory contains all of the route definitions for your
-        application. By default, several route files are included with Laravel: <code class=" language-php">web<span
+        application. By default, several route files are included with Space MVC: <code class=" language-php">web<span
                     class="token punctuation">.</span>php</code>, <code class=" language-php">api<span
                     class="token punctuation">.</span>php</code>, <code class=" language-php">console<span
                     class="token punctuation">.</span>php</code> and <code class=" language-php">channels<span
@@ -233,7 +233,7 @@
                 class=" language-php">make<span class="token punctuation">:</span>notification</code> Artisan command.
         The <code class=" language-php">Notifications</code> directory contains all of the "transactional" notifications
         that are sent by your application, such as simple notifications about events that happen within your
-        application. Laravel's notification features abstracts sending notifications over a variety of drivers such as
+        application. Space MVC's notification features abstracts sending notifications over a variety of drivers such as
         email, Slack, SMS, or stored in a database.</p>
     <p><a name="the-policies-directory"></a></p>
     <h4>The Policies Directory</h4>
@@ -248,7 +248,7 @@
             providers</a> for your application. Service providers bootstrap your application by binding services in the
         service container, registering events, or performing any other tasks to prepare your application for incoming
         requests.</p>
-    <p>In a fresh Laravel application, this directory will already contain several providers. You are free to add your
+    <p>In a fresh Space MVC application, this directory will already contain several providers. You are free to add your
         own providers to this directory as needed.</p>
     <p><a name="the-rules-directory"></a></p>
     <h4>The Rules Directory</h4>

@@ -4,7 +4,7 @@
 
 	<p><a name="defining-controllers"></a></p>
 	<h3>Defining Controllers</h3>
-	<p>Below is an example of a basic controller class. Note that the controller extends the base controller class included with Laravel. The base class provides a few convenience methods such as the <code class=" language-php">middleware</code> method, which may be used to attach middleware to controller actions:</p>
+	<p>Below is an example of a basic controller class. Note that the controller extends the base controller class included with Space MVC. The base class provides a few convenience methods such as the <code class=" language-php">middleware</code> method, which may be used to attach middleware to controller actions:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
 
 <span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>

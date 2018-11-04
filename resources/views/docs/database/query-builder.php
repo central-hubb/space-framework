@@ -30,8 +30,8 @@
 	</ul>
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
-	<p>Laravel's database query builder provides a convenient, fluent interface to creating and running database queries. It can be used to perform most database operations in your application and works on all supported database systems.</p>
-	<p>The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. There is no need to clean strings being passed as bindings.</p>
+	<p>Space MVC's database query builder provides a convenient, fluent interface to creating and running database queries. It can be used to perform most database operations in your application and works on all supported database systems.</p>
+	<p>The Space MVC query builder uses PDO parameter binding to protect your application against SQL injection attacks. There is no need to clean strings being passed as bindings.</p>
 	<p><a name="retrieving-results"></a></p>
 	<h2><a href="#retrieving-results">Retrieving Results</a></h2>
 	<h4>Retrieving All Rows From A Table</h4>
@@ -323,7 +323,7 @@
                 <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="parameter-grouping"></a></p>
 	<h3>Parameter Grouping</h3>
-	<p>Sometimes you may need to create more advanced where clauses such as "where exists" clauses or nested parameter groupings. The Laravel query builder can handle these as well. To get started, let's look at an example of grouping constraints within parenthesis:</p>
+	<p>Sometimes you may need to create more advanced where clauses such as "where exists" clauses or nested parameter groupings. The Space MVC query builder can handle these as well. To get started, let's look at an example of grouping constraints within parenthesis:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token scope">DB<span class="token punctuation">::</span></span><span class="token function">table<span class="token punctuation">(</span></span><span class="token string">'users'</span><span class="token punctuation">)</span>
             <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'='</span><span class="token punctuation">,</span> <span class="token string">'John'</span><span class="token punctuation">)</span>
             <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -353,7 +353,7 @@ where exists <span class="token punctuation">(</span>
 <span class="token punctuation">)</span></code></pre>
 	<p><a name="json-where-clauses"></a></p>
 	<h3>JSON Where Clauses</h3>
-	<p>Laravel also supports querying JSON column types on databases that provide support for JSON column types. Currently, this includes MySQL 5.7, PostgreSQL, SQL Server 2016, and SQLite 3.9.0 (with the <a href="https://www.sqlite.org/json1.html">JSON1 extension</a>). To query a JSON column, use the <code class=" language-php"><span class="token operator">-</span><span class="token operator">&gt;</span></code> operator:</p>
+	<p>Space MVC also supports querying JSON column types on databases that provide support for JSON column types. Currently, this includes MySQL 5.7, PostgreSQL, SQL Server 2016, and SQLite 3.9.0 (with the <a href="https://www.sqlite.org/json1.html">JSON1 extension</a>). To query a JSON column, use the <code class=" language-php"><span class="token operator">-</span><span class="token operator">&gt;</span></code> operator:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token scope">DB<span class="token punctuation">::</span></span><span class="token function">table<span class="token punctuation">(</span></span><span class="token string">'users'</span><span class="token punctuation">)</span>
                 <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where<span class="token punctuation">(</span></span><span class="token string">'options-&gt;language'</span><span class="token punctuation">,</span> <span class="token string">'en'</span><span class="token punctuation">)</span>
                 <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>

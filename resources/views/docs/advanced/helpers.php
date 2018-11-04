@@ -6,7 +6,7 @@
 	</ul>
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
-	<p>Laravel includes a variety of global "helper" PHP functions. Many of these functions are used by the framework itself; however, you are free to use them in your own applications if you find them convenient.</p>
+	<p>Space MVC includes a variety of global "helper" PHP functions. Many of these functions are used by the framework itself; however, you are free to use them in your own applications if you find them convenient.</p>
 	<p><a name="available-methods"></a></p>
 	<h2><a href="#available-methods">Available Methods</a></h2>
 	<style>
@@ -393,11 +393,11 @@
 	<p><a name="method-array-wrap"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_wrap<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
 	<p>The <code class=" language-php">array_wrap</code> function wraps the given value in an array. If the given value is already an array it will not be changed:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$string</span> <span class="token operator">=</span> <span class="token string">'Laravel'</span><span class="token punctuation">;</span>
+	<pre class=" language-php"><code class=" language-php"><span class="token variable">$string</span> <span class="token operator">=</span> <span class="token string">'Space MVC'</span><span class="token punctuation">;</span>
 
 <span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_wrap<span class="token punctuation">(</span></span><span class="token variable">$string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">
-// ['Laravel']</span></code></pre>
+// ['Space MVC']</span></code></pre>
 	<p>If the given value is null, an empty array will be returned:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$nothing</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 
@@ -723,9 +723,9 @@
 	<p><a name="method-str-slug"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_slug<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
 	<p>The <code class=" language-php">str_slug</code> function generates a URL friendly "slug" from the given string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$slug</span> <span class="token operator">=</span> <span class="token function">str_slug<span class="token punctuation">(</span></span><span class="token string">'Laravel 5 Framework'</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<pre class=" language-php"><code class=" language-php"><span class="token variable">$slug</span> <span class="token operator">=</span> <span class="token function">str_slug<span class="token punctuation">(</span></span><span class="token string">'Space MVC 5 Framework'</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">
-// laravel-5-framework</span></code></pre>
+// Space MVC</span></code></pre>
 	<p><a name="method-str-start"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_start<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
 	<p>The <code class=" language-php">str_start</code> function adds a single instance of the given value to a string if it does not already start with the value:</p>
@@ -915,11 +915,11 @@
 	<p>If you do not want to halt the execution of your script, use the <a href="#method-dump"><code class=" language-php">dump</code></a> function instead.</p>
 	<p><a name="method-decrypt"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">decrypt<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">decrypt</code> function decrypts the given value using Laravel's <a href="/docs/5.7/encryption">encrypter</a>:</p>
+	<p>The <code class=" language-php">decrypt</code> function decrypts the given value using Space MVC's <a href="/docs/5.7/encryption">encrypter</a>:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$decrypted</span> <span class="token operator">=</span> <span class="token function">decrypt<span class="token punctuation">(</span></span><span class="token variable">$encrypted_value</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="method-dispatch"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">dispatch</code> function pushes the given <a href="/docs/5.7/queues#creating-jobs">job</a> onto the Laravel <a href="/docs/5.7/queues">job queue</a>:</p>
+	<p>The <code class=" language-php">dispatch</code> function pushes the given <a href="/docs/5.7/queues#creating-jobs">job</a> onto the Space MVC <a href="/docs/5.7/queues">job queue</a>:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token keyword">new</span> <span class="token class-name">App<span class="token punctuation">\</span>Jobs<span class="token punctuation">\</span>SendEmails</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="method-dispatch-now"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">dispatch_now<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
@@ -937,7 +937,7 @@
 	</blockquote>
 	<p><a name="method-encrypt"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">encrypt<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">encrypt</code> function encrypts the given value using Laravel's <a href="/docs/5.7/encryption">encrypter</a>:</p>
+	<p>The <code class=" language-php">encrypt</code> function encrypts the given value using Space MVC's <a href="/docs/5.7/encryption">encrypter</a>:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token variable">$encrypted</span> <span class="token operator">=</span> <span class="token function">encrypt<span class="token punctuation">(</span></span><span class="token variable">$unencrypted_value</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="method-env"></a></p>
 	<h4 id="collection-method"><code class=" language-php"><span class="token function">env<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>

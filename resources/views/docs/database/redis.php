@@ -16,7 +16,7 @@
 	<p><a name="introduction"></a></p>
 	<h2><a href="#introduction">Introduction</a></h2>
 	<p><a href="https://redis.io">Redis</a> is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain <a href="https://redis.io/topics/data-types#strings">strings</a>, <a href="https://redis.io/topics/data-types#hashes">hashes</a>, <a href="https://redis.io/topics/data-types#lists">lists</a>, <a href="https://redis.io/topics/data-types#sets">sets</a>, and <a href="https://redis.io/topics/data-types#sorted-sets">sorted sets</a>.</p>
-	<p>Before using Redis with Laravel, you will need to install the <code class=" language-php">predis<span class="token operator">/</span>predis</code> package via Composer:</p>
+	<p>Before using Redis with Space MVC, you will need to install the <code class=" language-php">predis<span class="token operator">/</span>predis</code> package via Composer:</p>
 	<pre class=" language-php"><code class=" language-php">composer <span class="token keyword">require</span> predis<span class="token operator">/</span>predis</code></pre>
 	<p>Alternatively, you may install the <a href="https://github.com/phpredis/phpredis">PhpRedis</a> PHP extension via PECL. The extension is more complex to install but may yield better performance for applications that make heavy use of Redis.</p>
 	<p><a name="configuration"></a></p>
@@ -119,7 +119,7 @@
         <span class="token keyword">return</span> <span class="token function">view<span class="token punctuation">(</span></span><span class="token string">'user.profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'user'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$user</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-	<p>Of course, as mentioned above, you may call any of the Redis commands on the <code class=" language-php">Redis</code> facade. Laravel uses magic methods to pass the commands to the Redis server, so pass the arguments the Redis command expects:</p>
+	<p>Of course, as mentioned above, you may call any of the Redis commands on the <code class=" language-php">Redis</code> facade. Space MVC uses magic methods to pass the commands to the Redis server, so pass the arguments the Redis command expects:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token scope">Redis<span class="token punctuation">::</span></span><span class="token function">set<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'Taylor'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token variable">$values</span> <span class="token operator">=</span> <span class="token scope">Redis<span class="token punctuation">::</span></span><span class="token function">lrange<span class="token punctuation">(</span></span><span class="token string">'names'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -140,7 +140,7 @@
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 	<p><a name="pubsub"></a></p>
 	<h2><a href="#pubsub">Pub / Sub</a></h2>
-	<p>Laravel provides a convenient interface to the Redis <code class=" language-php">publish</code> and <code class=" language-php">subscribe</code> commands. These Redis commands allow you to listen for messages on a given "channel". You may publish messages to the channel from another application, or even using another programming language, allowing easy communication between applications and processes.</p>
+	<p>Space MVC provides a convenient interface to the Redis <code class=" language-php">publish</code> and <code class=" language-php">subscribe</code> commands. These Redis commands allow you to listen for messages on a given "channel". You may publish messages to the channel from another application, or even using another programming language, allowing easy communication between applications and processes.</p>
 	<p>First, let's setup a channel listener using the <code class=" language-php">subscribe</code> method. We'll place this method call within an <a href="/docs/5.7/artisan">Artisan command</a> since calling the <code class=" language-php">subscribe</code> method begins a long-running process:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
 
