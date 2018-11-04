@@ -6,13 +6,13 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors',1);
 
 // set autoloader to require all class files automatically
-spl_autoload_register(function ($class_name) {
-	str_replace('App', 'app', $class_name);
-	$filename = '../'.str_replace('\\', '/', $class_name) . '.php';
+spl_autoload_register(function ($className) {
+	$className =str_replace('App', 'app', $className);
+	$filename = '../'.str_replace('\\', '/', $className) . '.php';
 
 	echo $filename;
 	exit;
-	
+
 	if(file_exists($filename)) {
 		include $filename;
 	}
