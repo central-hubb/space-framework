@@ -24,8 +24,10 @@ class Cache
 	 */
 	public function __construct()
 	{
-		$this->memcached = new \Memcached();
-		$this->memcached->addServer($this->host, $this->port);
+		if(class_exists('Memcached')) {
+			$this->memcached = new \Memcached();
+			$this->memcached->addServer($this->host, $this->port);
+		}
 	}
 
 	/**
