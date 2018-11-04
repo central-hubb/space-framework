@@ -60,6 +60,8 @@
         &nbsp;&nbsp;
         <a class="github-button" href="https://github.com/space-mvc/space-mvc/fork" data-size="large" data-show-count="true" aria-label="Fork space-mvc/space-mvc on GitHub">Fork</a>
         &nbsp;&nbsp;
+        <a class="github-button" href="https://github.com/space-mvc/space-mvc/issues" data-size="large" data-show-count="true" aria-label="Issue space-mvc/space-mvc on GitHub">Issue</a>
+        &nbsp;&nbsp;
         <a class="github-button" href="https://github.com/space-mvc/space-mvc/archive/master.zip" data-size="large" aria-label="Download space-mvc/space-mvc on GitHub">Download</a>
 
 		<?php /*
