@@ -8,7 +8,7 @@ up to perform record breaking performance benchmarks! (This framework runs 4x fa
 processing than symfony)
 
 ## Documentation
-[Space MVC Documentation](http://space-mvc.com)
+[View Space MVC Full Documentation Here](http://space-mvc.com)
 
 ## About Space MVC Framework
 
