@@ -10,7 +10,7 @@
             <ul>
                 <!--<li><a href="/docs/getting-started/installation">Software Installation</a></li>-->
                 <li><a href="/docs/getting-started/installation">Space MVC Installation</a></li>
-                <li><a href="/docs/basics/routing">Environments</a></li>
+                <li><a href="/docs/basics/routing">* Environments</a></li>
                 <li><a href="/docs/getting-started/configuration">Configuration</a></li>
                 <li><a href="/docs/getting-started/directory-structure">Directory Structure</a></li>
             </ul>

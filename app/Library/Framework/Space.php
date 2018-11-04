@@ -22,6 +22,7 @@ class Space
 	{
 		$this->di['asset'] = new Asset();
 		$this->di['config'] = new Config();
+		$this->di['environment'] = new Environment();
 		$this->di['database'] = new Database();
 		$this->di['log'] = new Log();
 		$this->di['orm'] = new Orm();
@@ -96,6 +97,16 @@ class Space
 	public function asset()
 	{
 		return $this->di['asset'];
+	}
+
+	/**
+	 * environment.
+	 *
+	 * @return mixed
+	 */
+	public function environment()
+	{
+		return $this->di['environment'];
 	}
 
 	/**

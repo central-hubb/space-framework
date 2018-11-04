@@ -16,11 +16,6 @@ class IndexController extends Controller
 	 */
 	public function index()
 	{
-		$mail = $this->di->mail();
-		$mail->setSendTo(['mrdaniellee2020@gmail.com']);
-		$mail->setSendFrom('mrdaniellee2020@local.mvc.com');
-		$mail->send();
-
 		$this->di->layout()->set('helloA', 'worldA');
 		$this->di->layout()->set('helloB', 'worldB');
 		$this->di->layout()->set('helloC', 'worldC');

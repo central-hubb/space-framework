@@ -14,6 +14,9 @@ spl_autoload_register(function ($className) {
 	}
 });
 
+// require helpers
+require_once 'helpers.php';
+
 // start space framework application
 $space = new App\Library\Framework\Space();
 $space->init();
