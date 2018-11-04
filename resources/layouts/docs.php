@@ -18,6 +18,7 @@
             ?><link href="/frontend/assets/css/examples/cover.css" rel="stylesheet"><?php
         }
 	?>
+    <script type="text/javascript" async defer src="//buttons.github.io/buttons.js"></script>
 </head>
 
 <body>

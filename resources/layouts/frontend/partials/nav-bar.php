@@ -51,6 +51,17 @@
             </li> */ ?>
 		</ul>
 
+
+        <a class="github-button" href="https://github.com/space-mvc/space-mvc" data-size="large" data-show-count="true" aria-label="Star space-mvc/space-mvc on GitHub">Star</a>
+        &nbsp;&nbsp;
+        <a class="github-button" href="https://github.com/space-mvc" data-size="large" data-show-count="true" aria-label="Follow @space-mvc on GitHub">Follow Space MVC</a>
+        &nbsp;&nbsp;
+        <a class="github-button" href="https://github.com/space-mvc/space-mvc/subscription" data-size="large" data-show-count="true" aria-label="Watch space-mvc/space-mvc on GitHub">Watch</a>
+        &nbsp;&nbsp;
+        <a class="github-button" href="https://github.com/space-mvc/space-mvc/fork" data-size="large" data-show-count="true" aria-label="Fork space-mvc/space-mvc on GitHub">Fork</a>
+        &nbsp;&nbsp;
+        <a class="github-button" href="https://github.com/space-mvc/space-mvc/archive/master.zip" data-size="large" aria-label="Download space-mvc/space-mvc on GitHub">Download</a>
+
 		<?php /*
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
