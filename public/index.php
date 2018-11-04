@@ -7,8 +7,8 @@ ini_set('display_errors',1);
 
 // set autoloader to require all class files automatically
 spl_autoload_register(function ($class_name) {
-	$filename = strtolower('../'.str_replace('\\', '/', $class_name) . '.php');
-	echo  $filename;
+	str_replace('app', 'App', $class_name);
+	$filename = '../'.str_replace('\\', '/', $class_name) . '.php';
 	if(file_exists($filename)) {
 		include $filename;
 	}
