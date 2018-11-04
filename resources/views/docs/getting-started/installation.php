@@ -13,7 +13,7 @@
     <p><a name="installing-Space MVC"></a></p>
     <h3>Installing Framework</h3>
     <p>You can install Space CRM quite easily using github and composer.</p>
-    <pre class=" language-php"><code class=" language-php">git clone https://github.com/central-hubb/space-framework.git</code></pre>
+    <pre class=" language-php"><code class=" language-php">git clone https://github.com/space-mvc/space-mvc.git</code></pre>
     <pre class=" language-php"><code class=" language-php">composer install</code></pre>
     <p><a name="web-server-configuration"></a></p>
     <h2><a href="#web-server-configuration">Web Server Configuration</a></h2>
