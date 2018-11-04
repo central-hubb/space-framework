@@ -9,6 +9,9 @@ ini_set('display_errors',1);
 spl_autoload_register(function ($class_name) {
 	str_replace('app', 'App', $class_name);
 	$filename = '../'.str_replace('\\', '/', $class_name) . '.php';
+	echo $filename;
+	exit;
+	
 	if(file_exists($filename)) {
 		include $filename;
 	}
