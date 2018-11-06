@@ -7,7 +7,7 @@
 		MVC framework available.
 	</p>
 
-	<h2>How PHP works on servers</h2>
+	<h3>How PHP works on servers</h3>
 	<p>
 		When a client (browser) sends a request for a PHP page to the server, the server reads the requested file from
 		the disk (storage) and sends this file to the interpreter. The interpreter then runs the PHP code, fetches the
@@ -15,7 +15,7 @@
 		back to the server, which sends this data to the client (browser) that made a request for this page.
 	</p>
 
-	<h2>MVC architecture with PHP</h2>
+	<h3>MVC architecture with PHP</h3>
 	<p>
 		MVC, which stands for Model-View-Controller, is a really good way to develop clean, scalable, powerful and
 		fast applications in the least amount of time and with the least effort. The Model-View-Controller concept
@@ -25,7 +25,7 @@
 		on the same system without interfering with each other.
 	</p>
 
-	<h2>Model</h2>
+	<h3>Model</h3>
 	<p>
 		Model is the name given to the component that will communicate with the database to manipulate the data.
 		It acts as a bridge between the View component and the Controller component in the overall architecture. It
@@ -33,7 +33,7 @@
 		components.
 	</p>
 
-	<h2>View</h2>
+	<h3>View</h3>
 	<p>
 		The View requests for data from the Model component and then its final output is determined. View interacts
 		with the user, and then transfers the users reaction to the Controller component to respond accordingly.
@@ -41,7 +41,7 @@
 		in the Controller.
 	</p>
 
-	<h2>Controller</h2>
+	<h3>Controller</h3>
 	<p>
 		The Controllers job is to handle data that the user inputs or submits through the forms, and then Model
 		updates this accordingly in the database. The Controller is nothing without the users interactions,

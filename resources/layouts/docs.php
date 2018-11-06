@@ -19,6 +19,7 @@
         }
 	?>
     <script type="text/javascript" async defer src="//buttons.github.io/buttons.js"></script>
+    <link href="/bower_components/rainbow/themes/css/github.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -64,5 +65,10 @@
 <!--<script src="../../assets/js/vendor/popper.min.js"></script>-->
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/bower_components/holderjs/holder.min.js"></script>
+
+<script src="/bower_components/rainbow/dist/rainbow.min.js"></script>
+<script src="/bower_components/rainbow/src/language/generic.js"></script>
+<script src="/bower_components/rainbow/src/language/php.js"></script>
+
 </body>
 </html>

@@ -32,6 +32,14 @@ class IndexController extends Controller
 	}
 
 	/**
+	 * environments.
+	 */
+	public function environments()
+	{
+		return $this->di->view('docs.getting-started.environments');
+	}
+
+	/**
 	 * configuration.
 	 */
 	public function configuration()

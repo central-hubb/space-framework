@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+require 'vendor/autoload.php';
+
+// set autoloader to require all class files automatically
+spl_autoload_register(function ($className) {
+	$className =str_replace('App', 'app', $className);
+	$filename = str_replace('\\', '/', $className) . '.php';
+
+	if(file_exists($filename)) {
+		include $filename;
+	}
+});
+
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new \App\Library\Framework\Command\Space\Migrate());
+$application->add(new \App\Library\Framework\Command\Space\Seed());
+
+$application->run();

@@ -16,6 +16,11 @@ return [
 		'action' => 'installation',
 	],
 	[
+		'uri' => '/docs/getting-started/environments',
+		'controller' => 'Docs\IndexController',
+		'action' => 'environments',
+	],
+	[
 		'uri' => '/docs/getting-started/configuration',
 		'controller' => 'Docs\IndexController',
 		'action' => 'configuration',
