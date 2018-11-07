@@ -21,7 +21,12 @@ class IndexController extends Controller
 		$this->di->layout()->set('helloB', 'worldB');
 		$this->di->layout()->set('helloC', 'worldC');
 
-		dump(User::query('show tables;'));
+//		User::create([
+//			'first_name' => 'Daniel',
+//			'last_name' => 'Lee'
+//		]);
+//
+//		dump(User::find('all'));
 
 		return $this->di->view('frontend.index.index', [
 			'testA1' => 'testA',

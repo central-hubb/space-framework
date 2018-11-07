@@ -16,7 +16,7 @@ class CreateUsersTable
 		$sql = '';
 		$sql .= 'CREATE TABLE users'.'(';
 		$sql .= 'id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,';
-		$sql .= 'first_nme VARCHAR(30) NOT NULL,';
+		$sql .= 'first_name VARCHAR(30) NOT NULL,';
 		$sql .= 'last_name VARCHAR(30) NOT NULL,';
 		$sql .= 'email VARCHAR(50),';
 		$sql .= 'password VARCHAR(50),';

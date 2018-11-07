@@ -9,11 +9,8 @@ use App\Library\Framework\Base\Model;
  *
  * @package App\Models
  */
-class User extends Model
+class User extends  Model
 {
-// explicit table name since our table is not "books"
+	/** @var string $table_name */
 	static $table_name = 'users';
-	static $primary_key = 'id';
-	static $connection = 'default';
-	static $db = 'space_mvc';
 }
