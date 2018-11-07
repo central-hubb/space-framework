@@ -64,17 +64,18 @@ class Environment extends Core
 	/**
 	 * get.
 	 *
-	 * @param $key
-	 * @return array
+	 * @param null $key
+	 * @param null $default
+	 * @return array|mixed|null
 	 */
-	public function get($key = null)
+	public function get($key = null, $default = null)
 	{
 		$key = strtoupper($key);
 
 		if(!$key) {
 			return $this->data;
 		} else {
-			return $this->data[$key];
+			return !empty($this->data[$key]) ? $this->data[$key] : $default;
 		}
 	}
 }

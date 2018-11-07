@@ -9,6 +9,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "symfony/console": "^4.2@dev"
+        "symfony/console": "^4.2@dev",
+        "php-activerecord/php-activerecord": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"App\\": "app/"}
     }
 }

@@ -23,7 +23,6 @@ class Space
 		$this->di['asset'] = new Asset();
 		$this->di['config'] = new Config();
 		$this->di['environment'] = new Environment();
-		$this->di['database'] = new Database();
 		$this->di['log'] = new Log();
 		$this->di['orm'] = new Orm();
 		$this->di['request'] = new Request();

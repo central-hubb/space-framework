@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Library\Framework;
+namespace App\Library\Framework\Base;
 
 /**
  * Class Model
  *
- * @package App\Library\Framework
+ * @package App\Library\Framework\Base
  */
-class Model extends Database
+class Model extends \ActiveRecord\Model
 {
 
 }

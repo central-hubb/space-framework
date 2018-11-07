@@ -1,0 +1,14 @@
+/*
+$sql = "INSERT INTO payments (user_id, amount) VALUES (?, ?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(array(
+		$userId,
+		$paymentAmount,
+	)
+);$sql = "INSERT INTO payments (user_id, amount) VALUES (?, ?)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(array(
+		$userId,
+		$paymentAmount,
+	)
+);*/

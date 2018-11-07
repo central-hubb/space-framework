@@ -3,6 +3,7 @@
 namespace App\Controllers\Frontend;
 
 use App\Library\Framework\Base\Controller;
+use App\Models\User;
 
 /**
  * Class IndexController
@@ -19,6 +20,8 @@ class IndexController extends Controller
 		$this->di->layout()->set('helloA', 'worldA');
 		$this->di->layout()->set('helloB', 'worldB');
 		$this->di->layout()->set('helloC', 'worldC');
+
+		dump(User::query('show tables;'));
 
 		return $this->di->view('frontend.index.index', [
 			'testA1' => 'testA',
