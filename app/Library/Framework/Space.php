@@ -20,9 +20,8 @@ class Space
 	 */
 	public function __construct()
 	{
-		$this->di['asset'] = new Asset();
-		$this->di['config'] = new Config();
 		$this->di['environment'] = new Environment();
+		$this->di['config'] = new Config();
 		$this->di['log'] = new Log();
 		$this->di['orm'] = new Orm();
 		$this->di['request'] = new Request();
@@ -32,6 +31,7 @@ class Space
 		$this->di['exception'] = new Exception();
 		$this->di['layout'] = new Layout();
 		$this->di['mail'] = new Mail();
+		$this->di['asset'] = new Asset();
 		$this->di['controller'] = (new Controller($this, $this->di['router']->getRoute()['controller'], $this->di['router']->getRoute()['action']));
 		$this->di['response'] = new Response($this->di['controller']->getLayout()->getResponseBody());
 	}

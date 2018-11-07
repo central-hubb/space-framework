@@ -32,7 +32,7 @@
 	}
 </style>
 
-<div class="jumbotron" style="height:250px;padding-top:20px;">
+<div class="jumbotron" style="height:260px;padding-top:60px;">
 	<div class="container">
 		<h1 class="display-5">Space MVC</h1>
 		<p>
