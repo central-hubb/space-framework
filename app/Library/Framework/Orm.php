@@ -26,7 +26,7 @@ class Orm
 
 		\ActiveRecord\Config::initialize(function($cfg) use ($connections)
 		{
-			$cfg->set_model_directory('/workspace/www/space-mvc/app/Models');
+			$cfg->set_model_directory(__DIR__.'/../../../app/Models');
 			$cfg->set_connections($connections);
 			$cfg->set_default_connection('default');
 		});
