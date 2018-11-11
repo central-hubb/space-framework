@@ -32,6 +32,30 @@ class DatabaseController extends Controller
 	}
 
 	/**
+	 * conventions.
+	 */
+	public function conventions()
+	{
+		return $this->di->view('docs.database.conventions');
+	}
+
+	/**
+	 * basicCRUD.
+	 */
+	public function basicCrud()
+	{
+		return $this->di->view('docs.database.basic-crud');
+	}
+
+	/**
+	 * finders.
+	 */
+	public function finders()
+	{
+		return $this->di->view('docs.database.finders');
+	}
+
+	/**
 	 * queryBuilder.
 	 */
 	public function queryBuilder()

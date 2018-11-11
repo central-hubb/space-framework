@@ -30,6 +30,11 @@ return [
 		'controller' => 'Docs\IndexController',
 		'action' => 'directoryStructure',
 	],
+	[
+		'uri' => '/docs/getting-started/space-cli',
+		'controller' => 'Docs\IndexController',
+		'action' => 'spaceCli',
+	],
 
 	// the basics
 	[
@@ -94,6 +99,23 @@ return [
 		'controller' => 'Docs\DatabaseController',
 		'action' => 'gettingStarted',
 	],
+	[
+		'uri' => '/docs/database/conventions',
+		'controller' => 'Docs\DatabaseController',
+		'action' => 'conventions',
+	],
+	[
+		'uri' => '/docs/database/basic-crud',
+		'controller' => 'Docs\DatabaseController',
+		'action' => 'basicCrud',
+	],
+	[
+		'uri' => '/docs/database/finders',
+		'controller' => 'Docs\DatabaseController',
+		'action' => 'finders',
+	],
+
+
 	[
 		'uri' => '/docs/database/query-builder',
 		'controller' => 'Docs\DatabaseController',

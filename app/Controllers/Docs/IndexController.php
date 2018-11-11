@@ -54,4 +54,12 @@ class IndexController extends Controller
 	{
 		return $this->di->view('docs.getting-started.directory-structure');
 	}
+
+	/**
+	 * spaceCli.
+	 */
+	public function spaceCli()
+	{
+		return $this->di->view('docs.getting-started.space-cli');
+	}
 }
