@@ -37,15 +37,13 @@
                 <li><a href="/docs/database/basic-crud">Basic Crud</a></li>
                 <li><a href="/docs/database/finders">Finders</a></li>
 
-                <?php /*
                 <li><a href="/docs/database/query-builder">Query Builder</a></li>
                 <li><a href="/docs/database/pagination">Pagination</a></li>
                 <li><a href="/docs/database/migrations">Migrations</a></li>
                 <li><a href="/docs/database/seeding">Seeding</a></li>
-                <li><a href="/docs/database/relationships">Relationships</a></li>*/  ?>
+                <li><a href="/docs/database/relationships">Relationships</a></li>
             </ul>
         </li>
-    <?php  /*
         <li><a href="#" style="color:#5A5A5A;text-decoration: none;">Security</a>
             <ul>
                 <li><a href="/docs/advanced/asset">Users</a></li>
@@ -66,6 +64,6 @@
                 <li><a href="/docs/advanced/listeners">Listeners</a></li>
                 <li><a href="/docs/advanced/mail">* Mail</a></li>
             </ul>
-        </li>*/ ?>
+        </li>
     </ul>
 </p>
