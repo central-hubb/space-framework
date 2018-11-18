@@ -17,6 +17,7 @@ class IndexController extends Controller
 	 */
 	public function index()
 	{
+		//$this->di->layout()->setLayout();
 		$this->di->layout()->set('helloA', 'worldA');
 		$this->di->layout()->set('helloB', 'worldB');
 		$this->di->layout()->set('helloC', 'worldC');

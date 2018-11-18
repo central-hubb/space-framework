@@ -49,6 +49,12 @@
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li> */ ?>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/theme">Theme (Beta)<span class="sr-only"></span>
+                </a>
+            </li>
+
 		</ul>
 
 

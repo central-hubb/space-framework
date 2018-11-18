@@ -62,8 +62,15 @@ class Controller extends Core
 			$this->di->exception('action '.$this->actionName.'() not found in controller : '.$fullClassName,500);
 		}
 
-		$this->layout->setView(call_user_func_array(array($class, $this->actionName), $this->params));
-		$this->layout->init();
+		$view = call_user_func_array(array($class, $this->actionName), $this->params);
+
+		if($view instanceof \App\Library\Framework\View) {
+			$this->layout->setView($view);
+			$this->layout->init();
+		} else {
+			echo $view;
+			exit;
+		}
 
 		return $this;
 	}

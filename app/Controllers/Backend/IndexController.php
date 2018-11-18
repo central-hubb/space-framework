@@ -3,6 +3,7 @@
 namespace App\Controllers\Backend;
 
 use App\Library\Framework\Base\Controller;
+use App\Library\Framework\Space;
 
 /**
  * Class IndexController
@@ -12,18 +13,21 @@ use App\Library\Framework\Base\Controller;
 class IndexController extends Controller
 {
 	/**
+	 * IndexController constructor.
+	 *
+	 * @param Space $di
+	 */
+	public function __construct(Space $di)
+	{
+		parent::__construct($di);
+		$this->di->layout()->setLayoutName('backend');
+	}
+
+	/**
 	 * index.
 	 */
 	public function index()
 	{
-		$this->di->layout()->set('helloA', 'worldA');
-		$this->di->layout()->set('helloB', 'worldB');
-		$this->di->layout()->set('helloC', 'worldC');
-
-		return $this->di->view('backend.index.index', [
-			'testA1' => 'testA',
-			'testA2' => 'testB',
-			'testA3' => 'testC'
-		]);
+		return $this->di->view('backend.index.index');
 	}
 }

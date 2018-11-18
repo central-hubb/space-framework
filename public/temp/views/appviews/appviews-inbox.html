@@ -1,0 +1,216 @@
+<script>
+
+	var requiredJS = [
+		'assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js',
+		'assets/scripts/appviews/appviews-inbox.js'
+	];
+
+	loadJS(requiredJS);
+
+</script>
+
+<div class="row">
+	<div class="col-lg-5">
+		<div class="content-menu clearfix">
+			<div class="col-md-5 left">
+				<div class="content-menu-left">
+					<button type="button" class="btn-close-content-menu"><i class="fa fa-close"></i></button>
+					<nav>
+						<span>FOLDERS <a href="#"><i class="fa fa-plus-circle"></i></a></span>
+						<ul class="nav-content-menu">
+							<li><a href="#"><i class="fa fa-inbox"></i> Inbox</a></li>
+							<li><a href="#"><i class="fa fa-mail-forward"></i> Sent</a></li>
+							<li><a href="#"><i class="fa fa-folder"></i> Drafts</a></li>
+							<li><a href="#"><i class="fa fa-flag"></i> Flagged</a></li>
+							<li><a href="#"><i class="fa fa-trash"></i> Trash</a></li>
+						</ul>
+						<span>LABELS <a href="#"><i class="fa fa-plus-circle"></i></a></span>
+						<ul class="list-unstyled nav-content-menu">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Personal</a></li>
+							<li><a href="#">Work</a></li>
+							<li><a href="#">Friends</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="col-md-7 right">
+				<div class="content-menu-right">
+					<div class="content-menu-header clearfix">
+						<button type="button" class="btn-open-content-menu"><i class="fa fa-bars"></i></button>
+						<h2 class="heading">Messages</h2>
+						<button type="button" class="btn-icon"><i class="fa fa-refresh"></i></button>
+					</div>
+					<div id="list-message-scrollable">
+						<ul class="inbox-list-message">
+							<li>
+								<a href="#">
+									<img src="assets/img/user1.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+									</div>
+								</a>
+							</li>
+							<li class="unread">
+								<a href="#">
+									<img src="assets/img/user2.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+										<span class="attachment"><i class="fa fa-paperclip"></i></span>
+									</div>
+								</a>
+							</li>
+							<li class="active">
+								<a href="#">
+									<img src="assets/img/user3.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Jessie Monica</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+										<span class="attachment"><i class="fa fa-paperclip"></i></span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="assets/img/user1.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+									</div>
+								</a>
+							</li>
+							<li class="unread">
+								<a href="#">
+									<img src="assets/img/user2.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="assets/img/user1.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+									</div>
+								</a>
+							</li>
+							<li class="unread">
+								<a href="#">
+									<img src="assets/img/user2.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+										<span class="attachment"><i class="fa fa-paperclip"></i></span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="assets/img/user1.png" class="user-image" alt="">
+									<div class="text">
+										<span class="sender">Robby</span><span class="timestamp">13:45</span>
+										<h3 class="title">Weekly Meeting</h3>
+										<p class="preview">Hi Andrew, As your last message about user activation procedures ...</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-7">
+		<div class="content-right clearfix">
+			<div class="content-panel view-message">
+				<button type="button" class="btn-close-content-right"><i class="fa fa-close"></i></button>
+				<div class="header">
+					<div class="top clearfix">
+						<h3 class="title">Weekly Meeting</h3>
+						<span class="timestamp">Jan, 2</span>
+					</div>
+					<div class="bottom clearfix">
+						<div class="contact-info">
+							<img src="assets/img/user3.png" class="user-image" alt="Sender">
+							<span class="sender">Jessie Monica <span class="email">(jessie@yourdomain.com)</span><br>
+							</span> <span class="text-muted">to:</span> <span class="receiver" data-toggle="tooltip" data-title="samuel@yourdomain">me</span>, <span class="receiver" data-toggle="tooltip" data-title="robby@yourdomain">Robby</span>
+						</div>
+						
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary btn-replyx"><i class="fa fa-mail-reply"></i> <span>Reply</span></button>
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+							<span class="sr-only">Toggle Dropdown</span></button>
+							<ul class="dropdown-menu pull-right" role="menu">
+								<li><a href="#"><i class="fa fa-mail-reply"></i> Reply</a></li>
+								<li><a href="#"><i class="fa fa-mail-forward"></i> Forward</a></li>
+								<li><a href="#"><i class="fa fa-book"></i> Add Jessie to contact</a></li>
+								<li><a href="#"><i class="fa fa-trash"></i> Delete this message</a></li>
+								<li><a href="#"><i class="fa fa-warning"></i> Report spam</a></li>
+								<li><a href="#"><i class="fa fa-check-square"></i> Mark as unread</a></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				<div class="content">
+					<span>Dear team,</span><br/><br/>
+					<p>Seamlessly mesh open-source channels with progressive processes. Uniquely simplify B2B value before visionary technologies. Synergistically drive inexpensive convergence through principle-centered leadership skills. Rapidiously communicate customer directed total linkage.</p><p>Progressively fabricate mission-critical systems via enabled methods of empowerment. Quickly facilitate interactive bandwidth without economically sound technologies. Appropriately disseminate cooperative synergy vis-a-vis sustainable action items. Conveniently deliver 
+					cooperative vortals via client-centric "outside the box" thinking. Enthusiastically strategize premium expertise through an expanded array of processes. Monotonectally provide access to optimal solutions via alternative benefits.</p><p>Enthusiastically syndicate equity invested technology whereas functionalized quality vectors. Continually embrace error-free experiences rather than frictionless methods of empowerment. Competently supply cooperative best practices  for global e-commerce. Credibly orchestrate performance based best practices and frictionless solutions. Completely productize orthogonal benefits after resource maximizing alignments. Objectively fabricate cost.</p>
+					<p>Seamlessly mesh open-source channels with progressive processes. Uniquely simplify B2B value before visionary technologies. Synergistically drive inexpensive convergence through principle-centered leadership skills. Rapidiously communicate customer directed total linkage.</p><br>
+
+					Regards,<br>
+					Jessie Monica
+
+					<hr class="content-separator">
+
+					<div class="attachment-list">
+						<h4> 3 Attachments</h4>
+						<ul class="list-inline">
+							<li>
+
+								<a href="#">
+								<span class="file-type"><img src="assets/img/pages/inbox/attachment-img.jpg" alt="Thumbnail"> 
+									<span class="text"><span class="filename">login-background.jpg</span><br> <span class="filesize">127 KB</span></span></span></a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="file-type"><i class="fa fa-file-word-o"></i> 
+									<span class="text"><span class="filename">Proposal_Final.docx</span><br> <span class="filesize">4.2 MB</span></span></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="reply-message">
+						<img src="assets/img/user-medium.png" class="user-image" alt="User Image">
+						<div id="reply-message" class="reply-box">
+							Click here to <a href="#">reply</a>, <a href="#">reply to all</a> or <a href="#">forward</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function() {
+		// switch to minified and inbox class
+		$('body').addClass('sidebar-minified has-content-menu page-inbox');
+	});
+</script>
+

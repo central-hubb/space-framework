@@ -59,8 +59,33 @@ function path($type)
 			break;
 
 		case 'public':
-			return realpath(__DIR__);
+			return realpath(__DIR__.'/public');
 			break;
 	}
 }
 
+/**
+ * exception.
+ *
+ * @param $message
+ * @param $code
+ */
+function exception($message, $code)
+{
+	$exception = new \App\Library\Framework\Exception();
+	return $exception->throw($message, $code);
+
+}
+
+/**
+ * viewData.
+ *
+ * @param array $data
+ * @param $key
+ * @param null $default
+ * @return mixed|null
+ */
+function viewData($data = [], $key, $default = null)
+{
+	return !empty($data[$key]) ? $data[$key] : $default;
+}

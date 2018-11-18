@@ -7,12 +7,9 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
     <title>Space MVC</title>
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="/frontend/assets/css/examples/blog.css" rel="stylesheet">
-    <link href="/frontend/assets/css/examples/carousel.css" rel="stylesheet">
-    <link href="/frontend/assets/css/examples/form-validation.css" rel="stylesheet">
-    <link href="/docs/assets/css/main.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900">
+    <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css">
 	<?php
         if (strpos($_SERVER['REQUEST_URI'], 'cover') !== false) {
             ?><link href="/frontend/assets/css/examples/cover.css" rel="stylesheet"><?php

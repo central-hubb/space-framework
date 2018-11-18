@@ -1,0 +1,234 @@
+<div class="row">
+	<div class="col-md-6">
+		<!-- SUBMIT TICKETS -->
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">Submit a Ticket</h3>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" role="form">
+					<fieldset>
+						<legend>General Information</legend>
+						<div class="form-group">
+							<label for="ticket-type" class="col-sm-3 control-label">Type</label>
+							<div class="col-sm-9">
+								<select id="ticket-type" name="ticket-type" class="form-control">
+									<option value="technical-support">Technical Support</option>
+									<option value="general-info">General Info</option>
+									<option value="sales-inquiry">Sales Inquiry</option>
+									<option value="billing">Billing</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ticket-name" class="col-sm-3 control-label">Name</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="ticket-name" placeholder="Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ticket-email" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-9">
+								<input type="email" class="form-control" id="ticket-email" placeholder="Email">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ticket-priority" class="col-sm-3 control-label">Priority</label>
+							<div class="col-sm-9">
+								<select id="ticket-priority" name="ticket-priority" class="form-control">
+									<option value="low">Low</option>
+									<option value="medium">Medium</option>
+									<option value="high">High</option>
+									<option value="urgent">Urgent</option>
+									<option value="emergency">Emergency</option>
+									<option value="critical">Critical</option>
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Your Message</legend>
+						<div class="form-group">
+							<label for="ticket-subject" class="col-sm-3 control-label">Subject</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="ticket-subject" id="ticket-subject" placeholder="Subject">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ticket-message" class="col-sm-3 control-label">Message</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" name="ticket-message" id="ticket-message" rows="5" cols="30" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ticket-attachment" class="col-sm-3 control-label">Attach File</label>
+							<div class="col-md-9">
+								<input type="file" id="ticket-attachment">
+								<p class="help-block"><em>Valid file type: .jpg, .png, .txt, .pdf. File size max: 1 MB</em></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button type="submit" class="btn btn-primary btn-block">Submit Ticket</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<!-- END SUBMIT TICKETS -->
+
+		<!-- SIGN IN -->
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">Sign In</h3>
+			</div>
+			<div class="panel-body">
+				<p class="lead">Sign in to your account</p>
+				<form>
+					<div class="form-group">
+						<label for="username2" class="control-label sr-only">Username</label>
+						
+							<div class="input-group">
+								<input type="text" class="form-control" id="username2" placeholder="Username">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+							</div>
+						
+					</div>
+					<div class="form-group">
+						<label for="password" class="control-label sr-only">Password</label>
+						
+							<div class="input-group">
+								<input type="password" class="form-control" id="password" placeholder="Password">
+								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+							</div>
+						
+					</div>
+					<div class="form-group">
+						<label class="fancy-checkbox custom-bgcolor-blue">
+							<input type="checkbox">
+							<span class="text-muted">Remember me next time</span>
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg center-block">Sign In</button>
+				</form>
+			</div>
+		</div>
+		<!-- END SIGN IN -->
+	</div>
+	<div class="col-md-6">
+		<!-- CONTACT FORM -->
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">Contact Form</h3>
+			</div>
+			<div class="panel-body">
+				<form>
+					<div class="form-group">
+						<label for="contact-name" class="control-label sr-only">Name</label>
+						<input type="text" class="form-control" id="contact-name" placeholder="Name">
+					</div>
+					<div class="form-group">
+						<label for="contact-email" class="control-label sr-only">Email</label>
+						<input type="email" class="form-control" id="contact-email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label for="contact-subject" class="control-label sr-only">Subject</label>
+						<input type="text" class="form-control" id="contact-subject" placeholder="Subject">
+					</div>
+					<div class="form-group">
+						<label for="contact-message" class="control-label sr-only">Message</label>
+						<textarea class="form-control" id="contact-message" name="contact-message" rows="5" cols="30" placeholder="Message"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit Message</button>
+				</form>
+			</div>
+		</div>
+		<!-- END CONTACT FORM -->
+
+		<!-- SIGN IN -->
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">Sign In</h3>
+			</div>
+			<div class="panel-body">
+				<p class="lead">Sign in to your account</p>
+				<form class="form-horizontal label-left">
+					<div class="form-group">
+						<label for="signin-username" class="col-sm-3  control-label">Username*</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="signin-username">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="signin-password" class="col-sm-3  control-label">Password*</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" id="signin-password">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9 col-md-offset-3">
+							<label class="fancy-checkbox custom-bgcolor-blue">
+								<input type="checkbox">
+								<span class="text-muted">Remember me next time</span>
+							</label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg center-block"><i class="fa fa-sign-in"></i> <span>Sign In</span></button>
+				</form>
+			</div>
+		</div>
+		<!-- END SIGN IN -->
+
+		<!-- SIGN UP -->
+		<div class="panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">Sign Up</h3>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal label-left">
+					<div class="form-group">
+						<label for="signup-firstname" class="col-sm-3 control-label">First Name*</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="signup-firstname">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="signup-lastname" class="col-sm-3 control-label">Last Name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="signup-lastname">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="signup-username" class="col-sm-3  control-label">Username*</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="signup-username">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="signup-email" class="col-sm-3 control-label">Email*</label>
+						<div class="col-sm-9">
+							<input type="email" class="form-control" id="signup-email">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="signup-password" class="col-sm-3  control-label">Password*</label>
+						<div class="col-sm-9">
+							<input type="password" class="form-control" id="signup-password">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-9 col-md-offset-3">
+							<label class="fancy-checkbox custom-bgcolor-blue">
+								<input type="checkbox">
+								<span class="text-muted">I accept the <a href="#">Terms and  Agreements</a></span>
+							</label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg btn-fullrounded center-block"><i class="fa fa-check-circle"></i> <span>Sign Up</span></button>
+				</form>
+			</div>
+		</div>
+		<!-- END SIGN UP -->
+	</div>
+</div>
