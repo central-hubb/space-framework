@@ -5,7 +5,7 @@
 </p>
 
 <p>
-	The "A" in WAMP stands for Apache. Apache is server software that is used to serve webpages. Whenever someone types in your WordPress website’s URL, Apache is the software that "serves" your WordPress site.
+	The "A" in WAMP stands for Apache. Apache is server software that is used to serve webpages. Whenever someone types in your website’s URL, Apache is the software that "serves" your website.
 </p>
 
 <p>
@@ -13,7 +13,7 @@
 </p>
 
 <p>
-	The "P" in WAMP stands for PHP. PHP is the programming language that WordPress is written in. It is also the piece that holds the entire software stack together. It runs as a process in Apache and communicates with the MySQL database to dynamically build your webpages.
+	The "P" in WAMP stands for PHP. PHP is the programming language that Space MVC is written in. It is also the piece that holds the entire software stack together. It runs as a process in Apache and communicates with the MySQL database to dynamically build your webpages.
 </p>
 
 <p>
