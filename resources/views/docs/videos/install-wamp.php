@@ -1,7 +1,7 @@
 <h1>What does Wamp mean?</h1>
 
 <p>
-	WAMP is sometimes used as an abbreviated name for the software stack Windows, Apache, MySQL, PHP. It is derived from LAMP which stands for Linux, Apache, MySQL, and PHP. As the name implies, while LAMP is used on Linux servers, WAMP is used on Windows servers. Because WordPress isn’t usually installed on Windows Servers, WAMP has become popular among developers as a method of installing WordPress on their personal computers.
+	WAMP is sometimes used as an abbreviated name for the software stack Windows, Apache, MySQL, PHP. It is derived from LAMP which stands for Linux, Apache, MySQL, and PHP. As the name implies, while LAMP is used on Linux servers, WAMP is used on Windows servers.
 </p>
 
 <p>

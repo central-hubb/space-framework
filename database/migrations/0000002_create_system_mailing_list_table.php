@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Class CreateUsersTable
+ * Class CreateSystemMailingListTable
  *
  */
-class CreateUsersTable
+class CreateSystemMailingListTable
 {
 	/**
 	 * up.
@@ -14,12 +14,9 @@ class CreateUsersTable
 	public function up()
 	{
 		$sql = '';
-		$sql .= 'CREATE TABLE users'.'(';
+		$sql .= 'CREATE TABLE system_mailing_list'.'(';
 		$sql .= 'id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,';
-		$sql .= 'first_name VARCHAR(30) NOT NULL,';
-		$sql .= 'last_name VARCHAR(30) NOT NULL,';
-		$sql .= 'email VARCHAR(50),';
-		$sql .= 'password VARCHAR(50),';
+		$sql .= 'email VARCHAR(255) NOT NULL,';
 		$sql .= 'created_at TIMESTAMP,';
 		$sql .= 'updated_at TIMESTAMP';
 		$sql .= ');';
@@ -33,6 +30,6 @@ class CreateUsersTable
 	 */
 	public function down()
 	{
-		return 'drop table users';
+		return 'drop table system_mailing_list';
 	}
 }

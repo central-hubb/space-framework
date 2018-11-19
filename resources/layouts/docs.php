@@ -10,6 +10,11 @@
     <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900">
     <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css">
+
+
+    <link type="text/css" rel="stylesheet" href="/themes/default/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/themes/default/assets/vendor/dropify/css/dropify.min.css">
+    <link type="text/css" rel="stylesheet" href="/themes/default/assets/css/main-custom.css">
 	<?php
         if (strpos($_SERVER['REQUEST_URI'], 'cover') !== false) {
             ?><link href="/frontend/assets/css/examples/cover.css" rel="stylesheet"><?php

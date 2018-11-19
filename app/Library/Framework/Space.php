@@ -109,6 +109,16 @@ class Space
 	}
 
 	/**
+	 * request.
+	 *
+	 * @return mixed
+	 */
+	public function request()
+	{
+		return $this->di['request'];
+	}
+
+	/**
 	 * exception.
 	 *
 	 * @param $message

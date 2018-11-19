@@ -83,8 +83,4 @@ class VideoController extends Controller
 		return $this->di->view('docs.videos.download-space-mvc');
 	}
 
-
-
-
-
 }

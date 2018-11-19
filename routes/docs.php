@@ -234,4 +234,16 @@ return [
 		'controller' => 'Docs\VideoController',
 		'action' => 'downloadSpaceMvc',
 	],
+
+	[
+		'uri' => '/docs/extras/mailing-list',
+		'controller' => 'Docs\ExtrasController',
+		'action' => 'mailingList',
+	],
+
+	[
+		'uri' => '/docs/extras/support-ticket',
+		'controller' => 'Docs\ExtrasController',
+		'action' => 'supportTicket',
+	],
 ];

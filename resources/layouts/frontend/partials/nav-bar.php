@@ -56,8 +56,13 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/docs/videos">Tutorial Videos<span class="sr-only"></span>
-                </a>
+                <a class="nav-link" href="/docs/videos">Tutorial Videos<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/docs/extras/mailing-list">Mailing List<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/docs/extras/support-ticket">Help<span class="sr-only"></span></a>
             </li>
 
 		</ul>

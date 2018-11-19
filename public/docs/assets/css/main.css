@@ -860,7 +860,7 @@ pre.line-numbers, pre.line-numbers > code {
 .btn {
     border: none;
     border-radius: 3px;
-    background: #f4645f;
+    /*background: #f4645f;*/
     color: #fff;
     padding: 10px 15px;
     font-size: 16px
@@ -871,7 +871,7 @@ pre.line-numbers, pre.line-numbers > code {
 }
 
 .btn:active, .btn:hover {
-    background: #e74430;
+    /*background: #e74430;*/
     color: #fff
 }
 
