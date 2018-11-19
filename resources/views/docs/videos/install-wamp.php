@@ -34,6 +34,8 @@
 
 <p>Select the latest 32bit or 64bit version for your windows computer</p>
 
-<p><a href="/docs/videos/install-php-storm?rel=0">Next Video Tutorial : 2) What is PHP Storm IDE?</a></p>
-
 <p>Note: If you are using apple we recommend you install Mamp Pro or Mamp. If you are using Linux Lamp is usually already installed or you  can use 'tasksel' on the command line</p>
+
+<br />
+
+<p><a href="/docs/videos/install-php-storm">Next Video Tutorial : 2) What is PHP Storm IDE?</a></p>
