@@ -24,7 +24,7 @@
 
 <h1>What is the Wamp Server Application?</h1>
 
-<p>You can install mysql, apache, php on windows manually one by one or you can use the wamp server program created by <a href="http://www.wampserver.com">http://www.wampserver.com</a> to make it easy as it is an all in one application.</p>
+<p>You can install mysql, apache, php on your computer manually one by one or you can use the wamp server program created by <a href="http://www.wampserver.com">http://www.wampserver.com</a> to make it easy as it is an all in one application.</p>
 
 <h1>How to Install the Wamp Server Application?</h1>
 
