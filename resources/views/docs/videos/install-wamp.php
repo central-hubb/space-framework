@@ -30,8 +30,10 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MsMaiHqkKkQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>This video shows wamp at php version 5.4, newer version of wamp will automatically install php 5.6 and php 7 as of this year 2018</p>
+<p>This video shows wamp at php version 5.4, newer versions of wamp will automatically install php 5.6 and php 7 as of this year 2018</p>
 
 <p>Select the latest 32bit or 64bit version for your windows computer</p>
 
 <p><a href="/docs/videos/install-php-storm?rel=0">Next Video Tutorial : 2) What is PHP Storm IDE?</a></p>
+
+<p>Note: If you are using apple we recommend you install Mamp Pro or Mamp. If you are using Linux Lamp is usually already installed or you  can use 'tasksel' on the command line</p>
