@@ -4,6 +4,8 @@
 	WAMP is sometimes used as an abbreviated name for the software stack Windows, Apache, MySQL, PHP. It is derived from LAMP which stands for Linux, Apache, MySQL, and PHP. As the name implies, while LAMP is used on Linux servers, WAMP is used on Windows servers.
 </p>
 
+<p>The Apple OSX abbreviation is MAMP for Mac, Apache, Mysql and PHP.</p>
+
 <p>
 	The "A" in WAMP stands for Apache. Apache is server software that is used to serve webpages. Whenever someone types in your website’s URL, Apache is the software that "serves" your website.
 </p>
