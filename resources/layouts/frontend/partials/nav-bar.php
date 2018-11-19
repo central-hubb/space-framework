@@ -55,8 +55,12 @@
                 </a>
             </li>
 
-		</ul>
+            <li class="nav-item active">
+                <a class="nav-link" href="/docs/videos">Tutorial Videos<span class="sr-only"></span>
+                </a>
+            </li>
 
+		</ul>
 
         <a class="github-button" href="https://github.com/space-mvc/space-mvc" data-size="large" data-show-count="true" aria-label="Star space-mvc/space-mvc on GitHub">Star</a>
         &nbsp;&nbsp;

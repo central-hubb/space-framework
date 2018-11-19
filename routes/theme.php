@@ -130,4 +130,12 @@ return [
 		'controller' => 'Theme\ComponentsController',
 		'action' => 'index',
 	],
+
+	[
+		'uri' => '/theme/app-views/product-detail',
+		'controller' => 'Theme\AppViewsController',
+		'action' => 'productDetail',
+	],
+
+
 ];

@@ -198,4 +198,40 @@ return [
 		'controller' => 'Docs\AdvancedController',
 		'action' => 'taskScheduling',
 	],
+
+	[
+		'uri' => '/docs/videos',
+		'controller' => 'Docs\VideoController',
+		'action' => 'index',
+	],
+
+	[
+		'uri' => '/docs/videos/install-wamp',
+		'controller' => 'Docs\VideoController',
+		'action' => 'installWamp',
+	],
+
+	[
+		'uri' => '/docs/videos/install-php-storm',
+		'controller' => 'Docs\VideoController',
+		'action' => 'installPhpStorm',
+	],
+
+	[
+		'uri' => '/docs/videos/install-source-tree',
+		'controller' => 'Docs\VideoController',
+		'action' => 'installSourceTree',
+	],
+
+	[
+		'uri' => '/docs/videos/github-multiple-users',
+		'controller' => 'Docs\VideoController',
+		'action' => 'githubMultipleUsers',
+	],
+
+	[
+		'uri' => '/docs/videos/download-space-mvc',
+		'controller' => 'Docs\VideoController',
+		'action' => 'downloadSpaceMvc',
+	],
 ];

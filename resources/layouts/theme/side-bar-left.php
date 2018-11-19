@@ -55,7 +55,7 @@
 				<a href="#appViews" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-tab-window"></i> <span class="title">App Views</span> <i class="icon-submenu ti-angle-left"></i></a>
 				<div id="appViews" class="collapse">
 					<ul class="submenu">
-						<li><a href="appviews/appviews-project-detail.html">Project Details</a></li>
+						<li><a href="/theme/app-views/product-detail">Product Details</a></li>
 						<li><a href="appviews/appviews-projects.html">Projects</a></li>
 						<li><a href="appviews/appviews-inbox.html">Inbox <span class="badge">8</span></a></li>
 						<li><a href="appviews/appviews-file-manager.html">File Manager</a></li>
@@ -71,6 +71,19 @@
 					</ul>
 				</div>
 			</li>
+
+            <li class="panel">
+                <a href="#examples" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-grid2"></i> <span class="title">Examples</span> <i class="icon-submenu ti-angle-left"></i></a>
+                <div id="examples" class="collapse">
+                    <ul class="submenu">
+                        <li><a href="/example/page1">Example Page 1</a></li>
+                        <li><a href="/example/page2">Example Page 2</a></li>
+                    </ul>
+                </div>
+            </li>
+
+
+
 			<li class="menu-group">Components</li>
 			<li class="panel">
 				<a href="#uiElements" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-panel"></i> <span class="title">UI Elements</span> <i class="icon-submenu ti-angle-left"></i></a>

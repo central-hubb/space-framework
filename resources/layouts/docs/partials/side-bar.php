@@ -6,6 +6,17 @@
                 <li><a href="/docs/introduction/what-is-space">What is Space MVC?</a></li>
             </ul>
         </li>
+
+        <li><a href="#" style="color:#5A5A5A;text-decoration: none;">Video Tutorials</a>
+            <ul>
+                <li><a href="/docs/videos/install-wamp">1) What is Wamp?</a></li>
+                <li><a href="/docs/videos/install-php-storm">2) What is PHP Storm IDE?</a></li>
+                <li><a href="/docs/videos/install-source-tree">3) What is Git?</a></li>
+                <li><a href="/docs/videos/github-multiple-users">4) How to use git in a Dev Team?</a></li>
+                <li><a href="/docs/videos/download-space-mvc">5) How to download space mvc using source tree?</a></li>
+            </ul>
+        </li>
+
         <li><a href="#" style="color:#5A5A5A;text-decoration: none;">Getting Started</a>
             <ul>
                 <!--<li><a href="/docs/getting-started/installation">Software Installation</a></li>-->
