@@ -14,7 +14,7 @@
 
         <p style="font-size:14px;color:#555;">
             Please Subscribe to our code contributors list if you would like to join our development team and help us work on this project.
-            We will send developers advanced tutorials, guides, videos, and more. We aim to bring everybody up to scratch with modern professional
+            We will send developers beginners, mid weight and advanced tutorials, guides, videos, and more. We aim to bring everybody up to scratch with modern professional
             php programming we don't aim to leave anybody behind we can work with developers of all levels from first timers to advanced pro league developers.
         </p>
 
