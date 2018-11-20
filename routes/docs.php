@@ -242,6 +242,12 @@ return [
 	],
 
 	[
+		'uri' => '/docs/extras/code-contributors',
+		'controller' => 'Docs\ExtrasController',
+		'action' => 'codeContributors',
+	],
+
+	[
 		'uri' => '/docs/extras/support-ticket',
 		'controller' => 'Docs\ExtrasController',
 		'action' => 'supportTicket',

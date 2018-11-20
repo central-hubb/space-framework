@@ -41,6 +41,23 @@ class ExtrasController extends Controller
 	}
 
 	/**
+	 * codeContributors.
+	 *
+	 * @return \App\Library\Framework\View
+	 */
+	public function codeContributors()
+	{
+		if(!empty($this->post['email'])) {
+			\App\Models\System\CodeContributor::create([
+				'email' => $this->post['email'],
+			]);
+		}
+
+		$results = \App\Models\System\CodeContributor::all();
+		return $this->di->view('docs.extras.code-contributors', ['results' => $results]);
+	}
+
+	/**
 	 * supportTicket.
 	 *
 	 * @return \App\Library\Framework\View
