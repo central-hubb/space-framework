@@ -62,7 +62,7 @@
     <p>&nbsp;</p>
 </footer>
 
-<span class="skype-button bubble " data-contact-id="mrdaniel.lee"></span>
+<span class="skype-button bubble " data-contact-id="live:347d3c27d3b520cf"></span>
 <script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
