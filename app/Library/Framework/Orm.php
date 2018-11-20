@@ -26,7 +26,7 @@ class Orm
 	{
 		$this->db = [
 			'default' => [
-				'hostname' => env('DB_HOSTNAME', 'localhost'),
+				'hostname' => env('DB_HOST', 'localhost'),
 				'username' => env('DB_USERNAME', 'root'),
 				'password' => env('DB_PASSWORD', 'root'),
 				'database' => env('DB_DATABASE', 'space_mvc'),
