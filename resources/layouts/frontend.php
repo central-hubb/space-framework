@@ -73,5 +73,8 @@
     });
 </script>
 
+<span class="skype-button bubble " data-contact-id="live:347d3c27d3b520cf"></span>
+<script src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
+
 </body>
 </html>
