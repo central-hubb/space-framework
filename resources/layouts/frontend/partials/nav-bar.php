@@ -51,7 +51,7 @@
             </li> */ ?>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/theme">Theme (Beta)<span class="sr-only"></span>
+                <a class="nav-link" href="/theme" target="_blank">Theme (Beta)<span class="sr-only"></span>
                 </a>
             </li>
 
