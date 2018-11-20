@@ -51,11 +51,11 @@ function path($type)
 	switch($type)
 	{
 		case 'base':
-			return realpath(__DIR__.'/../');
+			return realpath(__DIR__);
 			break;
 
 		case 'app':
-			return realpath(__DIR__.'/../app');
+			return realpath(__DIR__.'/app');
 			break;
 
 		case 'public':
