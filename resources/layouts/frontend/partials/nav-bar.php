@@ -19,7 +19,7 @@
 				<div class="dropdown-menu" aria-labelledby="dropdown01">
 					<a class="dropdown-item" href="/docs/getting-started/installation">Getting Started</a>
 					<a class="dropdown-item" href="/docs/basics/routing">The Basics</a>
-                    <a class="dropdown-item" href="/docs/security/authentication">Security</a>
+<!--                    <a class="dropdown-item" href="/docs/security/authentication">Security</a>-->
                     <a class="dropdown-item" href="/docs/database/getting-started">Database</a>
                     <a class="dropdown-item" href="/docs/advanced/broadcasting">Advanced</a>
 				</div>
