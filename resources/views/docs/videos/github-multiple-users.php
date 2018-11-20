@@ -1,16 +1,23 @@
 <h1>How do multiple developers use git?</h1>
 
-<p>Note: You do not need to follow the steps in this video on your computer as it may be tricky for a first time user<p>
+<p>Please follow and listen to this video below which explains how to use git within a development team of multiple developers.</p>
 
-<p>Yet please just follow along and listen to how he explains everything overall.</p>
+<p>With this video you do not need to follow the steps on your computer as it may be tricky for a first time user<p>
 
 <p>We will upload an easier video tutorial for you to follow and work alongside in our next video.</p>
 <br />
 
+<h1>How do developers work in a team using git?</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2ftHHNBT4dU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br />
+<br />
+
 <h1>General Git Commands</h1>
 
-<p>These are the general git commands. Below it how to use them on the command line</p>
-<p>If you use sorce tree the buttons across the top menu in source tree can run these command actions for you</p>
+<p>These are the general git commands. Below it shows how to use them on the command line</p>
+<p>If you use source tree the buttons across the top menu in source tree can run these command actions for you</p>
 
 <table class="table table-striped">
     <tr>
@@ -41,11 +48,5 @@
 <br />
 
 
-<h1>How do developers work in a team using git?</h1>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2ftHHNBT4dU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br />
-<br />
 
 <p><a href="/docs/videos/download-space-mvc">Next Video Tutorial : 5) How to download space mvc using source tree?</a></p>
