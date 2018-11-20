@@ -37,7 +37,7 @@
         <td>This will add a message to write to when pushed to a repository</td>
     </tr>
     <tr>
-        <td>git Push</td>
+        <td>git push</td>
         <td>This will push / upload your files to the github repository</td>
     </tr>
     <tr>
