@@ -11,8 +11,7 @@
 
 <p>In short Git is used to backup a copy of your website code online in its original source code state. You can setup git
 	to use private repositories or public repositories to store you data.
-    You can also allow multiple developers to work from your github repositories (project backups). As their main starting point for to start developing on your project
-    as a team.
+    You can also allow multiple developers to work from your github repositories (project backups).
 </p>
 
 <p>A Private repository will allow for only users you choose to download and develop on your code</p>
