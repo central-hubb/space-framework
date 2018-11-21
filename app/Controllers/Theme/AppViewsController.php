@@ -39,7 +39,7 @@ class AppViewsController extends Controller
 	public function projects()
 	{
 		$this->di->layout()->set('page_title', 'Projects');
-		$this->di->layout()->set('List of project information summary');
+		$this->di->layout()->set('page_description', 'List of project information summary');
 		return $this->di->view('theme.app-views.projects');
 	}
 
@@ -49,8 +49,8 @@ class AppViewsController extends Controller
 	public function inbox()
 	{
 		$this->di->layout()->set('page_title', 'Inbox');
-		$this->di->layout()->set('You have <strong>8 unread messages</strong>');
-		return $this->di->view('theme.app-views.projects');
+		$this->di->layout()->set('page_description', 'You have <strong>8 unread messages</strong>');
+		return $this->di->view('theme.app-views.inbox');
 	}
 
 	/**
@@ -60,6 +60,6 @@ class AppViewsController extends Controller
 	{
 		$this->di->layout()->set('page_title', 'File Manager');
 		$this->di->layout()->set('page_description', '<span class=\"text-danger\">You nearly reached storage limit capacity!</span>&nbsp;&nbsp;&nbsp;<a href=\"#\"><i class=\"fa fa-plus-circle\"></i> Upgrade Now</a>');
-		return $this->di->view('theme.app-views.project-detail');
+		return $this->di->view('theme.app-views.file-manager');
 	}
 }

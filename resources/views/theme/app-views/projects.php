@@ -1,20 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js',
-		'assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js',
-		'assets/scripts/appviews/appviews-projects.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-6 col-lg-4">
 		<div class="panel project-item">

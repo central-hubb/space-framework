@@ -153,6 +153,18 @@ return [
 		'action' => 'fileManager',
 	],
 
+	// tables
+	[
+		'uri' => '/theme/tables/static',
+		'controller' => 'Theme\TablesController',
+		'action' => 'staticTable',
+	],
+	[
+		'uri' => '/theme/tables/dynamic',
+		'controller' => 'Theme\TablesController',
+		'action' => 'dynamic',
+	],
+
 	// charts
 	[
 		'uri' => '/theme/charts/chartjs',
@@ -202,18 +214,6 @@ return [
 		'uri' => '/theme/maps/mapael',
 		'controller' => 'Theme\MapsController',
 		'action' => 'mapael',
-	],
-
-	// tables
-	[
-		'uri' => '/theme/tables/static',
-		'controller' => 'Theme\TablesController',
-		'action' => '_static',
-	],
-	[
-		'uri' => '/theme/tables/dynamic',
-		'controller' => 'Theme\TablesController',
-		'action' => 'dynamic',
 	],
 
 	// ui

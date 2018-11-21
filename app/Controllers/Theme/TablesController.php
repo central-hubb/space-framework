@@ -24,11 +24,11 @@ class TablesController extends Controller
 	}
 
 	/**
-	 * static.
+	 * staticTable.
 	 */
-	public function _static()
+	public function staticTable()
 	{
-		$this->di->layout()->set('page_title', 'Tables');
+		$this->di->layout()->set('page_title', 'Static Tables');
 		$this->di->layout()->set('page_description', 'Simple tables based on Bootstrap.');
 		return $this->di->view('theme.tables.static');
 	}

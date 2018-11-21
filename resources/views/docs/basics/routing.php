@@ -2,7 +2,8 @@
     <h1>Routing</h1>
     <p><a name="basic-routing"></a></p>
     <h2><a href="#basic-routing">Basic Routing</a></h2>
-    <p>The most basic Laravel routes accept a URI and a <code class=" language-php">Closure</code>, providing a very simple and expressive method of defining routes:</p>
+    <p>The most basic Laravel routes accept a URI and a <code class=" language-php">Closure</code>, providing a very
+        simple and expressive method of defining routes:</p>
     <pre>
 <code data-language="php">&#x3C;?php
     return [
@@ -24,31 +25,45 @@
         </pre>
 
 
+    <pre>
+<code data-language="php">Route::get('foo', function () {
+    return 'Hello World';
+});</code></pre>
 
-
-    <pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token string">'Hello World'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
     <h4>The Default Route Files</h4>
-    <p>All Laravel routes are defined in your route files, which are located in the <code class=" language-php">routes</code> directory. These files are automatically loaded by the framework. The <code class=" language-php">routes<span class="token operator">/</span>web<span class="token punctuation">.</span>php</code> file defines routes that are for your web interface. These routes are assigned the <code class=" language-php">web</code> middleware group, which provides features like session state and CSRF protection. The routes in <code class=" language-php">routes<span class="token operator">/</span>api<span class="token punctuation">.</span>php</code> are stateless and are assigned the <code class=" language-php">api</code> middleware group.</p>
-    <p>For most applications, you will begin by defining routes in your <code class=" language-php">routes<span class="token operator">/</span>web<span class="token punctuation">.</span>php</code> file. The routes defined in <code class=" language-php">routes<span class="token operator">/</span>web<span class="token punctuation">.</span>php</code> may be accessed by entering the defined route's URL in your browser. For example, you may access the following route by navigating to <code class=" language-php">http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>your<span class="token operator">-</span>app<span class="token punctuation">.</span>test<span class="token operator">/</span>user</code> in your browser:</p>
-    <pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'/user'</span><span class="token punctuation">,</span> <span class="token string">'UserController@index'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-    <p>Routes defined in the <code class=" language-php">routes<span class="token operator">/</span>api<span class="token punctuation">.</span>php</code> file are nested within a route group by the <code class=" language-php">RouteServiceProvider</code>. Within this group, the <code class=" language-php"><span class="token operator">/</span>api</code> URI prefix is automatically applied so you do not need to manually apply it to every route in the file. You may modify the prefix and other route group options by modifying your <code class=" language-php">RouteServiceProvider</code> class.</p>
+    <p>
+        All Laravel routes are defined in your route files, which are located in the routes directory. These files are
+        automatically loaded by the framework. The  routes/web.php file defines routes that are for your web interface.
+        These routes are assigned the web middleware group, which provides features like session state and CSRF protection.
+        The routes in routes/api.php are stateless and are assigned the api middleware group.
+
+        For most applications, you will begin by defining routes in your routes/web.php file. The routes defined in
+        routes/web.php may be accessed by entering the defined route's URL in your browser. For example, you may access
+        the following route by navigating to http://your-app.test/user in your browser:
+    </p>
+
+    <pre>
+        <code data-language="php">Route::get('/user', 'UserController@index');</code>
+    </pre>
+
+
+    <p>
+        Routes defined in the routes/api.php file are nested within a route group by the  RouteServiceProvider.
+        Within this group, the /api URI prefix is automatically applied so you do not need to manually apply it to
+        every route in the file. You may modify the prefix and other route group options by modifying your
+        RouteServiceProvider class.
+    </p>
     <h4>Available Router Methods</h4>
     <p>The router allows you to register routes that respond to any HTTP verb:</p>
 
 
-
-    <pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">post<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">put<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">patch<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">delete<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">options<span class="token punctuation">(</span></span><span class="token variable">$uri</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-
-
-
+    <pre>
+        <code data-language="php">Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);</code></pre>
 
 
     <p>Sometimes you may need to register a route that responds to multiple HTTP verbs. You may do so using the <code class=" language-php">match</code> method. Or, you may even register a route that responds to all HTTP verbs using the <code class=" language-php">any</code> method:</p>

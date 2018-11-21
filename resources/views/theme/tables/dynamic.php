@@ -1,25 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/datatables/css-main/jquery.dataTables.min.css',
-		'assets/vendor/datatables/css-bootstrap/dataTables.bootstrap.min.css',
-		'assets/vendor/datatables-tabletools/css/dataTables.tableTools.css'
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/datatables/js-main/jquery.dataTables.min.js',
-		'assets/vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js',
-		'assets/vendor/datatables-colreorder/dataTables.colReorder.js',
-		'assets/vendor/datatables-tabletools/js/dataTables.tableTools.js',
-		'assets/scripts/tables.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-<!-- DRAG/DROP COLUMNS REORDER -->
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">Drag/Drop Column Reorder</h3>
@@ -132,9 +110,8 @@
 		</table>
 	</div>
 </div>
-<!-- END DRAG/DROP COLUMNS REORDER -->
 
-<!-- FILTER COLUMN -->
+
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">Column Filter Enabled</h3>
@@ -267,9 +244,8 @@
 		</table>
 	</div>
 </div>
-<!-- END FILTER COLUMN -->
 
-<!-- FEATURED DATATABLE -->
+
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">Featured Datatable</h3>
@@ -403,9 +379,7 @@
 		</table>
 	</div>
 </div>
-<!-- END FEATURED DATATABLE -->
 
-<!-- DATA EXPORT FEATURE -->
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">Datatable with Export Feature</h3>
@@ -497,9 +471,7 @@
 		</table>
 	</div>
 </div>
-<!-- END DATA EXPORT FEATURE -->
 
-<!-- DATATABLE WITH SCROLLING -->
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">Datatable with Scrolling</h3>
@@ -611,4 +583,3 @@
 		</table>
 	</div>
 </div>
-<!-- END DATATABLE WITH SCROLLING -->

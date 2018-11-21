@@ -58,7 +58,7 @@
 				<li class="file-item">
 					<a href="#">
 						<span class="file-preview image">
-							<img src="assets/img/files/file-image.jpg" class="img-responsive" alt="">
+							<img src="/themes/default/assets/img/files/file-image.jpg" class="img-responsive" alt="">
 						</span>
 					</a>
 					<div class="file-info">
@@ -118,7 +118,7 @@
 				<li class="file-item">
 					<a href="#">
 						<span class="file-preview image">
-							<img src="assets/img/files/file-image2.png" class="img-responsive" alt="">
+							<img src="/themes/default/assets/img/files/file-image2.png" class="img-responsive" alt="">
 						</span>
 					</a>
 					<div class="file-info">
@@ -178,7 +178,7 @@
 				<li class="file-item">
 					<a href="#">
 						<span class="file-preview image">
-							<img src="assets/img/files/file-image3.jpg" class="img-responsive" alt="">
+							<img src="/themes/default/assets/img/files/file-image3.jpg" class="img-responsive" alt="">
 						</span>
 					</a>
 					<div class="file-info">
@@ -279,11 +279,3 @@
 		</div>
 	</div>
 </div>
-
-<script>
-	$(function() {
-		// switch to minified and inbox class
-		//$('body').addClass('sidebar-minified has-content-menu page-inbox');
-	});
-</script>
-

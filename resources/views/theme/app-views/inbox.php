@@ -1,14 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js',
-		'assets/scripts/appviews/appviews-inbox.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-lg-5">
 		<div class="content-menu clearfix">
@@ -45,7 +34,7 @@
 						<ul class="inbox-list-message">
 							<li>
 								<a href="#">
-									<img src="assets/img/user1.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user1.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -55,7 +44,7 @@
 							</li>
 							<li class="unread">
 								<a href="#">
-									<img src="assets/img/user2.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user2.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -66,7 +55,7 @@
 							</li>
 							<li class="active">
 								<a href="#">
-									<img src="assets/img/user3.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user3.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Jessie Monica</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -77,7 +66,7 @@
 							</li>
 							<li>
 								<a href="#">
-									<img src="assets/img/user1.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user1.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -87,7 +76,7 @@
 							</li>
 							<li class="unread">
 								<a href="#">
-									<img src="assets/img/user2.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user2.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -97,7 +86,7 @@
 							</li>
 							<li>
 								<a href="#">
-									<img src="assets/img/user1.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user1.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -107,7 +96,7 @@
 							</li>
 							<li class="unread">
 								<a href="#">
-									<img src="assets/img/user2.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user2.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -118,7 +107,7 @@
 							</li>
 							<li>
 								<a href="#">
-									<img src="assets/img/user1.png" class="user-image" alt="">
+									<img src="/themes/default/assets/img/user1.png" class="user-image" alt="">
 									<div class="text">
 										<span class="sender">Robby</span><span class="timestamp">13:45</span>
 										<h3 class="title">Weekly Meeting</h3>
@@ -143,7 +132,7 @@
 					</div>
 					<div class="bottom clearfix">
 						<div class="contact-info">
-							<img src="assets/img/user3.png" class="user-image" alt="Sender">
+							<img src="/themes/default/assets/img/user3.png" class="user-image" alt="Sender">
 							<span class="sender">Jessie Monica <span class="email">(jessie@yourdomain.com)</span><br>
 							</span> <span class="text-muted">to:</span> <span class="receiver" data-toggle="tooltip" data-title="samuel@yourdomain">me</span>, <span class="receiver" data-toggle="tooltip" data-title="robby@yourdomain">Robby</span>
 						</div>
@@ -181,7 +170,7 @@
 							<li>
 
 								<a href="#">
-								<span class="file-type"><img src="assets/img/pages/inbox/attachment-img.jpg" alt="Thumbnail">
+								<span class="file-type"><img src="/themes/default/assets/img/pages/inbox/attachment-img.jpg" alt="Thumbnail">
 									<span class="text"><span class="filename">login-background.jpg</span><br> <span class="filesize">127 KB</span></span></span></a>
 							</li>
 							<li>
@@ -195,7 +184,7 @@
 				</div>
 				<div class="footer">
 					<div class="reply-message">
-						<img src="assets/img/user-medium.png" class="user-image" alt="User Image">
+						<img src="/themes/default/assets/img/user-medium.png" class="user-image" alt="User Image">
 						<div id="reply-message" class="reply-box">
 							Click here to <a href="#">reply</a>, <a href="#">reply to all</a> or <a href="#">forward</a>
 						</div>

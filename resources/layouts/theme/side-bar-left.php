@@ -55,7 +55,7 @@
 				<a href="#appViews" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-tab-window"></i> <span class="title">App Views</span> <i class="icon-submenu ti-angle-left"></i></a>
 				<div id="appViews" class="collapse">
 					<ul class="submenu">
-						<li><a href="/theme/app-views/product-detail">Product Details</a></li>
+						<li><a href="/theme/app-views/project-detail">Project Details</a></li>
 						<li><a href="/theme/app-views/projects">Projects</a></li>
 						<li><a href="/theme/app-views/inbox">Inbox <span class="badge">8</span></a></li>
 						<li><a href="/theme/app-views/file-manager">File Manager</a></li>
@@ -72,6 +72,7 @@
 				</div>
 			</li>
 
+            <?php /*
             <li class="panel">
                 <a href="#examples" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-grid2"></i> <span class="title">Examples</span> <i class="icon-submenu ti-angle-left"></i></a>
                 <div id="examples" class="collapse">
@@ -80,9 +81,7 @@
                         <li><a href="/example/page2">Example Page 2</a></li>
                     </ul>
                 </div>
-            </li>
-
-
+            </li>*/ ?>
 
 			<li class="menu-group">Components</li>
 			<li class="panel">

@@ -103,5 +103,13 @@
         });
 
     </script>
+
+    <script>
+        $(function() {
+            // switch to minified and inbox class
+            //$('body').addClass('sidebar-minified has-content-menu page-inbox');
+        });
+    </script>
+
 </body>
 </html>

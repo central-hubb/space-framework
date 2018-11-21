@@ -47,6 +47,7 @@ module.exports = function(grunt) {
                         'public/bower_components/nouislider/distribute/nouislider.min.css',
                         'public/bower_components/parsleyjs/src/parsley.css',
                         'public/themes/default/assets/vendor/switchery/switchery.min.css',
+                        'public/themes/default/assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
                     ]
                 }
             }
@@ -69,6 +70,7 @@ module.exports = function(grunt) {
                         'public/themes/default/assets/vendor/datatables/js-main/jquery.dataTables.min.js',
                         'public/themes/default/assets/vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js',
                         'public/themes/default/assets/vendor/datatables-tabletools/js/dataTables.tableTools.js',
+                        'public/themes/default/assets/vendor/datatables-colreorder/dataTables.colReorder.js',
 
                         // jquery ui
                         'public/themes/default/assets/vendor/jquery-ui/jquery-ui.min.js',
@@ -221,6 +223,17 @@ module.exports = function(grunt) {
                         'public/themes/default/assets/scripts/forms/forms-inputs.js',
 
                         // 'public/themes/default/assets/scripts/forms/forms-input-sliders.js',
+
+                        'public/themes/default/assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js',
+                        'public/themes/default/assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js',
+                        'public/themes/default/assets/scripts/appviews/appviews-projects.js',
+
+                        'public/themes/default/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js',
+                        'public/themes/default/assets/scripts/appviews/appviews-inbox.js',
+
+                        'public/themes/default/assets/scripts/tables.js'
+
+
                     ]
                 }
             }
@@ -235,3 +248,5 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['cssmin', 'uglify']);
 
 };
+
+
