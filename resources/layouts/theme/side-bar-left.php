@@ -56,9 +56,9 @@
 				<div id="appViews" class="collapse">
 					<ul class="submenu">
 						<li><a href="/theme/app-views/product-detail">Product Details</a></li>
-						<li><a href="appviews/appviews-projects.html">Projects</a></li>
-						<li><a href="appviews/appviews-inbox.html">Inbox <span class="badge">8</span></a></li>
-						<li><a href="appviews/appviews-file-manager.html">File Manager</a></li>
+						<li><a href="/theme/app-views/projects">Projects</a></li>
+						<li><a href="/theme/app-views/inbox">Inbox <span class="badge">8</span></a></li>
+						<li><a href="/theme/app-views/file-manager">File Manager</a></li>
 					</ul>
 				</div>
 			</li>
@@ -66,8 +66,8 @@
 				<a href="#tables" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-layout-grid2"></i> <span class="title">Tables</span> <i class="icon-submenu ti-angle-left"></i></a>
 				<div id="tables" class="collapse ">
 					<ul class="submenu">
-						<li><a href="tables/tables-static.html">Static Tables</a></li>
-						<li><a href="tables/tables-dynamic.html">Dynamic Tables</a></li>
+						<li><a href="/theme/tables/static">Static Tables</a></li>
+						<li><a href="/theme/tables/dynamic">Dynamic Tables</a></li>
 					</ul>
 				</div>
 			</li>
@@ -89,19 +89,19 @@
 				<a href="#uiElements" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-panel"></i> <span class="title">UI Elements</span> <i class="icon-submenu ti-angle-left"></i></a>
 				<div id="uiElements" class="collapse ">
 					<ul class="submenu">
-						<li><a href="ui/ui-sweetalert.html">Sweet Alert</a></li>
-						<li><a href="ui/ui-treeview.html">Tree View</a></li>
-						<li><a href="ui/ui-wizard.html">Wizard</a></li>
-						<li><a href="ui/ui-dragdrop-panel.html">Drag &amp; Drop Panel</a></li>
-						<li><a href="ui/ui-nestable.html">Nestable</a></li>
-						<li><a href="ui/ui-gauge.html">Gauge <span class="label label-success">NEW</span></a></li>
-						<li><a href="ui/ui-panels.html">Panels</a></li>
-						<li><a href="ui/ui-progressbars.html">Progress Bars</a></li>
-						<li><a href="ui/ui-tabs.html">Tabs</a></li>
-						<li><a href="ui/ui-buttons.html">Buttons <span class="label label-info">UPDATED</span></a></li>
-						<li><a href="ui/ui-bootstrap.html">Bootstrap UI</a></li>
-						<li><a href="ui/ui-social-buttons.html">Social Buttons</a></li>
-						<li><a href="ui/ui-icons.html">Icons</a></li>
+						<li><a href="/theme/ui/sweetalert">Sweet Alert</a></li>
+						<li><a href="/theme/ui/treeview">Tree View</a></li>
+						<li><a href="/theme/ui/wizard">Wizard</a></li>
+						<li><a href="/theme/ui/dragdrop-panel">Drag &amp; Drop Panel</a></li>
+						<li><a href="/theme/ui/nestable">Nestable</a></li>
+						<li><a href="/theme/ui/gauge">Gauge <span class="label label-success">NEW</span></a></li>
+						<li><a href="/theme/ui/panels">Panels</a></li>
+						<li><a href="/theme/ui/progressbars">Progress Bars</a></li>
+						<li><a href="/theme/ui/tabs">Tabs</a></li>
+						<li><a href="/theme/ui/buttons">Buttons <span class="label label-info">UPDATED</span></a></li>
+						<li><a href="/theme/ui/bootstrap">Bootstrap UI</a></li>
+						<li><a href="/theme/ui/social-buttons">Social Buttons</a></li>
+						<li><a href="/theme/ui/icons">Icons</a></li>
 					</ul>
 				</div>
 			</li>
@@ -109,23 +109,23 @@
 				<a href="#charts" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-pie-chart"></i> <span class="title">Charts</span> <i class="icon-submenu ti-angle-left"></i></a>
 				<div id="charts" class="collapse ">
 					<ul class="submenu">
-						<li><a href="charts/charts-chartjs.html">Chart.js</a></li>
-						<li><a href="charts/charts-chartist.html">Chartist</a></li>
-						<li><a href="charts/charts-flot.html">Flot Chart</a></li>
-						<li><a href="charts/charts-sparkline.html">Sparkline Chart</a></li>
+						<li><a href="/theme/charts/chartjs">Chart.js</a></li>
+						<li><a href="/theme/charts/chartist">Chartist</a></li>
+						<li><a href="/theme/charts/flot">Flot Chart</a></li>
+						<li><a href="/theme/charts/sparkline">Sparkline Chart</a></li>
 					</ul>
 				</div>
 			</li>
-			<li><a href="widgets.html"><i class="ti-widget"></i> <span class="title">Widgets</span></a></li>
-			<li><a href="notifications.html"><i class="ti-bell"></i> <span class="title">Notifications</span>
+			<li><a href="/theme/widgets"><i class="ti-widget"></i> <span class="title">Widgets</span></a></li>
+			<li><a href="/theme/notifications"><i class="ti-bell"></i> <span class="title">Notifications</span>
 					<!--<span class="badge">15</span>-->
 				</a></li>
 			<li class="panel">
 				<a href="#maps" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="ti-map"></i> <span class="title">Maps</span> <i class="icon-submenu ti-angle-left"></i></a>
 				<div id="maps" class="collapse ">
 					<ul class="submenu">
-						<li><a href="maps/maps-jqvmap.html">JQVMap</a></li>
-						<li><a href="maps/maps-mapael.html">Mapael</a></li>
+						<li><a href="/theme/maps/jqvmap">JQVMap</a></li>
+						<li><a href="/theme/maps/-mapael">Mapael</a></li>
 					</ul>
 				</div>
 			</li>

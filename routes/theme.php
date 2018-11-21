@@ -131,11 +131,177 @@ return [
 		'action' => 'index',
 	],
 
+	// app-views
 	[
-		'uri' => '/theme/app-views/product-detail',
+		'uri' => '/theme/app-views/project-detail',
 		'controller' => 'Theme\AppViewsController',
-		'action' => 'productDetail',
+		'action' => 'projectDetail',
+	],
+	[
+		'uri' => '/theme/app-views/projects',
+		'controller' => 'Theme\AppViewsController',
+		'action' => 'projects',
+	],
+	[
+		'uri' => '/theme/app-views/inbox',
+		'controller' => 'Theme\AppViewsController',
+		'action' => 'inbox',
+	],
+	[
+		'uri' => '/theme/app-views/file-manager',
+		'controller' => 'Theme\AppviewsController',
+		'action' => 'fileManager',
 	],
 
+	// charts
+	[
+		'uri' => '/theme/charts/chartjs',
+		'controller' => 'Theme\ChartsController',
+		'action' => 'chartjs',
+	],
+	[
+		'uri' => '/theme/charts/chartist',
+		'controller' => 'Theme\ChartsController',
+		'action' => 'chartist',
+	],
+	[
+		'uri' => '/theme/charts/flot',
+		'controller' => 'Theme\ChartsController',
+		'action' => 'flot',
+	],
+	[
+		'uri' => '/theme/charts/sparkline',
+		'controller' => 'Theme\ChartsController',
+		'action' => 'sparkline',
+	],
+
+	// layouts
+	[
+		'uri' => '/theme/layouts/topnav',
+		'controller' => 'Theme\LayoutsController',
+		'action' => 'topnav',
+	],
+	[
+		'uri' => '/theme/layouts/minified',
+		'controller' => 'Theme\LayoutsController',
+		'action' => 'minified',
+	],
+	[
+		'uri' => '/theme/layouts/grid',
+		'controller' => 'Theme\LayoutsController',
+		'action' => 'grid',
+	],
+
+	// maps
+	[
+		'uri' => '/theme/maps/jqvmap',
+		'controller' => 'Theme\MapsController',
+		'action' => 'jqvmap',
+	],
+	[
+		'uri' => '/theme/maps/mapael',
+		'controller' => 'Theme\MapsController',
+		'action' => 'mapael',
+	],
+
+	// tables
+	[
+		'uri' => '/theme/tables/static',
+		'controller' => 'Theme\TablesController',
+		'action' => '_static',
+	],
+	[
+		'uri' => '/theme/tables/dynamic',
+		'controller' => 'Theme\TablesController',
+		'action' => 'dynamic',
+	],
+
+	// ui
+	[
+		'uri' => '/theme/ui/sweetalert',
+		'controller' => 'Theme\UIController',
+		'action' => 'sweetalert',
+	],
+	[
+		'uri' => '/theme/ui/treeview',
+		'controller' => 'Theme\UIController',
+		'action' => 'treeview',
+	],
+	[
+		'uri' => '/theme/ui/wizard',
+		'controller' => 'Theme\UIController',
+		'action' => 'wizard',
+	],
+	[
+		'uri' => '/theme/ui/dragdrop-panel',
+		'controller' => 'Theme\UIController',
+		'action' => 'drapdropPanel',
+	],
+	[
+		'uri' => '/theme/ui/netstable',
+		'controller' => 'Theme\UIController',
+		'action' => 'netstable',
+	],
+	[
+		'uri' => '/theme/ui/gauge',
+		'controller' => 'Theme\UIController',
+		'action' => 'gauge',
+	],
+	[
+		'uri' => '/theme/ui/panels',
+		'controller' => 'Theme\UIController',
+		'action' => 'panels',
+	],
+	[
+		'uri' => '/theme/ui/progressbars',
+		'controller' => 'Theme\UIController',
+		'action' => 'progressbars',
+	],
+	[
+		'uri' => '/theme/ui/tabs',
+		'controller' => 'Theme\UIController',
+		'action' => 'tabs',
+	],
+	[
+		'uri' => '/theme/ui/buttons',
+		'controller' => 'Theme\UIController',
+		'action' => 'buttons',
+	],
+	[
+		'uri' => '/theme/ui/bootstrap',
+		'controller' => 'Theme\UIController',
+		'action' => 'bootstrap',
+	],
+	[
+		'uri' => '/theme/ui/social-buttons',
+		'controller' => 'Theme\UIController',
+		'action' => 'socialButtons',
+	],
+	[
+		'uri' => '/theme/ui/icons',
+		'controller' => 'Theme\UIController',
+		'action' => 'icons',
+	],	
+
+	// notifications
+	[
+		'uri' => '/theme/notifications',
+		'controller' => 'Theme\NotificationsController',
+		'action' => 'notifications',
+	],
+
+	// submenu
+	[
+		'uri' => '/theme/submenu',
+		'controller' => 'Theme\SubmenuController',
+		'action' => 'submenu',
+	],
+
+	// widgets
+	[
+		'uri' => '/theme/widgets',
+		'controller' => 'Theme\WidgetsController',
+		'action' => 'widgets',
+	],
 
 ];

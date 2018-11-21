@@ -21,15 +21,45 @@ class AppViewsController extends Controller
 	{
 		parent::__construct($di);
 		$this->di->layout()->setLayoutName('theme');
-	}
+	}	
 
 	/**
-	 * productDetail.
+	 * projectDetail.
 	 */
-	public function productDetail()
+	public function projectDetail()
 	{
 		$this->di->layout()->set('page_title', 'Project Detail');
 		$this->di->layout()->set('page_description', 'A detailed view about project information');
-		return $this->di->view('theme.app-views.product-detail');
+		return $this->di->view('theme.app-views.project-detail');
+	}
+
+	/**
+	 * projects.
+	 */
+	public function projects()
+	{
+		$this->di->layout()->set('page_title', 'Projects');
+		$this->di->layout()->set('List of project information summary');
+		return $this->di->view('theme.app-views.projects');
+	}
+
+	/**
+	 * inbox.
+	 */
+	public function inbox()
+	{
+		$this->di->layout()->set('page_title', 'Inbox');
+		$this->di->layout()->set('You have <strong>8 unread messages</strong>');
+		return $this->di->view('theme.app-views.projects');
+	}
+
+	/**
+	 * fileManager.
+	 */
+	public function fileManager()
+	{
+		$this->di->layout()->set('page_title', 'File Manager');
+		$this->di->layout()->set('page_description', '<span class=\"text-danger\">You nearly reached storage limit capacity!</span>&nbsp;&nbsp;&nbsp;<a href=\"#\"><i class=\"fa fa-plus-circle\"></i> Upgrade Now</a>');
+		return $this->di->view('theme.app-views.project-detail');
 	}
 }
