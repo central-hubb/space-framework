@@ -29,15 +29,15 @@
         </li>
         <li><a href="#" style="color:#5A5A5A;text-decoration: none;">The Basics</a>
             <ul>
-                <li><a href="/docs/basics/routing">* Routing</a></li>
-                <li><a href="/docs/basics/controllers">* Controllers</a></li>
-                <li><a href="/docs/basics/requests">* Requests</a></li>
-                <li><a href="/docs/basics/responses">* Responses</a></li>
-                <li><a href="/docs/basics/views">* Views</a></li>
-                <li><a href="/docs/basics/session">* Session</a></li>
+                <li><a href="/docs/basics/routing">Routing</a></li>
+                <li><a href="/docs/basics/controllers">Controllers</a></li>
+                <li><a href="/docs/basics/requests">Requests</a></li>
+                <li><a href="/docs/basics/responses">Responses</a></li>
+                <li><a href="/docs/basics/views">Views</a></li>
+                <li><a href="/docs/basics/session">Session</a></li>
                 <li><a href="/docs/basics/validation">Validation</a></li>
                 <li><a href="/docs/basics/error-handling">Error Handling</a></li>
-                <li><a href="/docs/basics/logging">* Logging</a></li>
+                <li><a href="/docs/basics/logging">Logging</a></li>
 <!--                <li><a href="/docs/advanced/helpers">* Helpers</a></li>-->
             </ul>
         </li>
@@ -73,10 +73,10 @@
             <ul>
 <!--                <li><a href="/docs/advanced/asset">* Assets</a></li>-->
                 <li><a href="/docs/advanced/file-storage">File Storage</a></li>
-                <li><a href="/docs/advanced/cache">* Cache</a></li>
+                <li><a href="/docs/advanced/cache">Cache</a></li>
                 <li><a href="/docs/advanced/events">Events</a></li>
 <!--                <li><a href="/docs/advanced/listeners">Listeners</a></li>-->
-                <li><a href="/docs/advanced/mail">* Mail</a></li>
+                <li><a href="/docs/advanced/mail">Mail</a></li>
             </ul>
         </li>
     </ul>
