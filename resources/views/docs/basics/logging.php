@@ -1,24 +1,6 @@
 <article>
 	<h1>Logging</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a></li>
-		<li><a href="#configuration">Configuration</a>
-			<ul>
-				<li><a href="#building-log-stacks">Building Log Stacks</a></li>
-			</ul></li>
-		<li><a href="#writing-log-messages">Writing Log Messages</a>
-			<ul>
-				<li><a href="#writing-to-specific-channels">Writing To Specific Channels</a></li>
-			</ul></li>
-		<li><a href="#advanced-monolog-channel-customization">Advanced Monolog Channel Customization</a>
-			<ul>
-				<li><a href="#customizing-monolog-for-channels">Customizing Monolog For Channels</a></li>
-				<li><a href="#creating-monolog-handler-channels">Creating Monolog Handler Channels</a></li>
-				<li><a href="#creating-channels-via-factories">Creating Channels Via Factories</a></li>
-			</ul></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
+	<h4>Introduction</h4>
 	<p>To help you learn more about what's happening within your application, Space MVC provides robust logging services that allow you to log messages to files, the system error log, and even to Slack to notify your entire team.</p>
 	<p>Under the hood, Space MVC utilizes the <a href="https://github.com/Seldaek/monolog">Monolog</a> library, which provides support for a variety of powerful log handlers. Space MVC makes it a cinch to configure these handlers, allowing you to mix and match them to customize your application's log handling.</p>
 	<p><a name="configuration"></a></p>

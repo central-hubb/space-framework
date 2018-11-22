@@ -1,26 +1,6 @@
 <article>
 	<h1>HTTP Requests</h1>
-	<ul>
-		<li><a href="#accessing-the-request">Accessing The Request</a>
-			<ul>
-				<li><a href="#request-path-and-method">Request Path &amp; Method</a></li>
-				<li><a href="#psr7-requests">PSR-7 Requests</a></li>
-			</ul></li>
-		<li><a href="#input-trimming-and-normalization">Input Trimming &amp; Normalization</a></li>
-		<li><a href="#retrieving-input">Retrieving Input</a>
-			<ul>
-				<li><a href="#old-input">Old Input</a></li>
-				<li><a href="#cookies">Cookies</a></li>
-			</ul></li>
-		<li><a href="#files">Files</a>
-			<ul>
-				<li><a href="#retrieving-uploaded-files">Retrieving Uploaded Files</a></li>
-				<li><a href="#storing-uploaded-files">Storing Uploaded Files</a></li>
-			</ul></li>
-		<li><a href="#configuring-trusted-proxies">Configuring Trusted Proxies</a></li>
-	</ul>
-	<p><a name="accessing-the-request"></a></p>
-	<h2><a href="#accessing-the-request">Accessing The Request</a></h2>
+	<h4>Accessing The Request</h4>
 	<p>To obtain an instance of the current HTTP request via dependency injection, you should type-hint the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> class on your controller method. The incoming request instance will automatically be injected by the <a href="/docs/5.7/container">service container</a>:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
 

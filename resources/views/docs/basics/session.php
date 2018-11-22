@@ -1,27 +1,6 @@
 <article>
 	<h1>HTTP Session</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a>
-			<ul>
-				<li><a href="#configuration">Configuration</a></li>
-				<li><a href="#driver-prerequisites">Driver Prerequisites</a></li>
-			</ul></li>
-		<li><a href="#using-the-session">Using The Session</a>
-			<ul>
-				<li><a href="#retrieving-data">Retrieving Data</a></li>
-				<li><a href="#storing-data">Storing Data</a></li>
-				<li><a href="#flash-data">Flash Data</a></li>
-				<li><a href="#deleting-data">Deleting Data</a></li>
-				<li><a href="#regenerating-the-session-id">Regenerating The Session ID</a></li>
-			</ul></li>
-		<li><a href="#adding-custom-session-drivers">Adding Custom Session Drivers</a>
-			<ul>
-				<li><a href="#implementing-the-driver">Implementing The Driver</a></li>
-				<li><a href="#registering-the-driver">Registering The Driver</a></li>
-			</ul></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
+	<h4>Introduction</h4>
 	<p>Since HTTP driven applications are stateless, sessions provide a way to store information about the user across multiple requests. Space MVC ships with a variety of session backends that are accessed through an expressive, unified API. Support for popular backends such as <a href="https://memcached.org">Memcached</a>, <a href="https://redis.io">Redis</a>, and databases is included out of the box.</p>
 	<p><a name="configuration"></a></p>
 	<h3>Configuration</h3>

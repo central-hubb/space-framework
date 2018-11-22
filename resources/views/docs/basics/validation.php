@@ -1,43 +1,6 @@
 <article>
 	<h1>Validation</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a></li>
-		<li><a href="#validation-quickstart">Validation Quickstart</a>
-			<ul>
-				<li><a href="#quick-defining-the-routes">Defining The Routes</a></li>
-				<li><a href="#quick-creating-the-controller">Creating The Controller</a></li>
-				<li><a href="#quick-writing-the-validation-logic">Writing The Validation Logic</a></li>
-				<li><a href="#quick-displaying-the-validation-errors">Displaying The Validation Errors</a></li>
-				<li><a href="#a-note-on-optional-fields">A Note On Optional Fields</a></li>
-			</ul></li>
-		<li><a href="#form-request-validation">Form Request Validation</a>
-			<ul>
-				<li><a href="#creating-form-requests">Creating Form Requests</a></li>
-				<li><a href="#authorizing-form-requests">Authorizing Form Requests</a></li>
-				<li><a href="#customizing-the-error-messages">Customizing The Error Messages</a></li>
-			</ul></li>
-		<li><a href="#manually-creating-validators">Manually Creating Validators</a>
-			<ul>
-				<li><a href="#automatic-redirection">Automatic Redirection</a></li>
-				<li><a href="#named-error-bags">Named Error Bags</a></li>
-				<li><a href="#after-validation-hook">After Validation Hook</a></li>
-			</ul></li>
-		<li><a href="#working-with-error-messages">Working With Error Messages</a>
-			<ul>
-				<li><a href="#custom-error-messages">Custom Error Messages</a></li>
-			</ul></li>
-		<li><a href="#available-validation-rules">Available Validation Rules</a></li>
-		<li><a href="#conditionally-adding-rules">Conditionally Adding Rules</a></li>
-		<li><a href="#validating-arrays">Validating Arrays</a></li>
-		<li><a href="#custom-validation-rules">Custom Validation Rules</a>
-			<ul>
-				<li><a href="#using-rule-objects">Using Rule Objects</a></li>
-				<li><a href="#using-closures">Using Closures</a></li>
-				<li><a href="#using-extensions">Using Extensions</a></li>
-			</ul></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
+	<h4>Introduction</h4>
 	<p>Space MVC provides several different approaches to validate your application's incoming data. By default, Space MVC's base controller class uses a <code class=" language-php">ValidatesRequests</code> trait which provides a convenient method to validate incoming HTTP request with a variety of powerful validation rules.</p>
 	<p><a name="validation-quickstart"></a></p>
 	<h2><a href="#validation-quickstart">Validation Quickstart</a></h2>

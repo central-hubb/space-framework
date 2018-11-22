@@ -1,32 +1,6 @@
 <article>
 	<h1>File Storage</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a></li>
-		<li><a href="#configuration">Configuration</a>
-			<ul>
-				<li><a href="#the-public-disk">The Public Disk</a></li>
-				<li><a href="#the-local-driver">The Local Driver</a></li>
-				<li><a href="#driver-prerequisites">Driver Prerequisites</a></li>
-				<li><a href="#caching">Caching</a></li>
-			</ul></li>
-		<li><a href="#obtaining-disk-instances">Obtaining Disk Instances</a></li>
-		<li><a href="#retrieving-files">Retrieving Files</a>
-			<ul>
-				<li><a href="#downloading-files">Downloading Files</a></li>
-				<li><a href="#file-urls">File URLs</a></li>
-				<li><a href="#file-metadata">File Metadata</a></li>
-			</ul></li>
-		<li><a href="#storing-files">Storing Files</a>
-			<ul>
-				<li><a href="#file-uploads">File Uploads</a></li>
-				<li><a href="#file-visibility">File Visibility</a></li>
-			</ul></li>
-		<li><a href="#deleting-files">Deleting Files</a></li>
-		<li><a href="#directories">Directories</a></li>
-		<li><a href="#custom-filesystems">Custom Filesystems</a></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
+	<h2>Introduction</h2>
 	<p>Space MVC provides a powerful filesystem abstraction thanks to the wonderful <a href="https://github.com/thephpleague/flysystem">Flysystem</a> PHP package by Frank de Jonge. The Space MVC Flysystem integration provides simple to use drivers for working with local filesystems, Amazon S3, and Rackspace Cloud Storage. Even better, it's amazingly simple to switch between these storage options as the API remains the same for each system.</p>
 	<p><a name="configuration"></a></p>
 	<h2><a href="#configuration">Configuration</a></h2>

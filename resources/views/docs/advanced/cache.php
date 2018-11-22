@@ -1,34 +1,6 @@
 <article>
 	<h1>Cache</h1>
-	<ul>
-		<li><a href="#configuration">Configuration</a>
-			<ul>
-				<li><a href="#driver-prerequisites">Driver Prerequisites</a></li>
-			</ul></li>
-		<li><a href="#cache-usage">Cache Usage</a>
-			<ul>
-				<li><a href="#obtaining-a-cache-instance">Obtaining A Cache Instance</a></li>
-				<li><a href="#retrieving-items-from-the-cache">Retrieving Items From The Cache</a></li>
-				<li><a href="#storing-items-in-the-cache">Storing Items In The Cache</a></li>
-				<li><a href="#removing-items-from-the-cache">Removing Items From The Cache</a></li>
-				<li><a href="#atomic-locks">Atomic Locks</a></li>
-				<li><a href="#the-cache-helper">The Cache Helper</a></li>
-			</ul></li>
-		<li><a href="#cache-tags">Cache Tags</a>
-			<ul>
-				<li><a href="#storing-tagged-cache-items">Storing Tagged Cache Items</a></li>
-				<li><a href="#accessing-tagged-cache-items">Accessing Tagged Cache Items</a></li>
-				<li><a href="#removing-tagged-cache-items">Removing Tagged Cache Items</a></li>
-			</ul></li>
-		<li><a href="#adding-custom-cache-drivers">Adding Custom Cache Drivers</a>
-			<ul>
-				<li><a href="#writing-the-driver">Writing The Driver</a></li>
-				<li><a href="#registering-the-driver">Registering The Driver</a></li>
-			</ul></li>
-		<li><a href="#events">Events</a></li>
-	</ul>
-	<p><a name="configuration"></a></p>
-	<h2><a href="#configuration">Configuration</a></h2>
+	<h2>Configuration</h2>
 	<p>Space MVC provides an expressive, unified API for various caching backends. The cache configuration is located at <code class=" language-php">config<span class="token operator">/</span>cache<span class="token punctuation">.</span>php</code>. In this file you may specify which cache driver you would like to be used by default throughout your application. Space MVC supports popular caching backends like <a href="https://memcached.org">Memcached</a> and <a href="https://redis.io">Redis</a> out of the box.</p>
 	<p>The cache configuration file also contains various other options, which are documented within the file, so make sure to read over these options. By default, Space MVC is configured to use the <code class=" language-php">file</code> cache driver, which stores the serialized, cached objects in the filesystem. For larger applications, it is recommended that you use a more robust driver such as Memcached or Redis. You may even configure multiple cache configurations for the same driver.</p>
 	<p><a name="driver-prerequisites"></a></p>

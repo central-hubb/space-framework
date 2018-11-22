@@ -1,28 +1,5 @@
 <article>
 	<h1>Events</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a></li>
-		<li><a href="#registering-events-and-listeners">Registering Events &amp; Listeners</a>
-			<ul>
-				<li><a href="#generating-events-and-listeners">Generating Events &amp; Listeners</a></li>
-				<li><a href="#manually-registering-events">Manually Registering Events</a></li>
-			</ul></li>
-		<li><a href="#defining-events">Defining Events</a></li>
-		<li><a href="#defining-listeners">Defining Listeners</a></li>
-		<li><a href="#queued-event-listeners">Queued Event Listeners</a>
-			<ul>
-				<li><a href="#manually-accessing-the-queue">Manually Accessing The Queue</a></li>
-				<li><a href="#handling-failed-jobs">Handling Failed Jobs</a></li>
-			</ul></li>
-		<li><a href="#dispatching-events">Dispatching Events</a></li>
-		<li><a href="#event-subscribers">Event Subscribers</a>
-			<ul>
-				<li><a href="#writing-event-subscribers">Writing Event Subscribers</a></li>
-				<li><a href="#registering-event-subscribers">Registering Event Subscribers</a></li>
-			</ul></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
 	<p>Space MVC's events provide a simple observer implementation, allowing you to subscribe and listen for various events that occur in your application. Event classes are typically stored in the <code class=" language-php">app<span class="token operator">/</span>Events</code> directory, while their listeners are stored in <code class=" language-php">app<span class="token operator">/</span>Listeners</code>. Don't worry if you don't see these directories in your application, since they will be created for you as you generate events and listeners using Artisan console commands.</p>
 	<p>Events serve as a great way to decouple various aspects of your application, since a single event can have multiple listeners that do not depend on each other. For example, you may wish to send a Slack notification to your user each time an order has shipped. Instead of coupling your order processing code to your Slack notification code, you can raise an <code class=" language-php">OrderShipped</code> event, which a listener can receive and transform into a Slack notification.</p>
 	<p><a name="registering-events-and-listeners"></a></p>

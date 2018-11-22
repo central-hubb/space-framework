@@ -149,6 +149,11 @@ return [
 
 	// advanced
 	[
+		'uri' => '/docs/advanced/asset',
+		'controller' => 'Docs\AdvancedController',
+		'action' => 'asset',
+	],
+	[
 		'uri' => '/docs/advanced/broadcasting',
 		'controller' => 'Docs\AdvancedController',
 		'action' => 'broadcasting',

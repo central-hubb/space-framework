@@ -1,21 +1,6 @@
 <article>
 	<h1>Error Handling</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a></li>
-		<li><a href="#configuration">Configuration</a></li>
-		<li><a href="#the-exception-handler">The Exception Handler</a>
-			<ul>
-				<li><a href="#report-method">Report Method</a></li>
-				<li><a href="#render-method">Render Method</a></li>
-				<li><a href="#renderable-exceptions">Reportable &amp; Renderable Exceptions</a></li>
-			</ul></li>
-		<li><a href="#http-exceptions">HTTP Exceptions</a>
-			<ul>
-				<li><a href="#custom-http-error-pages">Custom HTTP Error Pages</a></li>
-			</ul></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
+	<h4><a href="#introduction">Introduction</a></h4>
 	<p>When you start a new Space MVC project, error and exception handling is already configured for you. The <code class=" language-php">App\<span class="token package">Exceptions<span class="token punctuation">\</span>Handler</span></code> class is where all exceptions triggered by your application are logged and then rendered back to the user. We'll dive deeper into this class throughout this documentation.</p>
 	<p><a name="configuration"></a></p>
 	<h2><a href="#configuration">Configuration</a></h2>

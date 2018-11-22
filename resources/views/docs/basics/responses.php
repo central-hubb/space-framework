@@ -1,30 +1,6 @@
 <article>
 	<h1>HTTP Responses</h1>
-	<ul>
-		<li><a href="#creating-responses">Creating Responses</a>
-			<ul>
-				<li><a href="#attaching-headers-to-responses">Attaching Headers To Responses</a></li>
-				<li><a href="#attaching-cookies-to-responses">Attaching Cookies To Responses</a></li>
-				<li><a href="#cookies-and-encryption">Cookies &amp; Encryption</a></li>
-			</ul></li>
-		<li><a href="#redirects">Redirects</a>
-			<ul>
-				<li><a href="#redirecting-named-routes">Redirecting To Named Routes</a></li>
-				<li><a href="#redirecting-controller-actions">Redirecting To Controller Actions</a></li>
-				<li><a href="#redirecting-external-domains">Redirecting To External Domains</a></li>
-				<li><a href="#redirecting-with-flashed-session-data">Redirecting With Flashed Session Data</a></li>
-			</ul></li>
-		<li><a href="#other-response-types">Other Response Types</a>
-			<ul>
-				<li><a href="#view-responses">View Responses</a></li>
-				<li><a href="#json-responses">JSON Responses</a></li>
-				<li><a href="#file-downloads">File Downloads</a></li>
-				<li><a href="#file-responses">File Responses</a></li>
-			</ul></li>
-		<li><a href="#response-macros">Response Macros</a></li>
-	</ul>
-	<p><a name="creating-responses"></a></p>
-	<h2><a href="#creating-responses">Creating Responses</a></h2>
+	<h4>Creating Responses</h4>
 	<h4>Strings &amp; Arrays</h4>
 	<p>All routes and controllers should return a response to be sent back to the user's browser. Space MVC provides several different ways to return responses. The most basic response is returning a string from a route or controller. The framework will automatically convert the string into a full HTTP response:</p>
 	<pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>

@@ -1,40 +1,5 @@
 <article>
 	<h1>Mail</h1>
-	<ul>
-		<li><a href="#introduction">Introduction</a>
-			<ul>
-				<li><a href="#driver-prerequisites">Driver Prerequisites</a></li>
-			</ul></li>
-		<li><a href="#generating-mailables">Generating Mailables</a></li>
-		<li><a href="#writing-mailables">Writing Mailables</a>
-			<ul>
-				<li><a href="#configuring-the-sender">Configuring The Sender</a></li>
-				<li><a href="#configuring-the-view">Configuring The View</a></li>
-				<li><a href="#view-data">View Data</a></li>
-				<li><a href="#attachments">Attachments</a></li>
-				<li><a href="#inline-attachments">Inline Attachments</a></li>
-				<li><a href="#customizing-the-swiftmailer-message">Customizing The SwiftMailer Message</a></li>
-			</ul></li>
-		<li><a href="#markdown-mailables">Markdown Mailables</a>
-			<ul>
-				<li><a href="#generating-markdown-mailables">Generating Markdown Mailables</a></li>
-				<li><a href="#writing-markdown-messages">Writing Markdown Messages</a></li>
-				<li><a href="#customizing-the-components">Customizing The Components</a></li>
-			</ul></li>
-		<li><a href="#sending-mail">Sending Mail</a>
-			<ul>
-				<li><a href="#queueing-mail">Queueing Mail</a></li>
-			</ul></li>
-		<li><a href="#rendering-mailables">Rendering Mailables</a>
-			<ul>
-				<li><a href="#previewing-mailables-in-the-browser">Previewing Mailables In The Browser</a></li>
-			</ul></li>
-		<li><a href="#localizing-mailables">Localizing Mailables</a></li>
-		<li><a href="#mail-and-local-development">Mail &amp; Local Development</a></li>
-		<li><a href="#events">Events</a></li>
-	</ul>
-	<p><a name="introduction"></a></p>
-	<h2><a href="#introduction">Introduction</a></h2>
 	<p>Space MVC provides a clean, simple API over the popular <a href="https://swiftmailer.symfony.com/">SwiftMailer</a> library with drivers for SMTP, Mailgun, SparkPost, Amazon SES, PHP's <code class=" language-php">mail</code> function, and <code class=" language-php">sendmail</code>, allowing you to quickly get started sending mail through a local or cloud based service of your choice.</p>
 	<p><a name="driver-prerequisites"></a></p>
 	<h3>Driver Prerequisites</h3>
