@@ -123,7 +123,7 @@
 				<div id="maps" class="collapse ">
 					<ul class="submenu">
 						<li><a href="/theme/maps/jqvmap">JQVMap</a></li>
-						<li><a href="/theme/maps/mapael">Mapael</a></li>
+<!--						<li><a href="/theme/maps/mapael">Mapael</a></li>-->
 					</ul>
 				</div>
 			</li>
