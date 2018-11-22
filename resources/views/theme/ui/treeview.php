@@ -1,19 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/jstree/themes/default/style.css'
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/jstree/jstree.js',
-		'assets/scripts/ui/ui-treeview.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-4">
 		<div class="panel" style="min-height: 400px;">

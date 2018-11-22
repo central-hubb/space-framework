@@ -1,15 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/raphael/raphael.min.js',
-		'assets/vendor/justgage-toorshia/justgage.js',
-		'assets/scripts/ui/ui-gauge.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-4">
 		<div class="panel">

@@ -54,16 +54,6 @@ class FormController extends Controller
 	}
 
 	/**
-	 * inputSliders.
-	 *
-	 * @return \App\Library\Framework\View
-	 */
-	public function inputSliders()
-	{
-		return $this->di->view('theme.forms.input-sliders');
-	}
-
-	/**
 	 * select2.
 	 *
 	 * @return \App\Library\Framework\View

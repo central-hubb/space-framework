@@ -46,11 +46,6 @@ return [
 		'action' => 'inputPickers',
 	],
 	[
-		'uri' => '/theme/forms/input-sliders',
-		'controller' => 'Theme\FormController',
-		'action' => 'inputSliders',
-	],
-	[
 		'uri' => '/theme/forms/select2',
 		'controller' => 'Theme\FormController',
 		'action' => 'select2',
@@ -233,14 +228,14 @@ return [
 		'action' => 'wizard',
 	],
 	[
-		'uri' => '/theme/ui/dragdrop-panel',
+		'uri' => '/theme/ui/drag-drop-panel',
 		'controller' => 'Theme\UIController',
-		'action' => 'drapdropPanel',
+		'action' => 'dragDropPanel',
 	],
 	[
-		'uri' => '/theme/ui/netstable',
+		'uri' => '/theme/ui/nestable',
 		'controller' => 'Theme\UIController',
-		'action' => 'netstable',
+		'action' => 'nestable',
 	],
 	[
 		'uri' => '/theme/ui/gauge',

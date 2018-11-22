@@ -1,19 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js',
-		'assets/scripts/ui/ui-progressbars.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <!-- BOOTSTRAP PROGRESS BARS -->
 <div class="panel">
 	<div class="panel-heading">

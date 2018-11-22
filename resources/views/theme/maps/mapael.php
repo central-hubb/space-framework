@@ -1,18 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/raphael/raphael.min.js',
-		'assets/vendor/jquery-mapael/js/jquery.mapael.min.js',
-		'assets/vendor/jquery-mapael/js/maps/world_countries.min.js',
-		'assets/vendor/jquery-mapael/js/maps/france_departments.js',
-		'assets/vendor/jquery-mousewheel/jquery.mousewheel.js',
-		'assets/scripts/maps/maps-mapael.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">Data Visualization Map</h3>

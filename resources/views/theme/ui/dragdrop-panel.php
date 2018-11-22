@@ -1,19 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/jquery-ui/ui/widget.js',
-		'assets/vendor/jquery-ui/ui/data.js',
-		'assets/vendor/jquery-ui/ui/scroll-parent.js',
-		'assets/vendor/jquery-ui/ui/disable-selection.js',
-		'assets/vendor/jquery-ui/ui/widgets/mouse.js',
-		'assets/vendor/jquery-ui/ui/widgets/sortable.js',
-		'assets/scripts/ui/ui-dragdrop-panel.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row sortable-grid">
 	<div class="col-md-6 sortable-item">
 		<div class="panel">

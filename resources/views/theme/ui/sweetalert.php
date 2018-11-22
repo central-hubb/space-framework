@@ -1,19 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/sweetalert2/sweetalert2.css'
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/sweetalert2/sweetalert2.js',
-		'assets/scripts/ui/ui-sweetalert.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel">

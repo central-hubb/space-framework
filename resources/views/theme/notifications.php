@@ -1,20 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/toastr/toastr.min.css',
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/toastr/toastr.min.js',
-		'assets/scripts/notifications.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-
 <div id="toastr-demo" class="panel">
 	<div class="panel-body">
 		<!-- CONTEXTUAL -->

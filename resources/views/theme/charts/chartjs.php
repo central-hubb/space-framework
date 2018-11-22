@@ -1,14 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/chart-js/Chart.min.js',
-		'assets/scripts/charts/charts-chartjs.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-6">
 		<!-- line chart -->

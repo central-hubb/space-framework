@@ -1,20 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/nestable2/jquery.nestable.css',
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/nestable2/jquery.nestable.js',
-		'assets/scripts/ui/ui-nestable.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-
 <p><button id="btn-expand" class="btn btn-primary">Expand All</button>  <button id="btn-collapse" class="btn btn-primary">Collapse All</button></p><br>
 
 <div class="row">

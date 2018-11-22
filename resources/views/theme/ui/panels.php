@@ -1,20 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/dropzone/dropzone.min.css'
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/dropzone/dropzone.min.js',
-		'assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js',
-		'assets/scripts/ui/ui-panels.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-6">
 		<!-- PANEL PROGRESS -->
@@ -28,7 +11,7 @@
 			</div>
 			<div class="panel-body">
 				<div class="text-center margin-bottom-30">
-					<img src="assets/img/sync-illustration.png" alt="Sync"><br><br>
+					<img src="/themes/default/assets/img/sync-illustration.png" alt="Sync"><br><br>
 					<button type="button" class="btn btn-custom-orange">Sync my data</button>
 				</div>
 				

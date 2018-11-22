@@ -1,28 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
-		'assets/vendor/x-editable/bootstrap3-editable/css/bootstrap-editable.css'
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/jquery-sparkline/js/jquery.sparkline.min.js',
-		'assets/vendor/Flot/jquery.flot.js',
-		'assets/vendor/Flot/jquery.flot.resize.js',
-		'assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js',
-		'assets/vendor/x-editable/bootstrap3-editable/js/bootstrap-editable.min.js',
-		'assets/vendor/jquery.maskedinput/jquery.maskedinput.min.js',
-		'assets/vendor/jquery-appear/jquery.appear.min.js',
-		'assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js',
-		'assets/scripts/widgets.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-
 <div class="row">
 	<div class="col-sm-3">
 		<div class="widget widget-metric_1 animate">

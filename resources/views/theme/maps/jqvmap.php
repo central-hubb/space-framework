@@ -1,25 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/jqvmap/jqvmap.min.css',
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/jqvmap/jquery.vmap.min.js',
-		'assets/vendor/jqvmap/maps/jquery.vmap.world.js',
-		'assets/vendor/jqvmap/maps/jquery.vmap.usa.js',
-		'assets/vendor/jqvmap/maps/jquery.vmap.europe.js',
-		'assets/vendor/jqvmap/maps/jquery.vmap.russia.js',
-		'assets/scripts/jquery.vmap.sampledata.js',
-		'assets/scripts/maps/maps-jqvmap.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel">

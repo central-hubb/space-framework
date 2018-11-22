@@ -1,15 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/jquery-sparkline/js/jquery.sparkline.min.js',
-		'assets/scripts/charts/charts-sparkline.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-
 <div class="row">
 	<div class="col-md-6">
 		<!-- MINI LINE CHARTS -->

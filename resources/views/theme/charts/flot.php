@@ -1,20 +1,3 @@
-<script>
-
-	var requiredJS = [
-		'assets/vendor/Flot/jquery.flot.js',
-		'assets/vendor/Flot/jquery.flot.resize.js',
-		'assets/vendor/Flot/jquery.flot.time.js',
-		'assets/vendor/Flot/jquery.flot.pie.js',
-		'assets/vendor/flot.tooltip/jquery.flot.tooltip.js',
-		'assets/vendor/flot.orderbars/jquery.flot.orderBars.js',
-		'assets/scripts/charts/charts-flot.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
-
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel">

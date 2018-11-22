@@ -1,21 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/parsleyjs/css/parsley.css',
-		'assets/vendor/sweetalert2/sweetalert2.css'
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/fuelux/wizard/wizard.js',
-		'assets/vendor/parsleyjs/js/parsley.min.js',
-		'assets/scripts/ui/ui-wizard.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div id="demo-wizard" class="wizard">
 	<div class="steps-container">
 		<ul class="steps">

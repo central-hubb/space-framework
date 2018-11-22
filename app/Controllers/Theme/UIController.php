@@ -57,10 +57,10 @@ class UIController extends Controller
 	}
 
 	/**
-	 * dragdropPanel.
+	 * dragDropPanel.
 	 *
 	 */
-	public function dragdropPanel()
+	public function dragDropPanel()
 	{
 		$this->di->layout()->set('page_title', 'Drag & Drop Panel');
 		$this->di->layout()->set('page_description', 'Reorder panels in layout with drag and drop feature');
@@ -68,13 +68,13 @@ class UIController extends Controller
 	}
 
 	/**
-	 * netstable.
+	 * nestable.
 	 */
-	public function netstable()
+	public function nestable()
 	{
 		$this->di->layout()->set('page_title', 'Netstable');
 		$this->di->layout()->set('page_description', 'Drag & drop hierarchical list with mouse and touch compatibility');
-		return $this->di->view('theme.ui.netstable');
+		return $this->di->view('theme.ui.nestable');
 	}
 
 	/**

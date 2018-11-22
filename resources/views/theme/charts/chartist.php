@@ -1,19 +1,3 @@
-<script>
-	var requiredCSS = [
-		'assets/vendor/chartist/css/chartist-custom.css',
-	];
-
-	loadCSS(requiredCSS);
-
-	var requiredJS = [
-		'assets/vendor/chartist/js/chartist.min.js',
-		'assets/scripts/charts/charts-chartist.js'
-	];
-
-	loadJS(requiredJS);
-
-</script>
-
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel">

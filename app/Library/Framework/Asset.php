@@ -21,7 +21,11 @@ class Asset
 	 */
 	public function add($type, $url, $attributes = [])
 	{
-		$this->assets[$type][] = $this->render($type, $url, $attributes);
+		$this->assets[$type][] = [
+			'type' => $type,
+			'url' => $url,
+			'attributes' => $attributes
+		];
 	}
 
 	/**

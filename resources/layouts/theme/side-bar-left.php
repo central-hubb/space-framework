@@ -41,7 +41,6 @@
 						<li><a href="/theme/forms/inputs">Inputs</a></li>
 						<li><a href="/theme/forms/multi-select">Multi select</a></li>
 						<li><a href="/theme/forms/input-pickers">Input Pickers</a></li>
-						<li><a href="/theme/forms/input-sliders">Input Sliders</a></li>
 						<li><a href="/theme/forms/select2">Select2</a></li>
 						<li><a href="/theme/forms/x-editable">In-place Editing</a></li>
 						<li><a href="/theme/forms/drag-drop-upload">Drag and Drop Upload</a></li>
@@ -91,7 +90,7 @@
 						<li><a href="/theme/ui/sweetalert">Sweet Alert</a></li>
 						<li><a href="/theme/ui/treeview">Tree View</a></li>
 						<li><a href="/theme/ui/wizard">Wizard</a></li>
-						<li><a href="/theme/ui/dragdrop-panel">Drag &amp; Drop Panel</a></li>
+						<li><a href="/theme/ui/drag-drop-panel">Drag &amp; Drop Panel</a></li>
 						<li><a href="/theme/ui/nestable">Nestable</a></li>
 						<li><a href="/theme/ui/gauge">Gauge <span class="label label-success">NEW</span></a></li>
 						<li><a href="/theme/ui/panels">Panels</a></li>
@@ -124,7 +123,7 @@
 				<div id="maps" class="collapse ">
 					<ul class="submenu">
 						<li><a href="/theme/maps/jqvmap">JQVMap</a></li>
-						<li><a href="/theme/maps/-mapael">Mapael</a></li>
+						<li><a href="/theme/maps/mapael">Mapael</a></li>
 					</ul>
 				</div>
 			</li>

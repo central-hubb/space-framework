@@ -18,7 +18,10 @@ $(function() {
 		lineSmooth: false,
 	};
 
-	new Chartist.Line('#demo-line-chart', data, options);
+
+    if($('#demo-line-chart').length){
+        new Chartist.Line('#demo-line-chart', data, options);
+    }
 
 	// bar chart
 	options = {
@@ -28,8 +31,9 @@ $(function() {
 		},
 	};
 
-	new Chartist.Bar('#demo-bar-chart', data, options);
-
+    if($('#demo-bar-chart').length) {
+        new Chartist.Bar('#demo-bar-chart', data, options);
+    }
 
 	// area chart
 	options = {
@@ -43,8 +47,9 @@ $(function() {
 		lineSmooth: false,
 	};
 
-	new Chartist.Line('#demo-area-chart', data, options);
-
+    if($('#demo-area-chart').length) {
+        new Chartist.Line('#demo-area-chart', data, options);
+    }
 
 	// multiple chart
 	var data = {
@@ -89,6 +94,8 @@ $(function() {
 		}
 	};
 
-	new Chartist.Line('#multiple-chart', data, options);
+    if($('#multiple-chart').length){
+        new Chartist.Line('#multiple-chart', data, options);
+    }
 
 });
