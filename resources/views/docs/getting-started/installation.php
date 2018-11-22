@@ -1,3 +1,5 @@
+<?php use App\Library\Framework\Component\Code; ?>
+
 <article>
 
     <h3>Server Requirements</h3>
@@ -17,9 +19,8 @@
 
     <p>You can install Space CRM quite easily using github and composer.</p>
 
-    <pre class="language-php"><code class="language-php">git clone https://github.com/space-mvc/space-mvc.git</code></pre>
-
-    <pre class="language-php"><code class="language-php">composer install</code></pre>
+    <?php echo Code::getHtmlStatic('git clone https://github.com/space-mvc/space-mvc.git'); ?>
+	<?php echo Code::getHtmlStatic('composer install'); ?>
 
     <h2>Web Server Configuration</h2>
 
@@ -34,23 +35,23 @@
         Space MVC does not work with your Apache installation, try this alternative:
     </p>
 
-    <pre class="language-php"><code class="language-php">Options +FollowSymLinks -Indexes
-RewriteEngine On
-
-RewriteCond %{HTTP:Authorization} .
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L]</code></pre>
+	<?php echo Code::getHtmlStatic('Options +FollowSymLinks -Indexes
+    RewriteEngine On
+    
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]'); ?>
 
     <h4>Nginx</h4>
     <p>
         If you are using Nginx, the following directive in your site configuration will direct all requests
         to the index.php front controller:
     </p>
-    <pre class="language-php">
-        <code class="language-php">location / {
+
+    <?php echo Code::getHtmlStatic('location / {
     try_files $uri $uri/ /index.php?$query_string;
-}</code></pre>
+}'); ?>
 </article>
