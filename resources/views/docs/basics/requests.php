@@ -1,276 +1,278 @@
+<?php use App\Library\Framework\Component\Code; ?>
+
 <article>
 	<h1>HTTP Requests</h1>
 	<h4>Accessing The Request</h4>
-	<p>To obtain an instance of the current HTTP request via dependency injection, you should type-hint the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> class on your controller method. The incoming request instance will automatically be injected by the <a href="/docs/5.7/container">service container</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+	<p>To obtain an instance of the current HTTP request via dependency injection, you should type-hint the Illuminate\Http\Request class on your controller method. The incoming request instance will automatically be injected by the <a href="/docs/5.7/container">service container</a>:</p>
+	<?php echo Code::getHtmlStatic('&lt;?php
 
-<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+namespace App\Http\Controllers;
 
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+use Illuminate\Http\Request;
 
-<span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
+class UserController extends Controller
+{
+    /**
      * Store a new user.
      *
      * @param  Request  $request
      * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store<span class="token punctuation">(</span></span>Request <span class="token variable">$request</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     */
+    public function store(Request $request)
+    {
+        $name = $request-&gt;input(\'name\');
 
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+        //
+    }
+}'); ?>
 	<h4>Dependency Injection &amp; Route Parameters</h4>
 	<p>If your controller method is also expecting input from a route parameter you should list your route parameters after your other dependencies. For example, if your route is defined like so:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">put<span class="token punctuation">(</span></span><span class="token string">'user/{id}'</span><span class="token punctuation">,</span> <span class="token string">'UserController@update'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>You may still type-hint the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> and access your route parameter <code class=" language-php">id</code> by defining your controller method as follows:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+	<?php echo Code::getHtmlStatic('Route::put(\'user/{id}\', \'UserController@update\');'); ?>
+	<p>You may still type-hint the Illuminate\Http\Request and access your route parameter id by defining your controller method as follows:</p>
+	<?php echo Code::getHtmlStatic('&lt;?php
 
-<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+namespace App\Http\Controllers;
 
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+use Illuminate\Http\Request;
 
-<span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
+class UserController extends Controller
+{
+    /**
      * Update the specified user.
      *
      * @param  Request  $request
      * @param  string  $id
      * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">update<span class="token punctuation">(</span></span>Request <span class="token variable">$request</span><span class="token punctuation">,</span> <span class="token variable">$id</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+}'); ?>
 	<h4>Accessing The Request Via Route Closures</h4>
-	<p>You may also type-hint the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> class on a route Closure. The service container will automatically inject the incoming request into the Closure when it is executed:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+	<p>You may also type-hint the Illuminate\Http\Request class on a route Closure. The service container will automatically inject the incoming request into the Closure when it is executed:</p>
+	<?php echo Code::getHtmlStatic('use Illuminate\Http\Request;
 
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>Request <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+Route::get(\'/\', function (Request $request) {
+    //
+});'); ?>
 	<p><a name="request-path-and-method"></a></p>
 	<h3>Request Path &amp; Method</h3>
-	<p>The <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> instance provides a variety of methods for examining the HTTP request for your application and extends the <code class=" language-php">Symfony\<span class="token package">Component<span class="token punctuation">\</span>HttpFoundation<span class="token punctuation">\</span>Request</span></code> class. We will discuss a few of the most important methods below.</p>
+	<p>The Illuminate\Http\Request instance provides a variety of methods for examining the HTTP request for your application and extends the Symfony\Component\HttpFoundation\Request class. We will discuss a few of the most important methods below.</p>
 	<h4>Retrieving The Request Path</h4>
-	<p>The <code class=" language-php">path</code> method returns the request's path information. So, if the incoming request is targeted at <code class=" language-php">http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>domain<span class="token punctuation">.</span>com<span class="token operator">/</span>foo<span class="token operator">/</span>bar</code>, the <code class=" language-php">path</code> method will return <code class=" language-php">foo<span class="token operator">/</span>bar</code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$uri</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>The <code class=" language-php">is</code> method allows you to verify that the incoming request path matches a given pattern. You may use the <code class=" language-php"><span class="token operator">*</span></code> character as a wildcard when utilizing this method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">is<span class="token punctuation">(</span></span><span class="token string">'admin/*'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
+	<p>The path method returns the request's path information. So, if the incoming request is targeted at http://domain.com/foo/bar, the path method will return foo/bar:</p>
+	<?php echo Code::getHtmlStatic('$uri = $request-&gt;path();'); ?>
+	<p>The is method allows you to verify that the incoming request path matches a given pattern. You may use the * character as a wildcard when utilizing this method:</p>
+	<?php echo Code::getHtmlStatic('if ($request-&gt;is(\'admin/*\')) {
+    //
+}'); ?>
 	<h4>Retrieving The Request URL</h4>
-	<p>To retrieve the full URL for the incoming request you may use the <code class=" language-php">url</code> or <code class=" language-php">fullUrl</code> methods. The <code class=" language-php">url</code> method will return the URL without the query string, while the <code class=" language-php">fullUrl</code> method includes the query string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// Without Query String...
-</span><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">url<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// With Query String...
-</span><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">fullUrl<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<h4>Retrieving The Request Method</h4>
-	<p>The <code class=" language-php">method</code> method will return the HTTP verb for the request. You may use the <code class=" language-php">isMethod</code> method to verify that the HTTP verb matches a given string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$method</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">method<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>To retrieve the full URL for the incoming request you may use the url or fullUrl methods. The url method will return the URL without the query string, while the fullUrl method includes the query string:</p>
+	<?php echo Code::getHtmlStatic('// Without Query String...
+$url = $request-&gt;url();
 
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isMethod<span class="token punctuation">(</span></span><span class="token string">'post'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
+// With Query String...
+$url = $request-&gt;fullUrl();'); ?>
+	<h4>Retrieving The Request Method</h4>
+	<p>The method method will return the HTTP verb for the request. You may use the isMethod method to verify that the HTTP verb matches a given string:</p>
+	<?php echo Code::getHtmlStatic('$method = $request-&gt;method();
+
+if ($request-&gt;isMethod(\'post\')) {
+    //
+}'); ?>
 	<p><a name="psr7-requests"></a></p>
 	<h3>PSR-7 Requests</h3>
 	<p>The <a href="http://www.php-fig.org/psr/psr-7/">PSR-7 standard</a> specifies interfaces for HTTP messages, including requests and responses. If you would like to obtain an instance of a PSR-7 request instead of a Space MVC request, you will first need to install a few libraries. Space MVC uses the <em>Symfony HTTP Message Bridge</em> component to convert typical Space MVC requests and responses into PSR-7 compatible implementations:</p>
-	<pre class=" language-php"><code class=" language-php">composer <span class="token keyword">require</span> symfony<span class="token operator">/</span>psr<span class="token operator">-</span>http<span class="token operator">-</span>message<span class="token operator">-</span>bridge
-composer <span class="token keyword">require</span> zendframework<span class="token operator">/</span>zend<span class="token operator">-</span>diactoros</code></pre>
+	<?php echo Code::getHtmlStatic('composer require symfony/psr-http-message-bridge
+composer require zendframework/zend-diactoros'); ?>
 	<p>Once you have installed these libraries, you may obtain a PSR-7 request by type-hinting the request interface on your route Closure or controller method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Psr<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Message<span class="token punctuation">\</span>ServerRequestInterface</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('use Psr\Http\Message\ServerRequestInterface;
 
-<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>ServerRequestInterface <span class="token variable">$request</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<blockquote class="has-icon">
-		<p class="tip"><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="56.6px" height="87.5px" viewBox="0 0 56.6 87.5" enable-background="new 0 0 56.6 87.5" xml:space="preserve"><path fill="#FFFFFF" d="M28.7 64.5c-1.4 0-2.5-1.1-2.5-2.5v-5.7 -5V41c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v10.1 5 5.8C31.2 63.4 30.1 64.5 28.7 64.5zM26.4 0.1C11.9 1 0.3 13.1 0 27.7c-0.1 7.9 3 15.2 8.2 20.4 0.5 0.5 0.8 1 1 1.7l3.1 13.1c0.3 1.1 1.3 1.9 2.4 1.9 0.3 0 0.7-0.1 1.1-0.2 1.1-0.5 1.6-1.8 1.4-3l-2-8.4 -0.4-1.8c-0.7-2.9-2-5.7-4-8 -1-1.2-2-2.5-2.7-3.9C5.8 35.3 4.7 30.3 5.4 25 6.7 14.5 15.2 6.3 25.6 5.1c13.9-1.5 25.8 9.4 25.8 23 0 4.1-1.1 7.9-2.9 11.2 -0.8 1.4-1.7 2.7-2.7 3.9 -2 2.3-3.3 5-4 8L41.4 53l-2 8.4c-0.3 1.2 0.3 2.5 1.4 3 0.3 0.2 0.7 0.2 1.1 0.2 1.1 0 2.2-0.8 2.4-1.9l3.1-13.1c0.2-0.6 0.5-1.2 1-1.7 5-5.1 8.2-12.1 8.2-19.8C56.4 12 42.8-1 26.4 0.1zM43.7 69.6c0 0.5-0.1 0.9-0.3 1.3 -0.4 0.8-0.7 1.6-0.9 2.5 -0.7 3-2 8.6-2 8.6 -1.3 3.2-4.4 5.5-7.9 5.5h-4.1H28h-0.5 -3.6c-3.5 0-6.7-2.4-7.9-5.7l-0.1-0.4 -1.8-7.8c-0.4-1.1-0.8-2.1-1.2-3.1 -0.1-0.3-0.2-0.5-0.2-0.9 0.1-1.3 1.3-2.1 2.6-2.1H41C42.4 67.5 43.6 68.2 43.7 69.6zM37.7 72.5H26.9c-4.2 0-7.2 3.9-6.3 7.9 0.6 1.3 1.8 2.1 3.2 2.1h4.1 0.5 0.5 3.6c1.4 0 2.7-0.8 3.2-2.1L37.7 72.5z"></path></svg></span></div> If you return a PSR-7 response instance from a route or controller, it will automatically be converted back to a Space MVC response instance and be displayed by the framework.</p>
-	</blockquote>
+Route::get(\'/\', function (ServerRequestInterface $request) {
+    //
+});'); ?>
+	
+		 If you return a PSR-7 response instance from a route or controller, it will automatically be converted back to a Space MVC response instance and be displayed by the framework.</p>
+	
 	<p><a name="input-trimming-and-normalization"></a></p>
 	<h2><a href="#input-trimming-and-normalization">Input Trimming &amp; Normalization</a></h2>
-	<p>By default, Space MVC includes the <code class=" language-php">TrimStrings</code> and <code class=" language-php">ConvertEmptyStringsToNull</code> middleware in your application's global middleware stack. These middleware are listed in the stack by the <code class=" language-php">App\<span class="token package">Http<span class="token punctuation">\</span>Kernel</span></code> class. These middleware will automatically trim all incoming string fields on the request, as well as convert any empty string fields to <code class=" language-php"><span class="token keyword">null</span></code>. This allows you to not have to worry about these normalization concerns in your routes and controllers.</p>
-	<p>If you would like to disable this behavior, you may remove the two middleware from your application's middleware stack by removing them from the <code class=" language-php"><span class="token variable">$middleware</span></code> property of your <code class=" language-php">App\<span class="token package">Http<span class="token punctuation">\</span>Kernel</span></code> class.</p>
+	<p>By default, Space MVC includes the TrimStrings and ConvertEmptyStringsToNull middleware in your application's global middleware stack. These middleware are listed in the stack by the App\Http\Kernel class. These middleware will automatically trim all incoming string fields on the request, as well as convert any empty string fields to null. This allows you to not have to worry about these normalization concerns in your routes and controllers.</p>
+	<p>If you would like to disable this behavior, you may remove the two middleware from your application's middleware stack by removing them from the $middleware property of your App\Http\Kernel class.</p>
 	<p><a name="retrieving-input"></a></p>
 	<h2><a href="#retrieving-input">Retrieving Input</a></h2>
 	<h4>Retrieving All Input Data</h4>
-	<p>You may also retrieve all of the input data as an <code class=" language-php"><span class="token keyword">array</span></code> using the <code class=" language-php">all</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">all<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p>You may also retrieve all of the input data as an array using the all method:</p>
+	<?php echo Code::getHtmlStatic('$input = $request-&gt;all();'); ?>
 	<h4>Retrieving An Input Value</h4>
-	<p>Using a few simple methods, you may access all of the user input from your <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> instance without worrying about which HTTP verb was used for the request. Regardless of the HTTP verb, the <code class=" language-php">input</code> method may be used to retrieve user input:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>You may pass a default value as the second argument to the <code class=" language-php">input</code> method. This value will be returned if the requested input value is not present on the request:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'Sally'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p>Using a few simple methods, you may access all of the user input from your Illuminate\Http\Request instance without worrying about which HTTP verb was used for the request. Regardless of the HTTP verb, the input method may be used to retrieve user input:</p>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;input(\'name\');'); ?>
+	<p>You may pass a default value as the second argument to the input method. This value will be returned if the requested input value is not present on the request:</p>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;input(\'name\', \'Sally\');'); ?>
 	<p>When working with forms that contain array inputs, use "dot" notation to access the arrays:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input<span class="token punctuation">(</span></span><span class="token string">'products.0.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;input(\'products.0.name\');
 
-<span class="token variable">$names</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input<span class="token punctuation">(</span></span><span class="token string">'products.*.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$names = $request-&gt;input(\'products.*.name\');'); ?>
 	<h4>Retrieving Input From The Query String</h4>
-	<p>While the <code class=" language-php">input</code> method retrieves values from entire request payload (including the query string), the <code class=" language-php">query</code> method will only retrieve values from the query string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">query<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p>While the input method retrieves values from entire request payload (including the query string), the query method will only retrieve values from the query string:</p>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;query(\'name\');'); ?>
 	<p>If the requested query string value data is not present, the second argument to this method will be returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">query<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'Helen'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>You may call the <code class=" language-php">query</code> method without any arguments in order to retrieve all of the query string values as an associative array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$query</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">query<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;query(\'name\', \'Helen\');'); ?>
+	<p>You may call the query method without any arguments in order to retrieve all of the query string values as an associative array:</p>
+	<?php echo Code::getHtmlStatic('$query = $request-&gt;query();'); ?>
 	<h4>Retrieving Input Via Dynamic Properties</h4>
-	<p>You may also access user input using dynamic properties on the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> instance. For example, if one of your application's forms contains a <code class=" language-php">name</code> field, you may access the value of the field like so:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span><span class="token punctuation">;</span></code></pre>
+	<p>You may also access user input using dynamic properties on the Illuminate\Http\Request instance. For example, if one of your application's forms contains a name field, you may access the value of the field like so:</p>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;name;'); ?>
 	<p>When using dynamic properties, Space MVC will first look for the parameter's value in the request payload. If it is not present, Space MVC will search for the field in the route parameters.</p>
 	<h4>Retrieving JSON Input Values</h4>
-	<p>When sending JSON requests to your application, you may access the JSON data via the <code class=" language-php">input</code> method as long as the <code class=" language-php">Content<span class="token operator">-</span>Type</code> header of the request is properly set to <code class=" language-php">application<span class="token operator">/</span>json</code>. You may even use "dot" syntax to dig into JSON arrays:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$name</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input<span class="token punctuation">(</span></span><span class="token string">'user.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p>When sending JSON requests to your application, you may access the JSON data via the input method as long as the Content-Type header of the request is properly set to application/json. You may even use "dot" syntax to dig into JSON arrays:</p>
+	<?php echo Code::getHtmlStatic('$name = $request-&gt;input(\'user.name\');'); ?>
 	<h4>Retrieving A Portion Of The Input Data</h4>
-	<p>If you need to retrieve a subset of the input data, you may use the <code class=" language-php">only</code> and <code class=" language-php">except</code> methods. Both of these methods accept a single <code class=" language-php"><span class="token keyword">array</span></code> or a dynamic list of arguments:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">only<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>If you need to retrieve a subset of the input data, you may use the only and except methods. Both of these methods accept a single array or a dynamic list of arguments:</p>
+	<?php echo Code::getHtmlStatic('$input = $request-&gt;only([\'username\', \'password\']);
 
-<span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">only<span class="token punctuation">(</span></span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$input = $request-&gt;only(\'username\', \'password\');
 
-<span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">except<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'credit_card'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$input = $request-&gt;except([\'credit_card\']);
 
-<span class="token variable">$input</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">except<span class="token punctuation">(</span></span><span class="token string">'credit_card'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<blockquote class="has-icon">
-		<p class="tip"><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="56.6px" height="87.5px" viewBox="0 0 56.6 87.5" enable-background="new 0 0 56.6 87.5" xml:space="preserve"><path fill="#FFFFFF" d="M28.7 64.5c-1.4 0-2.5-1.1-2.5-2.5v-5.7 -5V41c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v10.1 5 5.8C31.2 63.4 30.1 64.5 28.7 64.5zM26.4 0.1C11.9 1 0.3 13.1 0 27.7c-0.1 7.9 3 15.2 8.2 20.4 0.5 0.5 0.8 1 1 1.7l3.1 13.1c0.3 1.1 1.3 1.9 2.4 1.9 0.3 0 0.7-0.1 1.1-0.2 1.1-0.5 1.6-1.8 1.4-3l-2-8.4 -0.4-1.8c-0.7-2.9-2-5.7-4-8 -1-1.2-2-2.5-2.7-3.9C5.8 35.3 4.7 30.3 5.4 25 6.7 14.5 15.2 6.3 25.6 5.1c13.9-1.5 25.8 9.4 25.8 23 0 4.1-1.1 7.9-2.9 11.2 -0.8 1.4-1.7 2.7-2.7 3.9 -2 2.3-3.3 5-4 8L41.4 53l-2 8.4c-0.3 1.2 0.3 2.5 1.4 3 0.3 0.2 0.7 0.2 1.1 0.2 1.1 0 2.2-0.8 2.4-1.9l3.1-13.1c0.2-0.6 0.5-1.2 1-1.7 5-5.1 8.2-12.1 8.2-19.8C56.4 12 42.8-1 26.4 0.1zM43.7 69.6c0 0.5-0.1 0.9-0.3 1.3 -0.4 0.8-0.7 1.6-0.9 2.5 -0.7 3-2 8.6-2 8.6 -1.3 3.2-4.4 5.5-7.9 5.5h-4.1H28h-0.5 -3.6c-3.5 0-6.7-2.4-7.9-5.7l-0.1-0.4 -1.8-7.8c-0.4-1.1-0.8-2.1-1.2-3.1 -0.1-0.3-0.2-0.5-0.2-0.9 0.1-1.3 1.3-2.1 2.6-2.1H41C42.4 67.5 43.6 68.2 43.7 69.6zM37.7 72.5H26.9c-4.2 0-7.2 3.9-6.3 7.9 0.6 1.3 1.8 2.1 3.2 2.1h4.1 0.5 0.5 3.6c1.4 0 2.7-0.8 3.2-2.1L37.7 72.5z"></path></svg></span></div> The <code class=" language-php">only</code> method returns all of the key / value pairs that you request; however, it will not return key / value pairs that are not present on the request.</p>
-	</blockquote>
+$input = $request-&gt;except(\'credit_card\');'); ?>
+	
+		 The only method returns all of the key / value pairs that you request; however, it will not return key / value pairs that are not present on the request.</p>
+	
 	<h4>Determining If An Input Value Is Present</h4>
-	<p>You should use the <code class=" language-php">has</code> method to determine if a value is present on the request. The <code class=" language-php">has</code> method returns <code class=" language-php"><span class="token boolean">true</span></code> if the value is present on the request:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">has<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
-	<p>When given an array, the <code class=" language-php">has</code> method will determine if all of the specified values are present:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">has<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'email'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
-	<p>If you would like to determine if a value is present on the request and is not empty, you may use the <code class=" language-php">filled</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">filled<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
+	<p>You should use the has method to determine if a value is present on the request. The has method returns true if the value is present on the request:</p>
+	<?php echo Code::getHtmlStatic('if ($request-&gt;has(\'name\')) {
+    //
+}'); ?>
+	<p>When given an array, the has method will determine if all of the specified values are present:</p>
+	<?php echo Code::getHtmlStatic('if ($request-&gt;has([\'name\', \'email\'])) {
+    //
+}'); ?>
+	<p>If you would like to determine if a value is present on the request and is not empty, you may use the filled method:</p>
+	<?php echo Code::getHtmlStatic('if ($request-&gt;filled(\'name\')) {
+    //
+}'); ?>
 	<p><a name="old-input"></a></p>
 	<h3>Old Input</h3>
 	<p>Space MVC allows you to keep input from one request during the next request. This feature is particularly useful for re-populating forms after detecting validation errors. However, if you are using Space MVC's included <a href="/docs/5.7/validation">validation features</a>, it is unlikely you will need to manually use these methods, as some of Space MVC's built-in validation facilities will call them automatically.</p>
 	<h4>Flashing Input To The Session</h4>
-	<p>The <code class=" language-php">flash</code> method on the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> class will flash the current input to the <a href="/docs/5.7/session">session</a> so that it is available during the user's next request to the application:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">flash<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>You may also use the <code class=" language-php">flashOnly</code> and <code class=" language-php">flashExcept</code> methods to flash a subset of the request data to the session. These methods are useful for keeping sensitive information such as passwords out of the session:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">flashOnly<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token string">'email'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>The flash method on the Illuminate\Http\Request class will flash the current input to the <a href="/docs/5.7/session">session</a> so that it is available during the user's next request to the application:</p>
+	<?php echo Code::getHtmlStatic('$request-&gt;flash();'); ?>
+	<p>You may also use the flashOnly and flashExcept methods to flash a subset of the request data to the session. These methods are useful for keeping sensitive information such as passwords out of the session:</p>
+	<?php echo Code::getHtmlStatic('$request-&gt;flashOnly([\'username\', \'email\']);
 
-<span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">flashExcept<span class="token punctuation">(</span></span><span class="token string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$request-&gt;flashExcept(\'password\');'); ?>
 	<h4>Flashing Input Then Redirecting</h4>
-	<p>Since you often will want to flash input to the session and then redirect to the previous page, you may easily chain input flashing onto a redirect using the <code class=" language-php">withInput</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">redirect<span class="token punctuation">(</span></span><span class="token string">'form'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">withInput<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>Since you often will want to flash input to the session and then redirect to the previous page, you may easily chain input flashing onto a redirect using the withInput method:</p>
+	<?php echo Code::getHtmlStatic('return redirect(\'form\')-&gt;withInput();
 
-<span class="token keyword">return</span> <span class="token function">redirect<span class="token punctuation">(</span></span><span class="token string">'form'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">withInput<span class="token punctuation">(</span></span>
-    <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">except<span class="token punctuation">(</span></span><span class="token string">'password'</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return redirect(\'form\')-&gt;withInput(
+    $request-&gt;except(\'password\')
+);'); ?>
 	<h4>Retrieving Old Input</h4>
-	<p>To retrieve flashed input from the previous request, use the <code class=" language-php">old</code> method on the <code class=" language-php">Request</code> instance. The <code class=" language-php">old</code> method will pull the previously flashed input data from the <a href="/docs/5.7/session">session</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$username</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">old<span class="token punctuation">(</span></span><span class="token string">'username'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>Space MVC also provides a global <code class=" language-php">old</code> helper. If you are displaying old input within a <a href="/docs/5.7/blade">Blade template</a>, it is more convenient to use the <code class=" language-php">old</code> helper. If no old input exists for the given field, <code class=" language-php"><span class="token keyword">null</span></code> will be returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ old('username') }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span></code></pre>
+	<p>To retrieve flashed input from the previous request, use the old method on the Request instance. The old method will pull the previously flashed input data from the <a href="/docs/5.7/session">session</a>:</p>
+	<?php echo Code::getHtmlStatic('$username = $request-&gt;old(\'username\');'); ?>
+	<p>Space MVC also provides a global old helper. If you are displaying old input within a <a href="/docs/5.7/blade">Blade template</a>, it is more convenient to use the old helper. If no old input exists for the given field, null will be returned:</p>
+	<?php echo Code::getHtmlStatic('&lt;input type="text" name="username" value="{{ old(\'username\') }}"&gt;'); ?>
 	<p><a name="cookies"></a></p>
 	<h3>Cookies</h3>
 	<h4>Retrieving Cookies From Requests</h4>
-	<p>All cookies created by the Space MVC framework are encrypted and signed with an authentication code, meaning they will be considered invalid if they have been changed by the client. To retrieve a cookie value from the request, use the <code class=" language-php">cookie</code> method on a <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> instance:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">cookie<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>Alternatively, you may use the <code class=" language-php">Cookie</code> facade to access cookie values:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token scope">Cookie<span class="token punctuation">::</span></span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p>All cookies created by the Space MVC framework are encrypted and signed with an authentication code, meaning they will be considered invalid if they have been changed by the client. To retrieve a cookie value from the request, use the cookie method on a Illuminate\Http\Request instance:</p>
+	<?php echo Code::getHtmlStatic('$value = $request-&gt;cookie(\'name\');'); ?>
+	<p>Alternatively, you may use the Cookie facade to access cookie values:</p>
+	<?php echo Code::getHtmlStatic('$value = Cookie::get(\'name\');'); ?>
 	<h4>Attaching Cookies To Responses</h4>
-	<p>You may attach a cookie to an outgoing <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Response</span></code> instance using the <code class=" language-php">cookie</code> method. You should pass the name, value, and number of minutes the cookie should be considered valid to this method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">response<span class="token punctuation">(</span></span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">cookie<span class="token punctuation">(</span></span>
-    <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token variable">$minutes</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>The <code class=" language-php">cookie</code> method also accepts a few more arguments which are used less frequently. Generally, these arguments have the same purpose and meaning as the arguments that would be given to PHP's native <a href="https://secure.php.net/manual/en/function.setcookie.php">setcookie</a> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">response<span class="token punctuation">(</span></span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">cookie<span class="token punctuation">(</span></span>
-    <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token variable">$minutes</span><span class="token punctuation">,</span> <span class="token variable">$path</span><span class="token punctuation">,</span> <span class="token variable">$domain</span><span class="token punctuation">,</span> <span class="token variable">$secure</span><span class="token punctuation">,</span> <span class="token variable">$httpOnly</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>Alternatively, you can use the <code class=" language-php">Cookie</code> facade to "queue" cookies for attachment to the outgoing response from your application. The <code class=" language-php">queue</code> method accepts a <code class=" language-php">Cookie</code> instance or the arguments needed to create a <code class=" language-php">Cookie</code> instance. These cookies will be attached to the outgoing response before it is sent to the browser:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token scope">Cookie<span class="token punctuation">::</span></span><span class="token function">queue<span class="token punctuation">(</span></span><span class="token scope">Cookie<span class="token punctuation">::</span></span><span class="token function">make<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token variable">$minutes</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>You may attach a cookie to an outgoing Illuminate\Http\Response instance using the cookie method. You should pass the name, value, and number of minutes the cookie should be considered valid to this method:</p>
+	<?php echo Code::getHtmlStatic('return response(\'Hello World\')-&gt;cookie(
+    \'name\', \'value\', $minutes
+);'); ?>
+	<p>The cookie method also accepts a few more arguments which are used less frequently. Generally, these arguments have the same purpose and meaning as the arguments that would be given to PHP's native <a href="https://secure.php.net/manual/en/function.setcookie.php">setcookie</a> method:</p>
+	<?php echo Code::getHtmlStatic('return response(\'Hello World\')-&gt;cookie(
+    \'name\', \'value\', $minutes, $path, $domain, $secure, $httpOnly
+);'); ?>
+	<p>Alternatively, you can use the Cookie facade to "queue" cookies for attachment to the outgoing response from your application. The queue method accepts a Cookie instance or the arguments needed to create a Cookie instance. These cookies will be attached to the outgoing response before it is sent to the browser:</p>
+	<?php echo Code::getHtmlStatic('Cookie::queue(Cookie::make(\'name\', \'value\', $minutes));
 
-<span class="token scope">Cookie<span class="token punctuation">::</span></span><span class="token function">queue<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token variable">$minutes</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+Cookie::queue(\'name\', \'value\', $minutes);'); ?>
 	<h4>Generating Cookie Instances</h4>
-	<p>If you would like to generate a <code class=" language-php">Symfony\<span class="token package">Component<span class="token punctuation">\</span>HttpFoundation<span class="token punctuation">\</span>Cookie</span></code> instance that can be given to a response instance at a later time, you may use the global <code class=" language-php">cookie</code> helper. This cookie will not be sent back to the client unless it is attached to a response instance:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$cookie</span> <span class="token operator">=</span> <span class="token function">cookie<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token variable">$minutes</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>If you would like to generate a Symfony\Component\HttpFoundation\Cookie instance that can be given to a response instance at a later time, you may use the global cookie helper. This cookie will not be sent back to the client unless it is attached to a response instance:</p>
+	<?php echo Code::getHtmlStatic('$cookie = cookie(\'name\', \'value\', $minutes);
 
-<span class="token keyword">return</span> <span class="token function">response<span class="token punctuation">(</span></span><span class="token string">'Hello World'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">cookie<span class="token punctuation">(</span></span><span class="token variable">$cookie</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return response(\'Hello World\')-&gt;cookie($cookie);'); ?>
 	<p><a name="files"></a></p>
 	<h2><a href="#files">Files</a></h2>
 	<p><a name="retrieving-uploaded-files"></a></p>
 	<h3>Retrieving Uploaded Files</h3>
-	<p>You may access uploaded files from a <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>Request</span></code> instance using the <code class=" language-php">file</code> method or using dynamic properties. The <code class=" language-php">file</code> method returns an instance of the <code class=" language-php">Illuminate\<span class="token package">Http<span class="token punctuation">\</span>UploadedFile</span></code> class, which extends the PHP <code class=" language-php">SplFileInfo</code> class and provides a variety of methods for interacting with the file:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$file</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file<span class="token punctuation">(</span></span><span class="token string">'photo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>You may access uploaded files from a Illuminate\Http\Request instance using the file method or using dynamic properties. The file method returns an instance of the Illuminate\Http\UploadedFile class, which extends the PHP SplFileInfo class and provides a variety of methods for interacting with the file:</p>
+	<?php echo Code::getHtmlStatic('$file = $request-&gt;file(\'photo\');
 
-<span class="token variable">$file</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token punctuation">;</span></code></pre>
-	<p>You may determine if a file is present on the request using the <code class=" language-php">hasFile</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">hasFile<span class="token punctuation">(</span></span><span class="token string">'photo'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
+$file = $request-&gt;photo;'); ?>
+	<p>You may determine if a file is present on the request using the hasFile method:</p>
+	<?php echo Code::getHtmlStatic('if ($request-&gt;hasFile(\'photo\')) {
+    //
+}'); ?>
 	<h4>Validating Successful Uploads</h4>
-	<p>In addition to checking if the file is present, you may verify that there were no problems uploading the file via the <code class=" language-php">isValid</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">file<span class="token punctuation">(</span></span><span class="token string">'photo'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isValid<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span></code></pre>
+	<p>In addition to checking if the file is present, you may verify that there were no problems uploading the file via the isValid method:</p>
+	<?php echo Code::getHtmlStatic('if ($request-&gt;file(\'photo\')-&gt;isValid()) {
+    //
+}'); ?>
 	<h4>File Paths &amp; Extensions</h4>
-	<p>The <code class=" language-php">UploadedFile</code> class also contains methods for accessing the file's fully-qualified path and its extension. The <code class=" language-php">extension</code> method will attempt to guess the file's extension based on its contents. This extension may be different from the extension that was supplied by the client:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>The UploadedFile class also contains methods for accessing the file's fully-qualified path and its extension. The extension method will attempt to guess the file's extension based on its contents. This extension may be different from the extension that was supplied by the client:</p>
+	<?php echo Code::getHtmlStatic('$path = $request-&gt;photo-&gt;path();
 
-<span class="token variable">$extension</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">extension<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$extension = $request-&gt;photo-&gt;extension();'); ?>
 	<h4>Other File Methods</h4>
-	<p>There are a variety of other methods available on <code class=" language-php">UploadedFile</code> instances. Check out the <a href="http://api.symfony.com/3.0/Symfony/Component/HttpFoundation/File/UploadedFile.html">API documentation for the class</a> for more information regarding these methods.</p>
+	<p>There are a variety of other methods available on UploadedFile instances. Check out the <a href="http://api.symfony.com/3.0/Symfony/Component/HttpFoundation/File/UploadedFile.html">API documentation for the class</a> for more information regarding these methods.</p>
 	<p><a name="storing-uploaded-files"></a></p>
 	<h3>Storing Uploaded Files</h3>
-	<p>To store an uploaded file, you will typically use one of your configured <a href="/docs/5.7/filesystem">filesystems</a>. The <code class=" language-php">UploadedFile</code> class has a <code class=" language-php">store</code> method which will move an uploaded file to one of your disks, which may be a location on your local filesystem or even a cloud storage location like Amazon S3.</p>
-	<p>The <code class=" language-php">store</code> method accepts the path where the file should be stored relative to the filesystem's configured root directory. This path should not contain a file name, since a unique ID will automatically be generated to serve as the file name.</p>
-	<p>The <code class=" language-php">store</code> method also accepts an optional second argument for the name of the disk that should be used to store the file. The method will return the path of the file relative to the disk's root:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">store<span class="token punctuation">(</span></span><span class="token string">'images'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<p>To store an uploaded file, you will typically use one of your configured <a href="/docs/5.7/filesystem">filesystems</a>. The UploadedFile class has a store method which will move an uploaded file to one of your disks, which may be a location on your local filesystem or even a cloud storage location like Amazon S3.</p>
+	<p>The store method accepts the path where the file should be stored relative to the filesystem's configured root directory. This path should not contain a file name, since a unique ID will automatically be generated to serve as the file name.</p>
+	<p>The store method also accepts an optional second argument for the name of the disk that should be used to store the file. The method will return the path of the file relative to the disk's root:</p>
+	<?php echo Code::getHtmlStatic('$path = $request-&gt;photo-&gt;store(\'images\');
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">store<span class="token punctuation">(</span></span><span class="token string">'images'</span><span class="token punctuation">,</span> <span class="token string">'s3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If you do not want a file name to be automatically generated, you may use the <code class=" language-php">storeAs</code> method, which accepts the path, file name, and disk name as its arguments:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">storeAs<span class="token punctuation">(</span></span><span class="token string">'images'</span><span class="token punctuation">,</span> <span class="token string">'filename.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$path = $request-&gt;photo-&gt;store(\'images\', \'s3\');'); ?>
+	<p>If you do not want a file name to be automatically generated, you may use the storeAs method, which accepts the path, file name, and disk name as its arguments:</p>
+	<?php echo Code::getHtmlStatic('$path = $request-&gt;photo-&gt;storeAs(\'images\', \'filename.jpg\');
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">photo</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">storeAs<span class="token punctuation">(</span></span><span class="token string">'images'</span><span class="token punctuation">,</span> <span class="token string">'filename.jpg'</span><span class="token punctuation">,</span> <span class="token string">'s3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = $request-&gt;photo-&gt;storeAs(\'images\', \'filename.jpg\', \'s3\');'); ?>
 	<p><a name="configuring-trusted-proxies"></a></p>
 	<h2><a href="#configuring-trusted-proxies">Configuring Trusted Proxies</a></h2>
 	<p>When running your applications behind a load balancer that terminates TLS / SSL certificates, you may notice your application sometimes does not generate HTTPS links. Typically this is because your application is being forwarded traffic from your load balancer on port 80 and does not know it should generate secure links.</p>
-	<p>To solve this, you may use the <code class=" language-php">App\<span class="token package">Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>TrustProxies</span></code> middleware that is included in your Space MVC application, which allows you to quickly customize the load balancers or proxies that should be trusted by your application. Your trusted proxies should be listed as an array on the <code class=" language-php"><span class="token variable">$proxies</span></code> property of this middleware. In addition to configuring the trusted proxies, you may configure the proxy <code class=" language-php"><span class="token variable">$headers</span></code> that should be trusted:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token delimiter">&lt;?php</span>
+	<p>To solve this, you may use the App\Http\Middleware\TrustProxies middleware that is included in your Space MVC application, which allows you to quickly customize the load balancers or proxies that should be trusted by your application. Your trusted proxies should be listed as an array on the $proxies property of this middleware. In addition to configuring the trusted proxies, you may configure the proxy $headers that should be trusted:</p>
+	<?php echo Code::getHtmlStatic('&lt;?php
 
-<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware</span><span class="token punctuation">;</span>
+namespace App\Http\Middleware;
 
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
-<span class="token keyword">use</span> <span class="token package">Fideloper<span class="token punctuation">\</span>Proxy<span class="token punctuation">\</span>TrustProxies</span> <span class="token keyword">as</span> Middleware<span class="token punctuation">;</span>
+use Illuminate\Http\Request;
+use Fideloper\Proxy\TrustProxies as Middleware;
 
-<span class="token keyword">class</span> <span class="token class-name">TrustProxies</span> <span class="token keyword">extends</span> <span class="token class-name">Middleware</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
+class TrustProxies extends Middleware
+{
+    /**
      * The trusted proxies for this application.
      *
      * @var array
-     */</span>
-    <span class="token keyword">protected</span> <span class="token variable">$proxies</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token string">'192.168.1.1'</span><span class="token punctuation">,</span>
-        <span class="token string">'192.168.1.2'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+     */
+    protected $proxies = [
+        \'192.168.1.1\',
+        \'192.168.1.2\',
+    ];
 
-    <span class="token comment" spellcheck="true">/**
+    /**
      * The headers that should be used to detect proxies.
      *
      * @var string
-     */</span>
-    <span class="token keyword">protected</span> <span class="token variable">$headers</span> <span class="token operator">=</span> <span class="token scope">Request<span class="token punctuation">::</span></span><span class="token constant">HEADER_X_FORWARDED_ALL</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-	<blockquote class="has-icon">
-		<p class="tip"><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="56.6px" height="87.5px" viewBox="0 0 56.6 87.5" enable-background="new 0 0 56.6 87.5" xml:space="preserve"><path fill="#FFFFFF" d="M28.7 64.5c-1.4 0-2.5-1.1-2.5-2.5v-5.7 -5V41c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v10.1 5 5.8C31.2 63.4 30.1 64.5 28.7 64.5zM26.4 0.1C11.9 1 0.3 13.1 0 27.7c-0.1 7.9 3 15.2 8.2 20.4 0.5 0.5 0.8 1 1 1.7l3.1 13.1c0.3 1.1 1.3 1.9 2.4 1.9 0.3 0 0.7-0.1 1.1-0.2 1.1-0.5 1.6-1.8 1.4-3l-2-8.4 -0.4-1.8c-0.7-2.9-2-5.7-4-8 -1-1.2-2-2.5-2.7-3.9C5.8 35.3 4.7 30.3 5.4 25 6.7 14.5 15.2 6.3 25.6 5.1c13.9-1.5 25.8 9.4 25.8 23 0 4.1-1.1 7.9-2.9 11.2 -0.8 1.4-1.7 2.7-2.7 3.9 -2 2.3-3.3 5-4 8L41.4 53l-2 8.4c-0.3 1.2 0.3 2.5 1.4 3 0.3 0.2 0.7 0.2 1.1 0.2 1.1 0 2.2-0.8 2.4-1.9l3.1-13.1c0.2-0.6 0.5-1.2 1-1.7 5-5.1 8.2-12.1 8.2-19.8C56.4 12 42.8-1 26.4 0.1zM43.7 69.6c0 0.5-0.1 0.9-0.3 1.3 -0.4 0.8-0.7 1.6-0.9 2.5 -0.7 3-2 8.6-2 8.6 -1.3 3.2-4.4 5.5-7.9 5.5h-4.1H28h-0.5 -3.6c-3.5 0-6.7-2.4-7.9-5.7l-0.1-0.4 -1.8-7.8c-0.4-1.1-0.8-2.1-1.2-3.1 -0.1-0.3-0.2-0.5-0.2-0.9 0.1-1.3 1.3-2.1 2.6-2.1H41C42.4 67.5 43.6 68.2 43.7 69.6zM37.7 72.5H26.9c-4.2 0-7.2 3.9-6.3 7.9 0.6 1.3 1.8 2.1 3.2 2.1h4.1 0.5 0.5 3.6c1.4 0 2.7-0.8 3.2-2.1L37.7 72.5z"></path></svg></span></div> If you are using AWS Elastic Load Balancing, your <code class=" language-php"><span class="token variable">$headers</span></code> value should be <code class=" language-php"><span class="token scope">Request<span class="token punctuation">::</span></span><span class="token constant">HEADER_X_FORWARDED_AWS_ELB</span></code>. For more information on the constants that may be used in the <code class=" language-php"><span class="token variable">$headers</span></code> property, check out Symfony's documentation on <a href="http://symfony.com/doc/current/deployment/proxies.html">trusting proxies</a>.</p>
-	</blockquote>
+     */
+    protected $headers = Request::HEADER_X_FORWARDED_ALL;
+}'); ?>
+	
+		 If you are using AWS Elastic Load Balancing, your $headers value should be Request::HEADER_X_FORWARDED_AWS_ELB. For more information on the constants that may be used in the $headers property, check out Symfony's documentation on <a href="http://symfony.com/doc/current/deployment/proxies.html">trusting proxies</a>.</p>
+	
 	<h4>Trusting All Proxies</h4>
-	<p>If you are using Amazon AWS or another "cloud" load balancer provider, you may not know the IP addresses of your actual balancers. In this case, you may use <code class=" language-php"><span class="token operator">*</span></code> to trust all proxies:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">/**
+	<p>If you are using Amazon AWS or another "cloud" load balancer provider, you may not know the IP addresses of your actual balancers. In this case, you may use * to trust all proxies:</p>
+	<?php echo Code::getHtmlStatic('/**
  * The trusted proxies for this application.
  *
  * @var array
- */</span>
-<span class="token keyword">protected</span> <span class="token variable">$proxies</span> <span class="token operator">=</span> <span class="token string">'*'</span><span class="token punctuation">;</span></code></pre>
+ */
+protected $proxies = \'*\';'); ?>
 </article>
