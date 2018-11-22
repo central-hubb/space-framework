@@ -32,6 +32,14 @@ class DatabaseController extends Controller
 	}
 
 	/**
+	 * configuration.
+	 */
+	public function configuration()
+	{
+		return $this->di->view('docs.database.configuration');
+	}
+
+	/**
 	 * conventions.
 	 */
 	public function conventions()
@@ -53,6 +61,14 @@ class DatabaseController extends Controller
 	public function finders()
 	{
 		return $this->di->view('docs.database.finders');
+	}
+
+	/**
+	 * relationships.
+	 */
+	public function relationships()
+	{
+		return $this->di->view('docs.database.relationships');
 	}
 
 	/**
@@ -85,14 +101,6 @@ class DatabaseController extends Controller
 	public function seeding()
 	{
 		return $this->di->view('docs.database.seeding');
-	}
-
-	/**
-	 * relationships.
-	 */
-	public function relationships()
-	{
-		return $this->di->view('docs.database.relationships');
 	}
 
 	/**

@@ -41,18 +41,21 @@
 <!--                <li><a href="/docs/advanced/helpers">* Helpers</a></li>-->
             </ul>
         </li>
+
         <li><a href="#" style="color:#5A5A5A;text-decoration: none;">Database</a>
             <ul>
                 <li><a href="/docs/database/getting-started">Getting Started</a></li>
+                <li><a href="/docs/database/configuration">Configuration</a></li>
                 <li><a href="/docs/database/conventions">Conventions</a></li>
                 <li><a href="/docs/database/basic-crud">Basic Crud</a></li>
                 <li><a href="/docs/database/finders">Finders</a></li>
-
-                <li><a href="/docs/database/query-builder">Query Builder</a></li>
-                <li><a href="/docs/database/pagination">Pagination</a></li>
-                <li><a href="/docs/database/migrations">Migrations</a></li>
-                <li><a href="/docs/database/seeding">Seeding</a></li>
                 <li><a href="/docs/database/relationships">Relationships</a></li>
+
+<!--                <li><a href="/docs/database/migrations">Migrations</a></li>-->
+<!--                <li><a href="/docs/database/seeding">Seeding</a></li>-->
+<!--                <li><a href="/docs/database/relationships">Relationships</a></li>-->
+<!--                <li><a href="/docs/database/query-builder">Query Builder</a></li>-->
+<!--                <li><a href="/docs/database/pagination">Pagination</a></li>-->
             </ul>
         </li>
 

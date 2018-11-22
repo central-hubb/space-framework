@@ -100,6 +100,11 @@ return [
 		'action' => 'gettingStarted',
 	],
 	[
+		'uri' => '/docs/database/configuration',
+		'controller' => 'Docs\DatabaseController',
+		'action' => 'configuration',
+	],
+	[
 		'uri' => '/docs/database/conventions',
 		'controller' => 'Docs\DatabaseController',
 		'action' => 'conventions',
@@ -113,18 +118,6 @@ return [
 		'uri' => '/docs/database/finders',
 		'controller' => 'Docs\DatabaseController',
 		'action' => 'finders',
-	],
-
-
-	[
-		'uri' => '/docs/database/query-builder',
-		'controller' => 'Docs\DatabaseController',
-		'action' => 'queryBuilder',
-	],
-	[
-		'uri' => '/docs/database/pagination',
-		'controller' => 'Docs\DatabaseController',
-		'action' => 'pagination',
 	],
 	[
 		'uri' => '/docs/database/relationships',

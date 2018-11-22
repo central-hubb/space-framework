@@ -1,108 +1,48 @@
-<article>
-	<h1>Database: Getting Started</h1>
-    <p>This guide will show you the bare essentials to get up and running with php active record orm.</p>
-    <p>The first steps are to include the orm library class and define our database connection.</p>
-    <p>This class is automatically loaded by the space framework inside app/Library/Framework/Space.php</p>
-    <p>All you need to do is set your database settings in the .env file.</p>
+<div class="wiki">
+
+	<h1>Database ORM</h1>
+
+	<h3 id="Quick-Start">Getting Started</h3>
+
+	<p>This guide will show you the bare essentials to get up and running with php-activerecord. I will assume you have downloaded the library into your include_path in a directory called php-activerecord.</p>
+
+	<p>The first steps are to include the library and define our database connection:</p>
 
 
-    <?php $code = "<?php
+	<pre class="code"><code class="php syntaxhl"><span class="CodeRay"><span class="no">1</span> <span class="pd">require_once</span> <span class="s"><span class="dl">'</span><span class="k">php-activerecord/ActiveRecord.php</span><span class="dl">'</span></span>;
+<span class="no">2</span>
+<span class="no">3</span> <span class="co">ActiveRecord</span>\<span class="co">Config</span>::initialize(<span class="r">function</span>(<span class="lv">$cfg</span>)
+<span class="no">4</span> {
+<span class="no">5</span>     <span class="lv">$cfg</span>-&gt;set_model_directory(<span class="s"><span class="dl">'</span><span class="k">models</span><span class="dl">'</span></span>);
+<span class="no">6</span>     <span class="lv">$cfg</span>-&gt;set_connections(<span class="pd">array</span>(
+<span class="no">7</span>         <span class="s"><span class="dl">'</span><span class="k">development</span><span class="dl">'</span></span> =&gt; <span class="s"><span class="dl">'</span><span class="k">mysql://username:password@localhost/database_name</span><span class="dl">'</span></span>));
+<span class="no">8</span> });
+</span></code></pre>
 
-namespace App\Library\Framework;
-
-/**
- * Class Orm
- *
- * @package App\Library\Framework
- */
-class Orm
-{
-	/** @var array \$db */
-	protected \$db = [
-		'default' => [
-			'hostname' => null,
-			'username' => null,
-			'password' => null,
-			'database' => null,
-		]
-	];
-
-	/**
-	 * Orm constructor.
-	 */
-	public function __construct()
-	{
-		\$this->db = [
-			'default' => [
-				'hostname' => env('DB_HOSTNAME', 'localhost'),
-				'username' => env('DB_USERNAME', 'root'),
-				'password' => env('DB_PASSWORD', 'root'),
-				'database' => env('DB_DATABASE', 'space_mvc'),
-			]
-		];
-		
-		\$connections = array(
-			'default' => 'mysql://'.\$this->db['default']['username'].':'.\$this->db['default']['password'].'@'.\$this->db['default']['hostname'].'/'.\$this->db['default']['database']
-		);
-
-		\ActiveRecord\Config::initialize(function(\$cfg) use (\$connections)
-		{
-			\$cfg->set_model_directory(__DIR__.'/../../../app/Models');
-			\$cfg->set_connections(\$connections);
-			\$cfg->set_default_connection('default');
-		});
-	}
-}
-
-"; ?>
+	<p>Next, lets create a model for a table called users. We'll save this class in the file models/User.php</p>
 
 
-    <pre class="language-php"><code class="language-php"><?php echo htmlentities($code); ?></code></pre>
+	<pre class="code"><code class="php syntaxhl"><span class="CodeRay"><span class="no">1</span> <span class="r">class</span> <span class="cl">User</span> <span class="r">extends</span> <span class="co">ActiveRecord</span>\<span class="co">Model</span>
+<span class="no">2</span> {
+<span class="no">3</span> }
+</span></code></pre>
 
-    <p>Next, lets create a model for a table called users. We'll save this class in the file models/User.php</p>
-
-
-    <?php $code = "<?php
-
-namespace App\Models;
-
-use App\Library\Framework\Base\Model;
-
-/**
- * Class User
- *
- * @package App\Models
- */
-class User extends  Model
-{
-	/** @var string \$table_name */
-	static \$table_name = 'users';
-}"; ?>
+	<p>That's it! Now you can access the users table thru the User model.</p>
 
 
-    <pre class="language-php"><code class="language-php"><?php echo htmlentities($code); ?></code></pre>
+	<pre class="code"><code class="php syntaxhl"><span class="CodeRay"><span class="no"> 1</span> <span class="c"># create Tito</span>
+<span class="no"> 2</span> <span class="lv">$user</span> = <span class="co">User</span>::create(<span class="pd">array</span>(<span class="s"><span class="dl">'</span><span class="k">name</span><span class="dl">'</span></span> =&gt; <span class="s"><span class="dl">'</span><span class="k">Tito</span><span class="dl">'</span></span>, <span class="s"><span class="dl">'</span><span class="k">state</span><span class="dl">'</span></span> =&gt; <span class="s"><span class="dl">'</span><span class="k">VA</span><span class="dl">'</span></span>));
+<span class="no"> 3</span>
+<span class="no"> 4</span> <span class="c"># read Tito</span>
+<span class="no"> 5</span> <span class="lv">$user</span> = <span class="co">User</span>::find_by_name(<span class="s"><span class="dl">'</span><span class="k">Tito</span><span class="dl">'</span></span>);
+<span class="no"> 6</span>
+<span class="no"> 7</span> <span class="c"># update Tito</span>
+<span class="no"> 8</span> <span class="lv">$user</span>-&gt;name = <span class="s"><span class="dl">'</span><span class="k">Tito Jr</span><span class="dl">'</span></span>;
+<span class="no"> 9</span> <span class="lv">$user</span>-&gt;save();
+<span class="no"><strong>10</strong></span>
+<span class="no">11</span> <span class="c"># delete Tito</span>
+<span class="no">12</span> <span class="lv">$user</span>-&gt;<span class="pd">delete</span>();
+</span></code></pre>
 
-
-    <p>Now you can access the users table thru the User model.</p>
-
-
-	<?php
-    $code = "# create Tito
-\$user = User::create(array('name' => 'Tito', 'state' => 'VA'));
- 
-# read Tito
-\$user = User::find_by_name('Tito');
- 
-# update Tito
-\$user->name = 'Tito Jr';
-\$user->save();
-
-# delete Tito
-\$user->delete();"; ?>
-
-
-    <pre class="language-php"><code class="language-php"><?php echo htmlentities($code); ?></code></pre>
-
-    <p>That's it! Pretty simple. Check out the other database pages for more in depth guides on using the php active record orm more.</p>
-
-</article>
+	<p>That's it! Pretty simple.</p>
+</div>
