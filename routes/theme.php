@@ -144,7 +144,7 @@ return [
 	],
 	[
 		'uri' => '/theme/app-views/file-manager',
-		'controller' => 'Theme\AppviewsController',
+		'controller' => 'Theme\AppViewsController',
 		'action' => 'fileManager',
 	],
 
