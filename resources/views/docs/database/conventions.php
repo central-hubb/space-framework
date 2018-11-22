@@ -1,3 +1,5 @@
+<?php use App\Library\Framework\Component\Code; ?>
+
 <div class="wiki">
 	<h2 id="Conventions">Database : Conventions</h2>
 
@@ -11,21 +13,21 @@
 	<p>ActiveRecord assumes the following conventions:</p>
 
 
-	<pre class="code"><code class="php syntaxhl"><span class="CodeRay"><span class="no">1</span> <span class="c"># name of your class represents the singular form of your table name.</span>
-<span class="no">2</span> <span class="r">class</span> <span class="cl">Book</span> <span class="r">extends</span> <span class="co">ActiveRecord</span>\<span class="co">Model</span> {}
-<span class="no">3</span>
-<span class="no">4</span> <span class="c"># your table name would be "people" </span>
-<span class="no">5</span> <span class="r">class</span> <span class="cl">Person</span> <span class="r">extends</span> <span class="co">ActiveRecord</span>\<span class="co">Model</span> {}
-</span></code></pre>
+	<?php echo Code::getHtmlStatic('1 # name of your class represents the singular form of your table name.
+2 class Book extends ActiveRecord\Model {}
+3
+4 # your table name would be "people" 
+5 class Person extends ActiveRecord\Model {}
+'); ?>
 
 	<p>The primary key of your table is named "id".</p>
 
 
-	<pre class="code"><code class="php syntaxhl"><span class="CodeRay"><span class="no">1</span> <span class="r">class</span> <span class="cl">Book</span> <span class="r">extends</span> <span class="co">ActiveRecord</span>\<span class="co">Model</span> {}
-<span class="no">2</span>
-<span class="no">3</span> <span class="c"># SELECT * FROM `books` where id = 1</span>
-<span class="no">4</span> <span class="co">Book</span>::find(<span class="i">1</span>);
-</span></code></pre>
+	<?php echo Code::getHtmlStatic('1 class Book extends ActiveRecord\Model {}
+2
+3 # SELECT * FROM `books` where id = 1
+4 Book::find(1);
+'); ?>
 
 	<h4>Overriding conventions</h4>
 
@@ -33,19 +35,19 @@
 	<p>Even through ActiveRecord prefers to make assumptions about your table and primary key names, you can override them. Here is a simple example showing how one could configure a specific model.</p>
 
 
-	<pre class="code"><code class="php syntaxhl"><span class="CodeRay"><span class="no"> 1</span> <span class="r">class</span> <span class="cl">Book</span> <span class="r">extends</span> <span class="co">ActiveRecord</span>\<span class="co">Model</span>
-<span class="no"> 2</span> {
-<span class="no"> 3</span>   <span class="c"># explicit table name since our table is not "books" </span>
-<span class="no"> 4</span>   <span class="r">static</span> <span class="lv">$table_name</span> = <span class="s"><span class="dl">'</span><span class="k">my_book</span><span class="dl">'</span></span>;
-<span class="no"> 5</span>
-<span class="no"> 6</span>   <span class="c"># explicit pk since our pk is not "id" </span>
-<span class="no"> 7</span>   <span class="r">static</span> <span class="lv">$primary_key</span> = <span class="s"><span class="dl">'</span><span class="k">book_id</span><span class="dl">'</span></span>;
-<span class="no"> 8</span>
-<span class="no"> 9</span>   <span class="c"># explicit connection name since we always want our test db with this model</span>
-<span class="no"><strong>10</strong></span>   <span class="r">static</span> <span class="lv">$connection</span> = <span class="s"><span class="dl">'</span><span class="k">test</span><span class="dl">'</span></span>;
-<span class="no">11</span>
-<span class="no">12</span>   <span class="c"># explicit database name will generate sql like so =&gt; my_db.my_book</span>
-<span class="no">13</span>   <span class="r">static</span> <span class="lv">$db</span> = <span class="s"><span class="dl">'</span><span class="k">my_db</span><span class="dl">'</span></span>;
-<span class="no">14</span> }
-</span></code></pre>
+	<?php echo Code::getHtmlStatic(' 1 class Book extends ActiveRecord\Model
+ 2 {
+ 3   # explicit table name since our table is not "books" 
+ 4   static $table_name = \'my_book\';
+ 5
+ 6   # explicit pk since our pk is not "id" 
+ 7   static $primary_key = \'book_id\';
+ 8
+ 9   # explicit connection name since we always want our test db with this model
+10   static $connection = \'test\';
+11
+12   # explicit database name will generate sql like so =&gt; my_db.my_book
+13   static $db = \'my_db\';
+14 }
+'); ?>
 </div>

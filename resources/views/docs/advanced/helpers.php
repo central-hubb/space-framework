@@ -1,3 +1,5 @@
+<?php use App\Library\Framework\Component\Code; ?>
+
 <article>
 	<h1>Helpers</h1>
 	<ul>
@@ -168,1006 +170,1002 @@
 	<p><a name="arrays"></a></p>
 	<h2><a href="#arrays">Arrays &amp; Objects</a></h2>
 	<p><a name="method-array-add"></a></p>
-	<h4 id="collection-method" class="first-collection-method"><code class=" language-php"><span class="token function">array_add<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_add</code> function adds a given key / value pair to an array if the given key doesn't already exist in the array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_add<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'price'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['name' =&gt; 'Desk', 'price' =&gt; 100]</span></code></pre>
+	<h4 id="collection-method" class="first-collection-method">array_add()</h4>
+	<p>The array_add function adds a given key / value pair to an array if the given key doesn't already exist in the array:</p>
+	<?php echo Code::getHtmlStatic('$array = array_add([\'name\' =&gt; \'Desk\'], \'price\', 100);
+
+// [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100]'); ?>
 	<p><a name="method-array-collapse"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_collapse<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_collapse</code> function collapses an array of arrays into a single array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_collapse<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></code></pre>
+	<h4 id="collection-method">array_collapse()</h4>
+	<p>The array_collapse function collapses an array of arrays into a single array:</p>
+	<?php echo Code::getHtmlStatic('$array = array_collapse([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
+
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]'); ?>
 	<p><a name="method-array-divide"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_divide<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_divide</code> function returns two arrays, one containing the keys, and the other containing the values of the given array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token punctuation">[</span><span class="token variable">$keys</span><span class="token punctuation">,</span> <span class="token variable">$values</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">array_divide<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// $keys: ['name']
-</span><span class="token comment" spellcheck="true">
-// $values: ['Desk']</span></code></pre>
+	<h4 id="collection-method">array_divide()</h4>
+	<p>The array_divide function returns two arrays, one containing the keys, and the other containing the values of the given array:</p>
+	<?php echo Code::getHtmlStatic('[$keys, $values] = array_divide([\'name\' =&gt; \'Desk\']);
+
+// $keys: [\'name\']
+
+// $values: [\'Desk\']'); ?>
 	<p><a name="method-array-dot"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_dot<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_dot</code> function flattens a multi-dimensional array into a single level array that uses "dot" notation to indicate depth:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_dot()</h4>
+	<p>The array_dot function flattens a multi-dimensional array into a single level array that uses "dot" notation to indicate depth:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token variable">$flattened</span> <span class="token operator">=</span> <span class="token function">array_dot<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products.desk.price' =&gt; 100]</span></code></pre>
+$flattened = array_dot($array);
+
+// [\'products.desk.price\' =&gt; 100]'); ?>
 	<p><a name="method-array-except"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_except<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_except</code> function removes the given key / value pairs from an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_except()</h4>
+	<p>The array_except function removes the given key / value pairs from an array:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100];
 
-<span class="token variable">$filtered</span> <span class="token operator">=</span> <span class="token function">array_except<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'price'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['name' =&gt; 'Desk']</span></code></pre>
+$filtered = array_except($array, [\'price\']);
+
+// [\'name\' =&gt; \'Desk\']'); ?>
 	<p><a name="method-array-first"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_first<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_first</code> function returns the first element of an array passing a given truth test:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_first()</h4>
+	<p>The array_first function returns the first element of an array passing a given truth test:</p>
+	<?php echo Code::getHtmlStatic('$array = [100, 200, 300];
 
-<span class="token variable">$first</span> <span class="token operator">=</span> <span class="token function">array_first<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token variable">$value</span> <span class="token operator">&gt;=</span> <span class="token number">150</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 200</span></code></pre>
+$first = array_first($array, function ($value, $key) {
+    return $value &gt;= 150;
+});
+
+// 200'); ?>
 	<p>A default value may also be passed as the third parameter to the method. This value will be returned if no value passes the truth test:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$first</span> <span class="token operator">=</span> <span class="token function">array_first<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">,</span> <span class="token variable">$default</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$first = array_first($array, $callback, $default);'); ?>
 	<p><a name="method-array-flatten"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_flatten<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_flatten</code> function flattens a multi-dimensional array into a single level array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Joe'</span><span class="token punctuation">,</span> <span class="token string">'languages'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'PHP'</span><span class="token punctuation">,</span> <span class="token string">'Ruby'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_flatten()</h4>
+	<p>The array_flatten function flattens a multi-dimensional array into a single level array:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'name\' =&gt; \'Joe\', \'languages\' =&gt; [\'PHP\', \'Ruby\']];
 
-<span class="token variable">$flattened</span> <span class="token operator">=</span> <span class="token function">array_flatten<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['Joe', 'PHP', 'Ruby']</span></code></pre>
+$flattened = array_flatten($array);
+
+// [\'Joe\', \'PHP\', \'Ruby\']'); ?>
 	<p><a name="method-array-forget"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_forget<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_forget</code> function removes a given key / value pair from a deeply nested array using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_forget()</h4>
+	<p>The array_forget function removes a given key / value pair from a deeply nested array using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token function">array_forget<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'products.desk'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products' =&gt; []]</span></code></pre>
+array_forget($array, \'products.desk\');
+
+// [\'products\' =&gt; []]'); ?>
 	<p><a name="method-array-get"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_get<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_get</code> function retrieves a value from a deeply nested array using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_get()</h4>
+	<p>The array_get function retrieves a value from a deeply nested array using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token variable">$price</span> <span class="token operator">=</span> <span class="token function">array_get<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'products.desk.price'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 100</span></code></pre>
-	<p>The <code class=" language-php">array_get</code> function also accepts a default value, which will be returned if the specific key is not found:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$discount</span> <span class="token operator">=</span> <span class="token function">array_get<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'products.desk.discount'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 0</span></code></pre>
+$price = array_get($array, \'products.desk.price\');
+
+// 100'); ?>
+	<p>The array_get function also accepts a default value, which will be returned if the specific key is not found:</p>
+	<?php echo Code::getHtmlStatic('$discount = array_get($array, \'products.desk.discount\', 0);
+
+// 0'); ?>
 	<p><a name="method-array-has"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_has<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_has</code> function checks whether a given item or items exists in an array using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'product'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_has()</h4>
+	<p>The array_has function checks whether a given item or items exists in an array using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'product\' =&gt; [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100]];
 
-<span class="token variable">$contains</span> <span class="token operator">=</span> <span class="token function">array_has<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'product.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+$contains = array_has($array, \'product.name\');
+
 // true
-</span>
-<span class="token variable">$contains</span> <span class="token operator">=</span> <span class="token function">array_has<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'product.price'</span><span class="token punctuation">,</span> <span class="token string">'product.discount'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// false</span></code></pre>
+
+$contains = array_has($array, [\'product.price\', \'product.discount\']);
+
+// false'); ?>
 	<p><a name="method-array-last"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_last<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_last</code> function returns the last element of an array passing a given truth test:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_last()</h4>
+	<p>The array_last function returns the last element of an array passing a given truth test:</p>
+	<?php echo Code::getHtmlStatic('$array = [100, 200, 300, 110];
 
-<span class="token variable">$last</span> <span class="token operator">=</span> <span class="token function">array_last<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token variable">$value</span> <span class="token operator">&gt;=</span> <span class="token number">150</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 300</span></code></pre>
+$last = array_last($array, function ($value, $key) {
+    return $value &gt;= 150;
+});
+
+// 300'); ?>
 	<p>A default value may be passed as the third argument to the method. This value will be returned if no value passes the truth test:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$last</span> <span class="token operator">=</span> <span class="token function">array_last<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">,</span> <span class="token variable">$default</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$last = array_last($array, $callback, $default);'); ?>
 	<p><a name="method-array-only"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_only<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_only</code> function returns only the specified key / value pairs from the given array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">'orders'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_only()</h4>
+	<p>The array_only function returns only the specified key / value pairs from the given array:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100, \'orders\' =&gt; 10];
 
-<span class="token variable">$slice</span> <span class="token operator">=</span> <span class="token function">array_only<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'price'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['name' =&gt; 'Desk', 'price' =&gt; 100]</span></code></pre>
+$slice = array_only($array, [\'name\', \'price\']);
+
+// [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100]'); ?>
 	<p><a name="method-array-pluck"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_pluck<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_pluck</code> function retrieves all of the values for a given key from an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">[</span><span class="token string">'developer'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Taylor'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">'developer'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Abigail'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_pluck()</h4>
+	<p>The array_pluck function retrieves all of the values for a given key from an array:</p>
+	<?php echo Code::getHtmlStatic('$array = [
+    [\'developer\' =&gt; [\'id\' =&gt; 1, \'name\' =&gt; \'Taylor\']],
+    [\'developer\' =&gt; [\'id\' =&gt; 2, \'name\' =&gt; \'Abigail\']],
+];
 
-<span class="token variable">$names</span> <span class="token operator">=</span> <span class="token function">array_pluck<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'developer.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['Taylor', 'Abigail']</span></code></pre>
+$names = array_pluck($array, \'developer.name\');
+
+// [\'Taylor\', \'Abigail\']'); ?>
 	<p>You may also specify how you wish the resulting list to be keyed:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$names</span> <span class="token operator">=</span> <span class="token function">array_pluck<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'developer.name'</span><span class="token punctuation">,</span> <span class="token string">'developer.id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// [1 =&gt; 'Taylor', 2 =&gt; 'Abigail']</span></code></pre>
+	<?php echo Code::getHtmlStatic('$names = array_pluck($array, \'developer.name\', \'developer.id\');
+
+// [1 =&gt; \'Taylor\', 2 =&gt; \'Abigail\']'); ?>
 	<p><a name="method-array-prepend"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_prepend<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_prepend</code> function will push an item onto the beginning of an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">,</span> <span class="token string">'four'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_prepend()</h4>
+	<p>The array_prepend function will push an item onto the beginning of an array:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'one\', \'two\', \'three\', \'four\'];
 
-<span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_prepend<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'zero'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['zero', 'one', 'two', 'three', 'four']</span></code></pre>
+$array = array_prepend($array, \'zero\');
+
+// [\'zero\', \'one\', \'two\', \'three\', \'four\']'); ?>
 	<p>If needed, you may specify the key that should be used for the value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$array = [\'price\' =&gt; 100];
 
-<span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_prepend<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'Desk'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['name' =&gt; 'Desk', 'price' =&gt; 100]</span></code></pre>
+$array = array_prepend($array, \'Desk\', \'name\');
+
+// [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100]'); ?>
 	<p><a name="method-array-pull"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_pull<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_pull</code> function returns and removes a key / value pair from an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_pull()</h4>
+	<p>The array_pull function returns and removes a key / value pair from an array:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'name\' =&gt; \'Desk\', \'price\' =&gt; 100];
 
-<span class="token variable">$name</span> <span class="token operator">=</span> <span class="token function">array_pull<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+$name = array_pull($array, \'name\');
+
 // $name: Desk
-</span><span class="token comment" spellcheck="true">
-// $array: ['price' =&gt; 100]</span></code></pre>
-	<p>A default value may be passed as the third argument to the method. This value will be returned if the key doesn't exist:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">array_pull<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$default</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+// $array: [\'price\' =&gt; 100]'); ?>
+	<p>A default value may be passed as the third argument to the method. This value will be returned if the key doesn\'t exist:</p>
+	<?php echo Code::getHtmlStatic('$value = array_pull($array, $key, $default);'); ?>
 	<p><a name="method-array-random"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_random<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_random</code> function returns a random value from an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_random()</h4>
+	<p>The array_random function returns a random value from an array:</p>
+	<?php echo Code::getHtmlStatic('$array = [1, 2, 3, 4, 5];
 
-<span class="token variable">$random</span> <span class="token operator">=</span> <span class="token function">array_random<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 4 - (retrieved randomly)</span></code></pre>
+$random = array_random($array);
+
+// 4 - (retrieved randomly)'); ?>
 	<p>You may also specify the number of items to return as an optional second argument. Note that providing this argument will return an array, even if only one item is desired:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$items</span> <span class="token operator">=</span> <span class="token function">array_random<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// [2, 5] - (retrieved randomly)</span></code></pre>
+	<?php echo Code::getHtmlStatic('$items = array_random($array, 2);
+
+// [2, 5] - (retrieved randomly)'); ?>
 	<p><a name="method-array-set"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_set<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_set</code> function sets a value within a deeply nested array using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_set()</h4>
+	<p>The array_set function sets a value within a deeply nested array using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token function">array_set<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token string">'products.desk.price'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products' =&gt; ['desk' =&gt; ['price' =&gt; 200]]]</span></code></pre>
+array_set($array, \'products.desk.price\', 200);
+
+// [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 200]]]'); ?>
 	<p><a name="method-array-sort"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_sort<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_sort</code> function sorts an array by its values:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Desk'</span><span class="token punctuation">,</span> <span class="token string">'Table'</span><span class="token punctuation">,</span> <span class="token string">'Chair'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_sort()</h4>
+	<p>The array_sort function sorts an array by its values:</p>
+	<?php echo Code::getHtmlStatic('$array = [\'Desk\', \'Table\', \'Chair\'];
 
-<span class="token variable">$sorted</span> <span class="token operator">=</span> <span class="token function">array_sort<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['Chair', 'Desk', 'Table']</span></code></pre>
+$sorted = array_sort($array);
+
+// [\'Chair\', \'Desk\', \'Table\']'); ?>
 	<p>You may also sort the array by the results of the given Closure:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Table'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Chair'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$array = [
+    [\'name\' =&gt; \'Desk\'],
+    [\'name\' =&gt; \'Table\'],
+    [\'name\' =&gt; \'Chair\'],
+];
 
-<span class="token variable">$sorted</span> <span class="token operator">=</span> <span class="token function">array_values<span class="token punctuation">(</span></span><span class="token function">array_sort<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token variable">$value</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$sorted = array_values(array_sort($array, function ($value) {
+    return $value[\'name\'];
+}));
 
-<span class="token comment" spellcheck="true">/*
+/*
     [
-        ['name' =&gt; 'Chair'],
-        ['name' =&gt; 'Desk'],
-        ['name' =&gt; 'Table'],
+        [\'name\' =&gt; \'Chair\'],
+        [\'name\' =&gt; \'Desk\'],
+        [\'name\' =&gt; \'Table\'],
     ]
-*/</span></code></pre>
+*/'); ?>
 	<p><a name="method-array-sort-recursive"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_sort_recursive<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_sort_recursive</code> function recursively sorts an array using the <code class=" language-php">sort</code> function for numeric sub=arrays and <code class=" language-php">ksort</code> for associative sub-arrays:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">[</span><span class="token string">'Roman'</span><span class="token punctuation">,</span> <span class="token string">'Taylor'</span><span class="token punctuation">,</span> <span class="token string">'Li'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">'PHP'</span><span class="token punctuation">,</span> <span class="token string">'Ruby'</span><span class="token punctuation">,</span> <span class="token string">'JavaScript'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">'one'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'two'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'three'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_sort_recursive()</h4>
+	<p>The array_sort_recursive function recursively sorts an array using the sort function for numeric sub=arrays and ksort for associative sub-arrays:</p>
+	<?php echo Code::getHtmlStatic('$array = [
+    [\'Roman\', \'Taylor\', \'Li\'],
+    [\'PHP\', \'Ruby\', \'JavaScript\'],
+    [\'one\' =&gt; 1, \'two\' =&gt; 2, \'three\' =&gt; 3],
+];
 
-<span class="token variable">$sorted</span> <span class="token operator">=</span> <span class="token function">array_sort_recursive<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$sorted = array_sort_recursive($array);
 
-<span class="token comment" spellcheck="true">/*
+/*
     [
-        ['JavaScript', 'PHP', 'Ruby'],
-        ['one' =&gt; 1, 'three' =&gt; 3, 'two' =&gt; 2],
-        ['Li', 'Roman', 'Taylor'],
+        [\'JavaScript\', \'PHP\', \'Ruby\'],
+        [\'one\' =&gt; 1, \'three\' =&gt; 3, \'two\' =&gt; 2],
+        [\'Li\', \'Roman\', \'Taylor\'],
     ]
-*/</span></code></pre>
+*/'); ?>
 	<p><a name="method-array-where"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_where<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_where</code> function filters an array using the given Closure:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">'200'</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token string">'400'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_where()</h4>
+	<p>The array_where function filters an array using the given Closure:</p>
+	<?php echo Code::getHtmlStatic('$array = [100, \'200\', 300, \'400\', 500];
 
-<span class="token variable">$filtered</span> <span class="token operator">=</span> <span class="token function">array_where<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">is_string<span class="token punctuation">(</span></span><span class="token variable">$value</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// [1 =&gt; '200', 3 =&gt; '400']</span></code></pre>
+$filtered = array_where($array, function ($value, $key) {
+    return is_string($value);
+});
+
+// [1 =&gt; \'200\', 3 =&gt; \'400\']'); ?>
 	<p><a name="method-array-wrap"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">array_wrap<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">array_wrap</code> function wraps the given value in an array. If the given value is already an array it will not be changed:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$string</span> <span class="token operator">=</span> <span class="token string">'Space MVC'</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">array_wrap()</h4>
+	<p>The array_wrap function wraps the given value in an array. If the given value is already an array it will not be changed:</p>
+	<?php echo Code::getHtmlStatic('$string = \'Space MVC\';
 
-<span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_wrap<span class="token punctuation">(</span></span><span class="token variable">$string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['Space MVC']</span></code></pre>
+$array = array_wrap($string);
+
+// [\'Space MVC\']'); ?>
 	<p>If the given value is null, an empty array will be returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$nothing</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$nothing = null;
 
-<span class="token variable">$array</span> <span class="token operator">=</span> <span class="token function">array_wrap<span class="token punctuation">(</span></span><span class="token variable">$nothing</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// []</span></code></pre>
+$array = array_wrap($nothing);
+
+// []'); ?>
 	<p><a name="method-data-fill"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">data_fill<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">data_fill</code> function sets a missing value within a nested array or object using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">data_fill()</h4>
+	<p>The data_fill function sets a missing value within a nested array or object using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$data = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token function">data_fill<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.desk.price'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products' =&gt; ['desk' =&gt; ['price' =&gt; 100]]]
-</span>
-<span class="token function">data_fill<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.desk.discount'</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products' =&gt; ['desk' =&gt; ['price' =&gt; 100, 'discount' =&gt; 10]]]</span></code></pre>
+data_fill($data, \'products.desk.price\', 200);
+
+// [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]]
+
+data_fill($data, \'products.desk.discount\', 10);
+
+// [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100, \'discount\' =&gt; 10]]]'); ?>
 	<p>This function also accepts asterisks as wildcards and will fill the target accordingly:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk 1'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk 2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$data = [
+    \'products\' =&gt; [
+        [\'name\' =&gt; \'Desk 1\', \'price\' =&gt; 100],
+        [\'name\' =&gt; \'Desk 2\'],
+    ],
+];
 
-<span class="token function">data_fill<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.*.price'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+data_fill($data, \'products.*.price\', 200);
 
-<span class="token comment" spellcheck="true">/*
+/*
     [
-        'products' =&gt; [
-            ['name' =&gt; 'Desk 1', 'price' =&gt; 100],
-            ['name' =&gt; 'Desk 2', 'price' =&gt; 200],
+        \'products\' =&gt; [
+            [\'name\' =&gt; \'Desk 1\', \'price\' =&gt; 100],
+            [\'name\' =&gt; \'Desk 2\', \'price\' =&gt; 200],
         ],
     ]
-*/</span></code></pre>
+*/'); ?>
 	<p><a name="method-data-get"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">data_get<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">data_get</code> function retrieves a value from a nested array or object using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">data_get()</h4>
+	<p>The data_get function retrieves a value from a nested array or object using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$data = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token variable">$price</span> <span class="token operator">=</span> <span class="token function">data_get<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.desk.price'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 100</span></code></pre>
-	<p>The <code class=" language-php">data_get</code> function also accepts a default value, which will be returned if the specified key is not found:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$discount</span> <span class="token operator">=</span> <span class="token function">data_get<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.desk.discount'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 0</span></code></pre>
+$price = data_get($data, \'products.desk.price\');
+
+// 100'); ?>
+	<p>The data_get function also accepts a default value, which will be returned if the specified key is not found:</p>
+	<?php echo Code::getHtmlStatic('$discount = data_get($data, \'products.desk.discount\', 0);
+
+// 0'); ?>
 	<p>The function also accepts wildcards using asterisks, which may target any key of the array or object:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'product-one'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk 1'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">'product-two'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk 2'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">150</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$data = [
+    \'product-one\' =&gt; [\'name\' =&gt; \'Desk 1\', \'price\' =&gt; 100],
+    \'product-two\' =&gt; [\'name\' =&gt; \'Desk 2\', \'price\' =&gt; 150],
+];
 
-<span class="token function">data_get<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'*.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['Desk 1', 'Desk 2'];</span></code></pre>
+data_get($data, \'*.name\');
+
+// [\'Desk 1\', \'Desk 2\'];'); ?>
 	<p><a name="method-data-set"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">data_set<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">data_set</code> function sets a value within a nested array or object using "dot" notation:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">data_set()</h4>
+	<p>The data_set function sets a value within a nested array or object using "dot" notation:</p>
+	<?php echo Code::getHtmlStatic('$data = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token function">data_set<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.desk.price'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products' =&gt; ['desk' =&gt; ['price' =&gt; 200]]]</span></code></pre>
+data_set($data, \'products.desk.price\', 200);
+
+// [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 200]]]'); ?>
 	<p>This function also accepts wildcards and will set values on the target accordingly:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-    <span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk 1'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token punctuation">[</span><span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'Desk 2'</span><span class="token punctuation">,</span> <span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">150</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$data = [
+    \'products\' =&gt; [
+        [\'name\' =&gt; \'Desk 1\', \'price\' =&gt; 100],
+        [\'name\' =&gt; \'Desk 2\', \'price\' =&gt; 150],
+    ],
+];
 
-<span class="token function">data_set<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.*.price'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+data_set($data, \'products.*.price\', 200);
 
-<span class="token comment" spellcheck="true">/*
+/*
     [
-        'products' =&gt; [
-            ['name' =&gt; 'Desk 1', 'price' =&gt; 200],
-            ['name' =&gt; 'Desk 2', 'price' =&gt; 200],
+        \'products\' =&gt; [
+            [\'name\' =&gt; \'Desk 1\', \'price\' =&gt; 200],
+            [\'name\' =&gt; \'Desk 2\', \'price\' =&gt; 200],
         ],
     ]
-*/</span></code></pre>
-	<p>By default, any existing values are overwritten. If you wish to only set a value if it doesn't exist, you may pass <code class=" language-php"><span class="token boolean">false</span></code> as the third argument:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$data</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'products'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'desk'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">'price'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+*/'); ?>
+	<p>By default, any existing values are overwritten. If you wish to only set a value if it doesn\'t exist, you may pass false as the third argument:</p>
+	<?php echo Code::getHtmlStatic('$data = [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]];
 
-<span class="token function">data_set<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token string">'products.desk.price'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ['products' =&gt; ['desk' =&gt; ['price' =&gt; 100]]]</span></code></pre>
+data_set($data, \'products.desk.price\', 200, false);
+
+// [\'products\' =&gt; [\'desk\' =&gt; [\'price\' =&gt; 100]]]'); ?>
 	<p><a name="method-head"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">head<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">head</code> function returns the first element in the given array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">head()</h4>
+	<p>The head function returns the first element in the given array:</p>
+	<?php echo Code::getHtmlStatic('$array = [100, 200, 300];
 
-<span class="token variable">$first</span> <span class="token operator">=</span> <span class="token function">head<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 100</span></code></pre>
+$first = head($array);
+
+// 100'); ?>
 	<p><a name="method-last"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">last<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">last</code> function returns the last element in the given array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$array</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">last()</h4>
+	<p>The last function returns the last element in the given array:</p>
+	<?php echo Code::getHtmlStatic('$array = [100, 200, 300];
 
-<span class="token variable">$last</span> <span class="token operator">=</span> <span class="token function">last<span class="token punctuation">(</span></span><span class="token variable">$array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 300</span></code></pre>
+$last = last($array);
+
+// 300'); ?>
 	<p><a name="paths"></a></p>
 	<h2><a href="#paths">Paths</a></h2>
 	<p><a name="method-app-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">app_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">app_path</code> function returns the fully qualified path to the <code class=" language-php">app</code> directory. You may also use the <code class=" language-php">app_path</code> function to generate a fully qualified path to a file relative to the application directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">app_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">app_path()</h4>
+	<p>The app_path function returns the fully qualified path to the app directory. You may also use the app_path function to generate a fully qualified path to a file relative to the application directory:</p>
+	<?php echo Code::getHtmlStatic('$path = app_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">app_path<span class="token punctuation">(</span></span><span class="token string">'Http/Controllers/Controller.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = app_path(\'Http/Controllers/Controller.php\');'); ?>
 	<p><a name="method-base-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">base_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">base_path</code> function returns the fully qualified path to the project root. You may also use the <code class=" language-php">base_path</code> function to generate a fully qualified path to a given file relative to the project root directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">base_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">base_path()</h4>
+	<p>The base_path function returns the fully qualified path to the project root. You may also use the base_path function to generate a fully qualified path to a given file relative to the project root directory:</p>
+	<?php echo Code::getHtmlStatic('$path = base_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">base_path<span class="token punctuation">(</span></span><span class="token string">'vendor/bin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = base_path(\'vendor/bin\');'); ?>
 	<p><a name="method-config-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">config_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">config_path</code> function returns the fully qualified path to the <code class=" language-php">config</code> directory. You may also use the <code class=" language-php">config_path</code> function to generate a fully qualified path to a given file within the application's configuration directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">config_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">config_path()</h4>
+	<p>The config_path function returns the fully qualified path to the config directory. You may also use the config_path function to generate a fully qualified path to a given file within the application's configuration directory:</p>
+	<?php echo Code::getHtmlStatic('$path = config_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">config_path<span class="token punctuation">(</span></span><span class="token string">'app.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = config_path(\'app.php\');'); ?>
 	<p><a name="method-database-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">database_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">database_path</code> function returns the fully qualified path to the <code class=" language-php">database</code> directory. You may also use the <code class=" language-php">database_path</code> function to generate a fully qualified path to a given file within the database directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">database_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">database_path()</h4>
+	<p>The database_path function returns the fully qualified path to the database directory. You may also use the database_path function to generate a fully qualified path to a given file within the database directory:</p>
+	<?php echo Code::getHtmlStatic('$path = database_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">database_path<span class="token punctuation">(</span></span><span class="token string">'factories/UserFactory.php'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = database_path(\'factories/UserFactory.php\');'); ?>
 	<p><a name="method-mix"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">mix<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">mix</code> function returns the path to a <a href="/docs/5.7/mix">versioned Mix file</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">mix<span class="token punctuation">(</span></span><span class="token string">'css/app.css'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">mix()</h4>
+	<p>The mix function returns the path to a <a href="/docs/5.7/mix">versioned Mix file</a>:</p>
+	<?php echo Code::getHtmlStatic('$path = mix(\'css/app.css\');'); ?>
 	<p><a name="method-public-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">public_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">public_path</code> function returns the fully qualified path to the <code class=" language-php"><span class="token keyword">public</span></code> directory. You may also use the <code class=" language-php">public_path</code> function to generate a fully qualified path to a given file within the public directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">public_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">public_path()</h4>
+	<p>The public_path function returns the fully qualified path to the public directory. You may also use the public_path function to generate a fully qualified path to a given file within the public directory:</p>
+	<?php echo Code::getHtmlStatic('$path = public_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">public_path<span class="token punctuation">(</span></span><span class="token string">'css/app.css'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = public_path(\'css/app.css\');'); ?>
 	<p><a name="method-resource-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">resource_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">resource_path</code> function returns the fully qualified path to the <code class=" language-php">resources</code> directory. You may also use the <code class=" language-php">resource_path</code> function to generate a fully qualified path to a given file within the resources directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">resource_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">resource_path()</h4>
+	<p>The resource_path function returns the fully qualified path to the resources directory. You may also use the resource_path function to generate a fully qualified path to a given file within the resources directory:</p>
+	<?php echo Code::getHtmlStatic('$path = resource_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">resource_path<span class="token punctuation">(</span></span><span class="token string">'sass/app.scss'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = resource_path(\'sass/app.scss\');'); ?>
 	<p><a name="method-storage-path"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">storage_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">storage_path</code> function returns the fully qualified path to the <code class=" language-php">storage</code> directory. You may also use the <code class=" language-php">storage_path</code> function to generate a fully qualified path to a given file within the storage directory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">storage_path<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">storage_path()</h4>
+	<p>The storage_path function returns the fully qualified path to the storage directory. You may also use the storage_path function to generate a fully qualified path to a given file within the storage directory:</p>
+	<?php echo Code::getHtmlStatic('$path = storage_path();
 
-<span class="token variable">$path</span> <span class="token operator">=</span> <span class="token function">storage_path<span class="token punctuation">(</span></span><span class="token string">'app/file.txt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$path = storage_path(\'app/file.txt\');'); ?>
 	<p><a name="strings"></a></p>
 	<h2><a href="#strings">Strings</a></h2>
 	<p><a name="method-__"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">__<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php"><span class="token constant">__</span></code> function translates the given translation string or translation key using your <a href="/docs/5.7/localization">localization files</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">echo</span> <span class="token function">__<span class="token punctuation">(</span></span><span class="token string">'Welcome to our application'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">__()</h4>
+	<p>The __ function translates the given translation string or translation key using your <a href="/docs/5.7/localization">localization files</a>:</p>
+	<?php echo Code::getHtmlStatic('echo __(\'Welcome to our application\');
 
-<span class="token keyword">echo</span> <span class="token function">__<span class="token punctuation">(</span></span><span class="token string">'messages.welcome'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If the specified translation string or key does not exist, the <code class=" language-php"><span class="token constant">__</span></code> function will return the given value. So, using the example above, the <code class=" language-php"><span class="token constant">__</span></code> function would return <code class=" language-php">messages<span class="token punctuation">.</span>welcome</code> if that translation key does not exist.</p>
+echo __(\'messages.welcome\');'); ?>
+	<p>If the specified translation string or key does not exist, the __ function will return the given value. So, using the example above, the __ function would return messages.welcome if that translation key does not exist.</p>
 	<p><a name="method-camel-case"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">camel_case<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">camel_case</code> function converts the given string to <code class=" language-php">camelCase</code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$converted</span> <span class="token operator">=</span> <span class="token function">camel_case<span class="token punctuation">(</span></span><span class="token string">'foo_bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// fooBar</span></code></pre>
+	<h4 id="collection-method">camel_case()</h4>
+	<p>The camel_case function converts the given string to camelCase:</p>
+	<?php echo Code::getHtmlStatic('$converted = camel_case(\'foo_bar\');
+
+// fooBar'); ?>
 	<p><a name="method-class-basename"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">class_basename<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">class_basename</code> returns the class name of the given class with the class' namespace removed:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$class</span> <span class="token operator">=</span> <span class="token function">class_basename<span class="token punctuation">(</span></span><span class="token string">'Foo\Bar\Baz'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// Baz</span></code></pre>
+	<h4 id="collection-method">class_basename()</h4>
+	<p>The class_basename returns the class name of the given class with the class\' namespace removed:</p>
+	<?php echo Code::getHtmlStatic('$class = class_basename(\'Foo\Bar\Baz\');
+
+// Baz'); ?>
 	<p><a name="method-e"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">e<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">e</code> function runs PHP's <code class=" language-php">htmlspecialchars</code> function with the <code class=" language-php">double_encode</code> option set to <code class=" language-php"><span class="token boolean">true</span></code> by default:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">echo</span> <span class="token function">e<span class="token punctuation">(</span></span>'<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span></span>foo<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></span>'<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// &amp;lt;html&amp;gt;foo&amp;lt;/html&amp;gt;</span></code></pre>
+	<h4 id="collection-method">e()</h4>
+	<p>The e function runs PHP's htmlspecialchars function with the double_encode option set to true by default:</p>
+	<?php echo Code::getHtmlStatic('echo e(\'&lt;html&gt;foo&lt;/html&gt;\');
+
+// &amp;lt;html&amp;gt;foo&amp;lt;/html&amp;gt;'); ?>
 	<p><a name="method-ends-with"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">ends_with<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">ends_with</code> function determines if the given string ends with the given value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">ends_with<span class="token punctuation">(</span></span><span class="token string">'This is my name'</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// true</span></code></pre>
+	<h4 id="collection-method">ends_with()</h4>
+	<p>The ends_with function determines if the given string ends with the given value:</p>
+	<?php echo Code::getHtmlStatic('$result = ends_with(\'This is my name\', \'name\');
+
+// true'); ?>
 	<p><a name="method-kebab-case"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">kebab_case<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">kebab_case</code> function converts the given string to <code class=" language-php">kebab<span class="token operator">-</span><span class="token keyword">case</span></code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$converted</span> <span class="token operator">=</span> <span class="token function">kebab_case<span class="token punctuation">(</span></span><span class="token string">'fooBar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// foo-bar</span></code></pre>
+	<h4 id="collection-method">kebab_case()</h4>
+	<p>The kebab_case function converts the given string to kebab-case:</p>
+	<?php echo Code::getHtmlStatic('$converted = kebab_case(\'fooBar\');
+
+// foo-bar'); ?>
 	<p><a name="method-preg-replace-array"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">preg_replace_array<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">preg_replace_array</code> function replaces a given pattern in the string sequentially using an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$string</span> <span class="token operator">=</span> <span class="token string">'The event will take place between :start and :end'</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">preg_replace_array()</h4>
+	<p>The preg_replace_array function replaces a given pattern in the string sequentially using an array:</p>
+	<?php echo Code::getHtmlStatic('$string = \'The event will take place between :start and :end\';
 
-<span class="token variable">$replaced</span> <span class="token operator">=</span> <span class="token function">preg_replace_array<span class="token punctuation">(</span></span><span class="token string">'/:[a-z_]+/'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'8:30'</span><span class="token punctuation">,</span> <span class="token string">'9:00'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// The event will take place between 8:30 and 9:00</span></code></pre>
+$replaced = preg_replace_array(\'/:[a-z_]+/\', [\'8:30\', \'9:00\'], $string);
+
+// The event will take place between 8:30 and 9:00'); ?>
 	<p><a name="method-snake-case"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">snake_case<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">snake_case</code> function converts the given string to <code class=" language-php">snake_case</code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$converted</span> <span class="token operator">=</span> <span class="token function">snake_case<span class="token punctuation">(</span></span><span class="token string">'fooBar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// foo_bar</span></code></pre>
+	<h4 id="collection-method">snake_case()</h4>
+	<p>The snake_case function converts the given string to snake_case:</p>
+	<?php echo Code::getHtmlStatic('$converted = snake_case(\'fooBar\');
+
+// foo_bar'); ?>
 	<p><a name="method-starts-with"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">starts_with<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">starts_with</code> function determines if the given string begins with the given value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">starts_with<span class="token punctuation">(</span></span><span class="token string">'This is my name'</span><span class="token punctuation">,</span> <span class="token string">'This'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// true</span></code></pre>
+	<h4 id="collection-method">starts_with()</h4>
+	<p>The starts_with function determines if the given string begins with the given value:</p>
+	<?php echo Code::getHtmlStatic('$result = starts_with(\'This is my name\', \'This\');
+
+// true'); ?>
 	<p><a name="method-str-after"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_after<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_after</code> function returns everything after the given value in a string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$slice</span> <span class="token operator">=</span> <span class="token function">str_after<span class="token punctuation">(</span></span><span class="token string">'This is my name'</span><span class="token punctuation">,</span> <span class="token string">'This is'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// ' my name'</span></code></pre>
+	<h4 id="collection-method">str_after()</h4>
+	<p>The str_after function returns everything after the given value in a string:</p>
+	<?php echo Code::getHtmlStatic('$slice = str_after(\'This is my name\', \'This is\');
+
+// \' my name\''); ?>
 	<p><a name="method-str-before"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_before<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_before</code> function returns everything before the given value in a string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$slice</span> <span class="token operator">=</span> <span class="token function">str_before<span class="token punctuation">(</span></span><span class="token string">'This is my name'</span><span class="token punctuation">,</span> <span class="token string">'my name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 'This is '</span></code></pre>
+	<h4 id="collection-method">str_before()</h4>
+	<p>The str_before function returns everything before the given value in a string:</p>
+	<?php echo Code::getHtmlStatic('$slice = str_before(\'This is my name\', \'my name\');
+
+// \'This is \''); ?>
 	<p><a name="method-str-contains"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_contains<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_contains</code> function determines if the given string contains the given value (case sensitive):</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$contains</span> <span class="token operator">=</span> <span class="token function">str_contains<span class="token punctuation">(</span></span><span class="token string">'This is my name'</span><span class="token punctuation">,</span> <span class="token string">'my'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// true</span></code></pre>
+	<h4 id="collection-method">str_contains()</h4>
+	<p>The str_contains function determines if the given string contains the given value (case sensitive):</p>
+	<?php echo Code::getHtmlStatic('$contains = str_contains(\'This is my name\', \'my\');
+
+// true'); ?>
 	<p>You may also pass an array of values to determine if the given string contains any of the values:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$contains</span> <span class="token operator">=</span> <span class="token function">str_contains<span class="token punctuation">(</span></span><span class="token string">'This is my name'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'my'</span><span class="token punctuation">,</span> <span class="token string">'foo'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// true</span></code></pre>
+	<?php echo Code::getHtmlStatic('$contains = str_contains(\'This is my name\', [\'my\', \'foo\']);
+
+// true'); ?>
 	<p><a name="method-str-finish"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_finish<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_finish</code> function adds a single instance of the given value to a string if it does not already end with the value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$adjusted</span> <span class="token operator">=</span> <span class="token function">str_finish<span class="token punctuation">(</span></span><span class="token string">'this/string'</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+	<h4 id="collection-method">str_finish()</h4>
+	<p>The str_finish function adds a single instance of the given value to a string if it does not already end with the value:</p>
+	<?php echo Code::getHtmlStatic('$adjusted = str_finish(\'this/string\', \'/\');
+
 // this/string/
-</span>
-<span class="token variable">$adjusted</span> <span class="token operator">=</span> <span class="token function">str_finish<span class="token punctuation">(</span></span><span class="token string">'this/string/'</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// this/string/</span></code></pre>
+
+$adjusted = str_finish(\'this/string/\', \'/\');
+
+// this/string/'); ?>
 	<p><a name="method-str-is"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_is<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_is</code> function determines if a given string matches a given pattern. Asterisks may be used to indicate wildcards:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$matches</span> <span class="token operator">=</span> <span class="token function">str_is<span class="token punctuation">(</span></span><span class="token string">'foo*'</span><span class="token punctuation">,</span> <span class="token string">'foobar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+	<h4 id="collection-method">str_is()</h4>
+	<p>The str_is function determines if a given string matches a given pattern. Asterisks may be used to indicate wildcards:</p>
+	<?php echo Code::getHtmlStatic('$matches = str_is(\'foo*\', \'foobar\');
+
 // true
-</span>
-<span class="token variable">$matches</span> <span class="token operator">=</span> <span class="token function">str_is<span class="token punctuation">(</span></span><span class="token string">'baz*'</span><span class="token punctuation">,</span> <span class="token string">'foobar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// false</span></code></pre>
+
+$matches = str_is(\'baz*\', \'foobar\');
+
+// false'); ?>
 	<p><a name="method-str-limit"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_limit<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_limit</code> function truncates the given string at the specified length:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$truncated</span> <span class="token operator">=</span> <span class="token function">str_limit<span class="token punctuation">(</span></span><span class="token string">'The quick brown fox jumps over the lazy dog'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// The quick brown fox...</span></code></pre>
+	<h4 id="collection-method">str_limit()</h4>
+	<p>The str_limit function truncates the given string at the specified length:</p>
+	<?php echo Code::getHtmlStatic('$truncated = str_limit(\'The quick brown fox jumps over the lazy dog\', 20);
+
+// The quick brown fox...'); ?>
 	<p>You may also pass a third argument to change the string that will be appended to the end:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$truncated</span> <span class="token operator">=</span> <span class="token function">str_limit<span class="token punctuation">(</span></span><span class="token string">'The quick brown fox jumps over the lazy dog'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">' (...)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// The quick brown fox (...)</span></code></pre>
+	<?php echo Code::getHtmlStatic('$truncated = str_limit(\'The quick brown fox jumps over the lazy dog\', 20, \' (...)\');
+
+// The quick brown fox (...)'); ?>
 	<p><a name="method-str-ordered-uuid"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token scope">Str<span class="token punctuation">::</span></span><span class="token function">orderedUuid<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php"><span class="token scope">Str<span class="token punctuation">::</span></span>orderedUuid</code> method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Str</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">Str::orderedUuid()</h4>
+	<p>The Str::orderedUuid method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column:</p>
+	<?php echo Code::getHtmlStatic('use Illuminate\Support\Str;
 
-<span class="token keyword">return</span> <span class="token punctuation">(</span>string<span class="token punctuation">)</span> <span class="token scope">Str<span class="token punctuation">::</span></span><span class="token function">orderedUuid<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return (string) Str::orderedUuid();'); ?>
 	<p><a name="method-str-plural"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_plural<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_plural</code> function converts a string to its plural form. This function currently only supports the English language:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$plural</span> <span class="token operator">=</span> <span class="token function">str_plural<span class="token punctuation">(</span></span><span class="token string">'car'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+	<h4 id="collection-method">str_plural()</h4>
+	<p>The str_plural function converts a string to its plural form. This function currently only supports the English language:</p>
+	<?php echo Code::getHtmlStatic('$plural = str_plural(\'car\');
+
 // cars
-</span>
-<span class="token variable">$plural</span> <span class="token operator">=</span> <span class="token function">str_plural<span class="token punctuation">(</span></span><span class="token string">'child'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// children</span></code></pre>
+
+$plural = str_plural(\'child\');
+
+// children'); ?>
 	<p>You may provide an integer as a second argument to the function to retrieve the singular or plural form of the string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$plural</span> <span class="token operator">=</span> <span class="token function">str_plural<span class="token punctuation">(</span></span><span class="token string">'child'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+	<?php echo Code::getHtmlStatic('$plural = str_plural(\'child\', 2);
+
 // children
-</span>
-<span class="token variable">$plural</span> <span class="token operator">=</span> <span class="token function">str_plural<span class="token punctuation">(</span></span><span class="token string">'child'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// child</span></code></pre>
+
+$plural = str_plural(\'child\', 1);
+
+// child'); ?>
 	<p><a name="method-str-random"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_random<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_random</code> function generates a random string of the specified length. This function uses PHP's <code class=" language-php">random_bytes</code> function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$random</span> <span class="token operator">=</span> <span class="token function">str_random<span class="token punctuation">(</span></span><span class="token number">40</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">str_random()</h4>
+	<p>The str_random function generates a random string of the specified length. This function uses PHP's random_bytes function:</p>
+	<?php echo Code::getHtmlStatic('$random = str_random(40);'); ?>
 	<p><a name="method-str-replace-array"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_replace_array<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_replace_array</code> function replaces a given value in the string sequentially using an array:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$string</span> <span class="token operator">=</span> <span class="token string">'The event will take place between ? and ?'</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">str_replace_array()</h4>
+	<p>The str_replace_array function replaces a given value in the string sequentially using an array:</p>
+	<?php echo Code::getHtmlStatic('$string = \'The event will take place between ? and ?\';
 
-<span class="token variable">$replaced</span> <span class="token operator">=</span> <span class="token function">str_replace_array<span class="token punctuation">(</span></span><span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'8:30'</span><span class="token punctuation">,</span> <span class="token string">'9:00'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$string</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// The event will take place between 8:30 and 9:00</span></code></pre>
+$replaced = str_replace_array(\'?\', [\'8:30\', \'9:00\'], $string);
+
+// The event will take place between 8:30 and 9:00'); ?>
 	<p><a name="method-str-replace-first"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_replace_first<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_replace_first</code> function replaces the first occurrence of a given value in a string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$replaced</span> <span class="token operator">=</span> <span class="token function">str_replace_first<span class="token punctuation">(</span></span><span class="token string">'the'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'the quick brown fox jumps over the lazy dog'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// a quick brown fox jumps over the lazy dog</span></code></pre>
-	<p><a name="method-str-replace-last"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_replace_last<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_replace_last</code> function replaces the last occurrence of a given value in a string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$replaced</span> <span class="token operator">=</span> <span class="token function">str_replace_last<span class="token punctuation">(</span></span><span class="token string">'the'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'the quick brown fox jumps over the lazy dog'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// the quick brown fox jumps over a lazy dog</span></code></pre>
-	<p><a name="method-str-singular"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_singular<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_singular</code> function converts a string to its singular form. This function currently only supports the English language:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$singular</span> <span class="token operator">=</span> <span class="token function">str_singular<span class="token punctuation">(</span></span><span class="token string">'cars'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// car
-</span>
-<span class="token variable">$singular</span> <span class="token operator">=</span> <span class="token function">str_singular<span class="token punctuation">(</span></span><span class="token string">'children'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// child</span></code></pre>
-	<p><a name="method-str-slug"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_slug<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_slug</code> function generates a URL friendly "slug" from the given string:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$slug</span> <span class="token operator">=</span> <span class="token function">str_slug<span class="token punctuation">(</span></span><span class="token string">'Space MVC 5 Framework'</span><span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// Space MVC</span></code></pre>
-	<p><a name="method-str-start"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">str_start<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">str_start</code> function adds a single instance of the given value to a string if it does not already start with the value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$adjusted</span> <span class="token operator">=</span> <span class="token function">str_start<span class="token punctuation">(</span></span><span class="token string">'this/string'</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// /this/string
-</span>
-<span class="token variable">$adjusted</span> <span class="token operator">=</span> <span class="token function">str_start<span class="token punctuation">(</span></span><span class="token string">'/this/string'</span><span class="token punctuation">,</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// /this/string</span></code></pre>
-	<p><a name="method-studly-case"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">studly_case<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">studly_case</code> function converts the given string to <code class=" language-php">StudlyCase</code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$converted</span> <span class="token operator">=</span> <span class="token function">studly_case<span class="token punctuation">(</span></span><span class="token string">'foo_bar'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// FooBar</span></code></pre>
-	<p><a name="method-title-case"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">title_case<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">title_case</code> function converts the given string to <code class=" language-php">Title <span class="token keyword">Case</span></code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$converted</span> <span class="token operator">=</span> <span class="token function">title_case<span class="token punctuation">(</span></span><span class="token string">'a nice title uses the correct case'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// A Nice Title Uses The Correct Case</span></code></pre>
-	<p><a name="method-trans"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">trans<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">trans</code> function translates the given translation key using your <a href="/docs/5.7/localization">localization files</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">echo</span> <span class="token function">trans<span class="token punctuation">(</span></span><span class="token string">'messages.welcome'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If the specified translation key does not exist, the <code class=" language-php">trans</code> function will return the given key. So, using the example above, the <code class=" language-php">trans</code> function would return <code class=" language-php">messages<span class="token punctuation">.</span>welcome</code> if the translation key does not exist.</p>
-	<p><a name="method-trans-choice"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">trans_choice<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">trans_choice</code> function translates the given translation key with inflection:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">echo</span> <span class="token function">trans_choice<span class="token punctuation">(</span></span><span class="token string">'messages.notifications'</span><span class="token punctuation">,</span> <span class="token variable">$unreadCount</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If the specified translation key does not exist, the <code class=" language-php">trans_choice</code> function will return the given key. So, using the example above, the <code class=" language-php">trans_choice</code> function would return <code class=" language-php">messages<span class="token punctuation">.</span>notifications</code> if the translation key does not exist.</p>
-	<p><a name="method-str-uuid"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token scope">Str<span class="token punctuation">::</span></span><span class="token function">uuid<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php"><span class="token scope">Str<span class="token punctuation">::</span></span>uuid</code> method generates a UUID (version 4):</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Str</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">str_replace_first()</h4>
+	<p>The str_replace_first function replaces the first occurrence of a given value in a string:</p>
+	<?php echo Code::getHtmlStatic('$replaced = str_replace_first(\'the\', \'a\', \'the quick brown fox jumps over the lazy dog\');
 
-<span class="token keyword">return</span> <span class="token punctuation">(</span>string<span class="token punctuation">)</span> <span class="token scope">Str<span class="token punctuation">::</span></span><span class="token function">uuid<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+// a quick brown fox jumps over the lazy dog'); ?>
+	<p><a name="method-str-replace-last"></a></p>
+	<h4 id="collection-method">str_replace_last()</h4>
+	<p>The str_replace_last function replaces the last occurrence of a given value in a string:</p>
+	<?php echo Code::getHtmlStatic('$replaced = str_replace_last(\'the\', \'a\', \'the quick brown fox jumps over the lazy dog\');
+
+// the quick brown fox jumps over a lazy dog'); ?>
+	<p><a name="method-str-singular"></a></p>
+	<h4 id="collection-method">str_singular()</h4>
+	<p>The str_singular function converts a string to its singular form. This function currently only supports the English language:</p>
+	<?php echo Code::getHtmlStatic('$singular = str_singular(\'cars\');
+
+// car
+
+$singular = str_singular(\'children\');
+
+// child'); ?>
+	<p><a name="method-str-slug"></a></p>
+	<h4 id="collection-method">str_slug()</h4>
+	<p>The str_slug function generates a URL friendly "slug" from the given string:</p>
+	<?php echo Code::getHtmlStatic('$slug = str_slug(\'Space MVC 5 Framework\', \'-\');
+
+// Space MVC'); ?>
+	<p><a name="method-str-start"></a></p>
+	<h4 id="collection-method">str_start()</h4>
+	<p>The str_start function adds a single instance of the given value to a string if it does not already start with the value:</p>
+	<?php echo Code::getHtmlStatic('$adjusted = str_start(\'this/string\', \'/\');
+
+// /this/string
+
+$adjusted = str_start(\'/this/string\', \'/\');
+
+// /this/string'); ?>
+	<p><a name="method-studly-case"></a></p>
+	<h4 id="collection-method">studly_case()</h4>
+	<p>The studly_case function converts the given string to StudlyCase:</p>
+	<?php echo Code::getHtmlStatic('$converted = studly_case(\'foo_bar\');
+
+// FooBar'); ?>
+	<p><a name="method-title-case"></a></p>
+	<h4 id="collection-method">title_case()</h4>
+	<p>The title_case function converts the given string to Title Case:</p>
+	<?php echo Code::getHtmlStatic('$converted = title_case(\'a nice title uses the correct case\');
+
+// A Nice Title Uses The Correct Case'); ?>
+	<p><a name="method-trans"></a></p>
+	<h4 id="collection-method">trans()</h4>
+	<p>The trans function translates the given translation key using your <a href="/docs/5.7/localization">localization files</a>:</p>
+	<?php echo Code::getHtmlStatic('echo trans(\'messages.welcome\');'); ?>
+	<p>If the specified translation key does not exist, the trans function will return the given key. So, using the example above, the trans function would return messages.welcome if the translation key does not exist.</p>
+	<p><a name="method-trans-choice"></a></p>
+	<h4 id="collection-method">trans_choice()</h4>
+	<p>The trans_choice function translates the given translation key with inflection:</p>
+	<?php echo Code::getHtmlStatic('echo trans_choice(\'messages.notifications\', $unreadCount);'); ?>
+	<p>If the specified translation key does not exist, the trans_choice function will return the given key. So, using the example above, the trans_choice function would return messages.notifications if the translation key does not exist.</p>
+	<p><a name="method-str-uuid"></a></p>
+	<h4 id="collection-method">Str::uuid()</h4>
+	<p>The Str::uuid method generates a UUID (version 4):</p>
+	<?php echo Code::getHtmlStatic('use Illuminate\Support\Str;
+
+return (string) Str::uuid();'); ?>
 	<p><a name="urls"></a></p>
 	<h2><a href="#urls">URLs</a></h2>
 	<p><a name="method-action"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">action<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">action</code> function generates a URL for the given controller action. You do not need to pass the full namespace of the controller. Instead, pass the controller class name relative to the <code class=" language-php">App\<span class="token package">Http<span class="token punctuation">\</span>Controllers</span></code> namespace:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">action<span class="token punctuation">(</span></span><span class="token string">'HomeController@index'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">action()</h4>
+	<p>The action function generates a URL for the given controller action. You do not need to pass the full namespace of the controller. Instead, pass the controller class name relative to the App\Http\Controllers namespace:</p>
+	<?php echo Code::getHtmlStatic('$url = action(\'HomeController@index\');
 
-<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">action<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token scope">HomeController<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">,</span> <span class="token string">'index'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$url = action([HomeController::class, \'index\']);'); ?>
 	<p>If the method accepts route parameters, you may pass them as the second argument to the method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">action<span class="token punctuation">(</span></span><span class="token string">'UserController@profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$url = action(\'UserController@profile\', [\'id\' =&gt; 1]);'); ?>
 	<p><a name="method-asset"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">asset<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">asset</code> function generates a URL for an asset using the current scheme of the request (HTTP or HTTPS):</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">asset<span class="token punctuation">(</span></span><span class="token string">'img/photo.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">asset()</h4>
+	<p>The asset function generates a URL for an asset using the current scheme of the request (HTTP or HTTPS):</p>
+	<?php echo Code::getHtmlStatic('$url = asset(\'img/photo.jpg\');'); ?>
 	<p><a name="method-secure-asset"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">secure_asset<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">secure_asset</code> function generates a URL for an asset using HTTPS:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">secure_asset<span class="token punctuation">(</span></span><span class="token string">'img/photo.jpg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">secure_asset()</h4>
+	<p>The secure_asset function generates a URL for an asset using HTTPS:</p>
+	<?php echo Code::getHtmlStatic('$url = secure_asset(\'img/photo.jpg\');'); ?>
 	<p><a name="method-route"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">route<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">route</code> function generates a URL for the given named route:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'routeName'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">route()</h4>
+	<p>The route function generates a URL for the given named route:</p>
+	<?php echo Code::getHtmlStatic('$url = route(\'routeName\');'); ?>
 	<p>If the route accepts parameters, you may pass them as the second argument to the method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'routeName'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>By default, the <code class=" language-php">route</code> function generates an absolute URL. If you wish to generate a relative URL, you may pass <code class=" language-php"><span class="token boolean">false</span></code> as the third argument:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'routeName'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$url = route(\'routeName\', [\'id\' =&gt; 1]);'); ?>
+	<p>By default, the route function generates an absolute URL. If you wish to generate a relative URL, you may pass false as the third argument:</p>
+	<?php echo Code::getHtmlStatic('$url = route(\'routeName\', [\'id\' =&gt; 1], false);'); ?>
 	<p><a name="method-secure-url"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">secure_url<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">secure_url</code> function generates a fully qualified HTTPS URL to the given path:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">secure_url<span class="token punctuation">(</span></span><span class="token string">'user/profile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">secure_url()</h4>
+	<p>The secure_url function generates a fully qualified HTTPS URL to the given path:</p>
+	<?php echo Code::getHtmlStatic('$url = secure_url(\'user/profile\');
 
-<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">secure_url<span class="token punctuation">(</span></span><span class="token string">'user/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$url = secure_url(\'user/profile\', [1]);'); ?>
 	<p><a name="method-url"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">url<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">url</code> function generates a fully qualified URL to the given path:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">url<span class="token punctuation">(</span></span><span class="token string">'user/profile'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">url()</h4>
+	<p>The url function generates a fully qualified URL to the given path:</p>
+	<?php echo Code::getHtmlStatic('$url = url(\'user/profile\');
 
-<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token function">url<span class="token punctuation">(</span></span><span class="token string">'user/profile'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If no path is provided, a <code class=" language-php">Illuminate\<span class="token package">Routing<span class="token punctuation">\</span>UrlGenerator</span></code> instance is returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$current</span> <span class="token operator">=</span> <span class="token function">url<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">current<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$url = url(\'user/profile\', [1]);'); ?>
+	<p>If no path is provided, a Illuminate\Routing\UrlGenerator instance is returned:</p>
+	<?php echo Code::getHtmlStatic('$current = url()-&gt;current();
 
-<span class="token variable">$full</span> <span class="token operator">=</span> <span class="token function">url<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">full<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+$full = url()-&gt;full();
 
-<span class="token variable">$previous</span> <span class="token operator">=</span> <span class="token function">url<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">previous<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$previous = url()-&gt;previous();'); ?>
 	<p><a name="miscellaneous"></a></p>
 	<h2><a href="#miscellaneous">Miscellaneous</a></h2>
 	<p><a name="method-abort"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">abort<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">abort</code> function throws <a href="/docs/5.7/errors#http-exceptions">an HTTP exception</a> which will be rendered by the <a href="/docs/5.7/errors#the-exception-handler">exception handler</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">abort<span class="token punctuation">(</span></span><span class="token number">403</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">abort()</h4>
+	<p>The abort function throws <a href="/docs/5.7/errors#http-exceptions">an HTTP exception</a> which will be rendered by the <a href="/docs/5.7/errors#the-exception-handler">exception handler</a>:</p>
+	<?php echo Code::getHtmlStatic('abort(403);'); ?>
 	<p>You may also provide the exception's response text and custom response headers:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">abort<span class="token punctuation">(</span></span><span class="token number">403</span><span class="token punctuation">,</span> <span class="token string">'Unauthorized.'</span><span class="token punctuation">,</span> <span class="token variable">$headers</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('abort(403, \'Unauthorized.\', $headers);'); ?>
 	<p><a name="method-abort-if"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">abort_if<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">abort_if</code> function throws an HTTP exception if a given boolean expression evaluates to <code class=" language-php"><span class="token boolean">true</span></code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">abort_if<span class="token punctuation">(</span></span><span class="token operator">!</span> <span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAdmin<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">403</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>Like the <code class=" language-php">abort</code> method, you may also provide the exception's response text as the third argument and an array of custom response headers as the fourth argument.</p>
+	<h4 id="collection-method">abort_if()</h4>
+	<p>The abort_if function throws an HTTP exception if a given boolean expression evaluates to true:</p>
+	<?php echo Code::getHtmlStatic('abort_if(! Auth::user()-&gt;isAdmin(), 403);'); ?>
+	<p>Like the abort method, you may also provide the exception's response text as the third argument and an array of custom response headers as the fourth argument.</p>
 	<p><a name="method-abort-unless"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">abort_unless<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">abort_unless</code> function throws an HTTP exception if a given boolean expression evaluates to <code class=" language-php"><span class="token boolean">false</span></code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">abort_unless<span class="token punctuation">(</span></span><span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAdmin<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">403</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>Like the <code class=" language-php">abort</code> method, you may also provide the exception's response text as the third argument and an array of custom response headers as the fourth argument.</p>
+	<h4 id="collection-method">abort_unless()</h4>
+	<p>The abort_unless function throws an HTTP exception if a given boolean expression evaluates to false:</p>
+	<?php echo Code::getHtmlStatic('abort_unless(Auth::user()-&gt;isAdmin(), 403);'); ?>
+	<p>Like the abort method, you may also provide the exception's response text as the third argument and an array of custom response headers as the fourth argument.</p>
 	<p><a name="method-app"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">app<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">app</code> function returns the <a href="/docs/5.7/container">service container</a> instance:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$container</span> <span class="token operator">=</span> <span class="token function">app<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">app()</h4>
+	<p>The app function returns the <a href="/docs/5.7/container">service container</a> instance:</p>
+	<?php echo Code::getHtmlStatic('$container = app();'); ?>
 	<p>You may pass a class or interface name to resolve it from the container:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$api</span> <span class="token operator">=</span> <span class="token function">app<span class="token punctuation">(</span></span><span class="token string">'HelpSpot\API'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$api = app(\'HelpSpot\API\');'); ?>
 	<p><a name="method-auth"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">auth<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">auth</code> function returns an <a href="/docs/5.7/authentication">authenticator</a> instance. You may use it instead of the <code class=" language-php">Auth</code> facade for convenience:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token function">auth<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">auth()</h4>
+	<p>The auth function returns an <a href="/docs/5.7/authentication">authenticator</a> instance. You may use it instead of the Auth facade for convenience:</p>
+	<?php echo Code::getHtmlStatic('$user = auth()-&gt;user();'); ?>
 	<p>If needed, you may specify which guard instance you would like to access:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token function">auth<span class="token punctuation">(</span></span><span class="token string">'admin'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('$user = auth(\'admin\')-&gt;user();'); ?>
 	<p><a name="method-back"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">back<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">back</code> function generates a <a href="/docs/5.7/responses#redirects">redirect HTTP response</a> to the user's previous location:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">back<span class="token punctuation">(</span></span><span class="token variable">$status</span> <span class="token operator">=</span> <span class="token number">302</span><span class="token punctuation">,</span> <span class="token variable">$headers</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$fallback</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">back()</h4>
+	<p>The back function generates a <a href="/docs/5.7/responses#redirects">redirect HTTP response</a> to the user's previous location:</p>
+	<?php echo Code::getHtmlStatic('return back($status = 302, $headers = [], $fallback = false);
 
-<span class="token keyword">return</span> <span class="token function">back<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return back();'); ?>
 	<p><a name="method-bcrypt"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">bcrypt<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">bcrypt</code> function <a href="/docs/5.7/hashing">hashes</a> the given value using Bcrypt. You may use it as an alternative to the <code class=" language-php">Hash</code> facade:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$password</span> <span class="token operator">=</span> <span class="token function">bcrypt<span class="token punctuation">(</span></span><span class="token string">'my-secret-password'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">bcrypt()</h4>
+	<p>The bcrypt function <a href="/docs/5.7/hashing">hashes</a> the given value using Bcrypt. You may use it as an alternative to the Hash facade:</p>
+	<?php echo Code::getHtmlStatic('$password = bcrypt(\'my-secret-password\');'); ?>
 	<p><a name="method-broadcast"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">broadcast<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">broadcast</code> function <a href="/docs/5.7/broadcasting">broadcasts</a> the given <a href="/docs/5.7/events">event</a> to its listeners:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">broadcast<span class="token punctuation">(</span></span><span class="token keyword">new</span> <span class="token class-name">UserRegistered</span><span class="token punctuation">(</span><span class="token variable">$user</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">broadcast()</h4>
+	<p>The broadcast function <a href="/docs/5.7/broadcasting">broadcasts</a> the given <a href="/docs/5.7/events">event</a> to its listeners:</p>
+	<?php echo Code::getHtmlStatic('broadcast(new UserRegistered($user));'); ?>
 	<p><a name="method-blank"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">blank<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">blank</code> function returns whether the given value is "blank":</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">blank<span class="token punctuation">(</span></span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">blank<span class="token punctuation">(</span></span><span class="token string">'   '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">blank<span class="token punctuation">(</span></span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">blank<span class="token punctuation">(</span></span><span class="token function">collect<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+	<h4 id="collection-method">blank()</h4>
+	<p>The blank function returns whether the given value is "blank":</p>
+	<?php echo Code::getHtmlStatic('blank(\'\');
+blank(\'   \');
+blank(null);
+blank(collect());
+
 // true
-</span>
-<span class="token function">blank<span class="token punctuation">(</span></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">blank<span class="token punctuation">(</span></span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">blank<span class="token punctuation">(</span></span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// false</span></code></pre>
-	<p>For the inverse of <code class=" language-php">blank</code>, see the <a href="#method-filled"><code class=" language-php">filled</code></a> method.</p>
+
+blank(0);
+blank(true);
+blank(false);
+
+// false'); ?>
+	<p>For the inverse of blank, see the <a href="#method-filled">filled</a> method.</p>
 	<p><a name="method-cache"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">cache<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">cache</code> function may be used to get values from the <a href="/docs/5.7/cache">cache</a>. If the given key does not exist in the cache, an optional default value will be returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">cache<span class="token punctuation">(</span></span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">cache()</h4>
+	<p>The cache function may be used to get values from the <a href="/docs/5.7/cache">cache</a>. If the given key does not exist in the cache, an optional default value will be returned:</p>
+	<?php echo Code::getHtmlStatic('$value = cache(\'key\');
 
-<span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">cache<span class="token punctuation">(</span></span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$value = cache(\'key\', \'default\');'); ?>
 	<p>You may add items to the cache by passing an array of key / value pairs to the function. You should also pass the number of minutes or duration the cached value should be considered valid:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">cache<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'key'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('cache([\'key\' =&gt; \'value\'], 5);
 
-<span class="token function">cache<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'key'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">now<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">addSeconds<span class="token punctuation">(</span></span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+cache([\'key\' =&gt; \'value\'], now()-&gt;addSeconds(10));'); ?>
 	<p><a name="method-class-uses-recursive"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">class_uses_recursive<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">class_uses_recursive</code> function returns all traits used by a class, including traits used by all of its parent classes:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$traits</span> <span class="token operator">=</span> <span class="token function">class_uses_recursive<span class="token punctuation">(</span></span><span class="token scope">App<span class="token punctuation">\</span>User<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">class_uses_recursive()</h4>
+	<p>The class_uses_recursive function returns all traits used by a class, including traits used by all of its parent classes:</p>
+	<?php echo Code::getHtmlStatic('$traits = class_uses_recursive(App\User::class);'); ?>
 	<p><a name="method-collect"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">collect<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">collect</code> function creates a <a href="/docs/5.7/collections">collection</a> instance from the given value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$collection</span> <span class="token operator">=</span> <span class="token function">collect<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'taylor'</span><span class="token punctuation">,</span> <span class="token string">'abigail'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">collect()</h4>
+	<p>The collect function creates a <a href="/docs/5.7/collections">collection</a> instance from the given value:</p>
+	<?php echo Code::getHtmlStatic('$collection = collect([\'taylor\', \'abigail\']);'); ?>
 	<p><a name="method-config"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">config<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">config</code> function gets the value of a <a href="/docs/5.7/configuration">configuration</a> variable. The configuration values may be accessed using "dot" syntax, which includes the name of the file and the option you wish to access. A default value may be specified and is returned if the configuration option does not exist:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">config<span class="token punctuation">(</span></span><span class="token string">'app.timezone'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">config()</h4>
+	<p>The config function gets the value of a <a href="/docs/5.7/configuration">configuration</a> variable. The configuration values may be accessed using "dot" syntax, which includes the name of the file and the option you wish to access. A default value may be specified and is returned if the configuration option does not exist:</p>
+	<?php echo Code::getHtmlStatic('$value = config(\'app.timezone\');
 
-<span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">config<span class="token punctuation">(</span></span><span class="token string">'app.timezone'</span><span class="token punctuation">,</span> <span class="token variable">$default</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$value = config(\'app.timezone\', $default);'); ?>
 	<p>You may set configuration variables at runtime by passing an array of key / value pairs:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">config<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'app.debug'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('config([\'app.debug\' =&gt; true]);'); ?>
 	<p><a name="method-cookie"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">cookie<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">cookie</code> function creates a new <a href="/docs/5.7/requests#cookies">cookie</a> instance:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$cookie</span> <span class="token operator">=</span> <span class="token function">cookie<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token variable">$minutes</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">cookie()</h4>
+	<p>The cookie function creates a new <a href="/docs/5.7/requests#cookies">cookie</a> instance:</p>
+	<?php echo Code::getHtmlStatic('$cookie = cookie(\'name\', \'value\', $minutes);'); ?>
 	<p><a name="method-csrf-field"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">csrf_field<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">csrf_field</code> function generates an HTML <code class=" language-php">hidden</code> input field containing the value of the CSRF token. For example, using <a href="/docs/5.7/blade">Blade syntax</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">csrf_field<span class="token punctuation">(</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>
+	<h4 id="collection-method">csrf_field()</h4>
+	<p>The csrf_field function generates an HTML hidden input field containing the value of the CSRF token. For example, using <a href="/docs/5.7/blade">Blade syntax</a>:</p>
+	<?php echo Code::getHtmlStatic('{{ csrf_field() }}'); ?>
 	<p><a name="method-csrf-token"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">csrf_token<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">csrf_token</code> function retrieves the value of the current CSRF token:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$token</span> <span class="token operator">=</span> <span class="token function">csrf_token<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">csrf_token()</h4>
+	<p>The csrf_token function retrieves the value of the current CSRF token:</p>
+	<?php echo Code::getHtmlStatic('$token = csrf_token();'); ?>
 	<p><a name="method-dd"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">dd<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">dd</code> function dumps the given variables and ends execution of the script:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">dd<span class="token punctuation">(</span></span><span class="token variable">$value</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">dd()</h4>
+	<p>The dd function dumps the given variables and ends execution of the script:</p>
+	<?php echo Code::getHtmlStatic('dd($value);
 
-<span class="token function">dd<span class="token punctuation">(</span></span><span class="token variable">$value1</span><span class="token punctuation">,</span> <span class="token variable">$value2</span><span class="token punctuation">,</span> <span class="token variable">$value3</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If you do not want to halt the execution of your script, use the <a href="#method-dump"><code class=" language-php">dump</code></a> function instead.</p>
+dd($value1, $value2, $value3, ...);'); ?>
+	<p>If you do not want to halt the execution of your script, use the <a href="#method-dump">dump</a> function instead.</p>
 	<p><a name="method-decrypt"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">decrypt<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">decrypt</code> function decrypts the given value using Space MVC's <a href="/docs/5.7/encryption">encrypter</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$decrypted</span> <span class="token operator">=</span> <span class="token function">decrypt<span class="token punctuation">(</span></span><span class="token variable">$encrypted_value</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">decrypt()</h4>
+	<p>The decrypt function decrypts the given value using Space MVC's <a href="/docs/5.7/encryption">encrypter</a>:</p>
+	<?php echo Code::getHtmlStatic('$decrypted = decrypt($encrypted_value);'); ?>
 	<p><a name="method-dispatch"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">dispatch</code> function pushes the given <a href="/docs/5.7/queues#creating-jobs">job</a> onto the Space MVC <a href="/docs/5.7/queues">job queue</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token keyword">new</span> <span class="token class-name">App<span class="token punctuation">\</span>Jobs<span class="token punctuation">\</span>SendEmails</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">dispatch()</h4>
+	<p>The dispatch function pushes the given <a href="/docs/5.7/queues#creating-jobs">job</a> onto the Space MVC <a href="/docs/5.7/queues">job queue</a>:</p>
+	<?php echo Code::getHtmlStatic('dispatch(new App\Jobs\SendEmails);'); ?>
 	<p><a name="method-dispatch-now"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">dispatch_now<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">dispatch_now</code> function runs the given <a href="/docs/5.7/queues#creating-jobs">job</a> immediately and returns the value from its <code class=" language-php">handle</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">dispatch_now<span class="token punctuation">(</span></span><span class="token keyword">new</span> <span class="token class-name">App<span class="token punctuation">\</span>Jobs<span class="token punctuation">\</span>SendEmails</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">dispatch_now()</h4>
+	<p>The dispatch_now function runs the given <a href="/docs/5.7/queues#creating-jobs">job</a> immediately and returns the value from its handle method:</p>
+	<?php echo Code::getHtmlStatic('$result = dispatch_now(new App\Jobs\SendEmails);'); ?>
 	<p><a name="method-dump"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">dump<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">dump</code> function dumps the given variables:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">dump<span class="token punctuation">(</span></span><span class="token variable">$value</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">dump()</h4>
+	<p>The dump function dumps the given variables:</p>
+	<?php echo Code::getHtmlStatic('dump($value);
 
-<span class="token function">dump<span class="token punctuation">(</span></span><span class="token variable">$value1</span><span class="token punctuation">,</span> <span class="token variable">$value2</span><span class="token punctuation">,</span> <span class="token variable">$value3</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If you want to stop executing the script after dumping the variables, use the <a href="#method-dd"><code class=" language-php">dd</code></a> function instead.</p>
-	<blockquote class="has-icon">
-		<p class="tip"><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="56.6px" height="87.5px" viewBox="0 0 56.6 87.5" enable-background="new 0 0 56.6 87.5" xml:space="preserve"><path fill="#FFFFFF" d="M28.7 64.5c-1.4 0-2.5-1.1-2.5-2.5v-5.7 -5V41c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v10.1 5 5.8C31.2 63.4 30.1 64.5 28.7 64.5zM26.4 0.1C11.9 1 0.3 13.1 0 27.7c-0.1 7.9 3 15.2 8.2 20.4 0.5 0.5 0.8 1 1 1.7l3.1 13.1c0.3 1.1 1.3 1.9 2.4 1.9 0.3 0 0.7-0.1 1.1-0.2 1.1-0.5 1.6-1.8 1.4-3l-2-8.4 -0.4-1.8c-0.7-2.9-2-5.7-4-8 -1-1.2-2-2.5-2.7-3.9C5.8 35.3 4.7 30.3 5.4 25 6.7 14.5 15.2 6.3 25.6 5.1c13.9-1.5 25.8 9.4 25.8 23 0 4.1-1.1 7.9-2.9 11.2 -0.8 1.4-1.7 2.7-2.7 3.9 -2 2.3-3.3 5-4 8L41.4 53l-2 8.4c-0.3 1.2 0.3 2.5 1.4 3 0.3 0.2 0.7 0.2 1.1 0.2 1.1 0 2.2-0.8 2.4-1.9l3.1-13.1c0.2-0.6 0.5-1.2 1-1.7 5-5.1 8.2-12.1 8.2-19.8C56.4 12 42.8-1 26.4 0.1zM43.7 69.6c0 0.5-0.1 0.9-0.3 1.3 -0.4 0.8-0.7 1.6-0.9 2.5 -0.7 3-2 8.6-2 8.6 -1.3 3.2-4.4 5.5-7.9 5.5h-4.1H28h-0.5 -3.6c-3.5 0-6.7-2.4-7.9-5.7l-0.1-0.4 -1.8-7.8c-0.4-1.1-0.8-2.1-1.2-3.1 -0.1-0.3-0.2-0.5-0.2-0.9 0.1-1.3 1.3-2.1 2.6-2.1H41C42.4 67.5 43.6 68.2 43.7 69.6zM37.7 72.5H26.9c-4.2 0-7.2 3.9-6.3 7.9 0.6 1.3 1.8 2.1 3.2 2.1h4.1 0.5 0.5 3.6c1.4 0 2.7-0.8 3.2-2.1L37.7 72.5z"></path></svg></span></div> You may use Artisan's <code class=" language-php">dump<span class="token operator">-</span>server</code> command to intercept all <code class=" language-php">dump</code> calls and display them in your console window instead of your browser.</p>
-	</blockquote>
+dump($value1, $value2, $value3, ...);'); ?>
+	<p>If you want to stop executing the script after dumping the variables, use the <a href="#method-dd">dd</a> function instead.</p>
+	<p>You may use Artisan's dump-server command to intercept all dump calls and display them in your console window instead of your browser.</p>
 	<p><a name="method-encrypt"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">encrypt<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">encrypt</code> function encrypts the given value using Space MVC's <a href="/docs/5.7/encryption">encrypter</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$encrypted</span> <span class="token operator">=</span> <span class="token function">encrypt<span class="token punctuation">(</span></span><span class="token variable">$unencrypted_value</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">encrypt()</h4>
+	<p>The encrypt function encrypts the given value using Space MVC's <a href="/docs/5.7/encryption">encrypter</a>:</p>
+	<?php echo Code::getHtmlStatic('$encrypted = encrypt($unencrypted_value);'); ?>
 	<p><a name="method-env"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">env<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">env</code> function retrieves the value of an <a href="/docs/5.7/configuration#environment-configuration">environment variable</a> or returns a default value:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$env</span> <span class="token operator">=</span> <span class="token function">env<span class="token punctuation">(</span></span><span class="token string">'APP_ENV'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// Returns 'production' if APP_ENV is not set...
-</span><span class="token variable">$env</span> <span class="token operator">=</span> <span class="token function">env<span class="token punctuation">(</span></span><span class="token string">'APP_ENV'</span><span class="token punctuation">,</span> <span class="token string">'production'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<blockquote class="has-icon">
-		<p class="note"><div class="flag"><span class="svg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve"><path fill="#FFFFFF" d="M45 0C20.1 0 0 20.1 0 45s20.1 45 45 45 45-20.1 45-45S69.9 0 45 0zM45 74.5c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5 6.5 2.9 6.5 6.5S48.6 74.5 45 74.5zM52.1 23.9l-2.5 29.6c0 2.5-2.1 4.6-4.6 4.6 -2.5 0-4.6-2.1-4.6-4.6l-2.5-29.6c-0.1-0.4-0.1-0.7-0.1-1.1 0-4 3.2-7.2 7.2-7.2 4 0 7.2 3.2 7.2 7.2C52.2 23.1 52.2 23.5 52.1 23.9z"></path></svg></span></div> If you execute the <code class=" language-php">config<span class="token punctuation">:</span>cache</code> command during your deployment process, you should be sure that you are only calling the <code class=" language-php">env</code> function from within your configuration files. Once the configuration has been cached, the <code class=" language-php"><span class="token punctuation">.</span>env</code> file will not be loaded and all calls to the <code class=" language-php">env</code> function will return <code class=" language-php"><span class="token keyword">null</span></code>.</p>
-	</blockquote>
+	<h4 id="collection-method">env()</h4>
+	<p>The env function retrieves the value of an <a href="/docs/5.7/configuration#environment-configuration">environment variable</a> or returns a default value:</p>
+	<?php echo Code::getHtmlStatic('$env = env(\'APP_ENV\');
+
+// Returns \'production\' if APP_ENV is not set...
+$env = env(\'APP_ENV\', \'production\');'); ?>
+	<p>If you execute the config:cache command during your deployment process, you should be sure that you are only calling the env function from within your configuration files. Once the configuration has been cached, the .env file will not be loaded and all calls to the env function will return null.</p>
 	<p><a name="method-event"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">event<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">event</code> function dispatches the given <a href="/docs/5.7/events">event</a> to its listeners:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">event<span class="token punctuation">(</span></span><span class="token keyword">new</span> <span class="token class-name">UserRegistered</span><span class="token punctuation">(</span><span class="token variable">$user</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">event()</h4>
+	<p>The event function dispatches the given <a href="/docs/5.7/events">event</a> to its listeners:</p>
+	<?php echo Code::getHtmlStatic('event(new UserRegistered($user));'); ?>
 	<p><a name="method-factory"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">factory<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">factory</code> function creates a model factory builder for a given class, name, and amount. It can be used while <a href="/docs/5.7/database-testing#writing-factories">testing</a> or <a href="/docs/5.7/seeding#using-model-factories">seeding</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token function">factory<span class="token punctuation">(</span></span><span class="token scope">App<span class="token punctuation">\</span>User<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">make<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">factory()</h4>
+	<p>The factory function creates a model factory builder for a given class, name, and amount. It can be used while <a href="/docs/5.7/database-testing#writing-factories">testing</a> or <a href="/docs/5.7/seeding#using-model-factories">seeding</a>:</p>
+	<?php echo Code::getHtmlStatic('$user = factory(App\User::class)-&gt;make();'); ?>
 	<p><a name="method-filled"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">filled<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">filled</code> function returns whether the given value is not "blank":</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">filled<span class="token punctuation">(</span></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">filled<span class="token punctuation">(</span></span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">filled<span class="token punctuation">(</span></span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+	<h4 id="collection-method">filled()</h4>
+	<p>The filled function returns whether the given value is not "blank":</p>
+	<?php echo Code::getHtmlStatic('filled(0);
+filled(true);
+filled(false);
+
 // true
-</span>
-<span class="token function">filled<span class="token punctuation">(</span></span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">filled<span class="token punctuation">(</span></span><span class="token string">'   '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">filled<span class="token punctuation">(</span></span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">filled<span class="token punctuation">(</span></span><span class="token function">collect<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// false</span></code></pre>
-	<p>For the inverse of <code class=" language-php">filled</code>, see the <a href="#method-blank"><code class=" language-php">blank</code></a> method.</p>
+
+filled(\'\');
+filled(\'   \');
+filled(null);
+filled(collect());
+
+// false'); ?>
+	<p>For the inverse of filled, see the <a href="#method-blank">blank</a> method.</p>
 	<p><a name="method-info"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">info<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">info</code> function will write information to the <a href="/docs/5.7/errors#logging">log</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">info<span class="token punctuation">(</span></span><span class="token string">'Some helpful information!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">info()</h4>
+	<p>The info function will write information to the <a href="/docs/5.7/errors#logging">log</a>:</p>
+	<?php echo Code::getHtmlStatic('info(\'Some helpful information!\');'); ?>
 	<p>An array of contextual data may also be passed to the function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">info<span class="token punctuation">(</span></span><span class="token string">'User login attempt failed.'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">id</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('info(\'User login attempt failed.\', [\'id\' =&gt; $user-&gt;id]);'); ?>
 	<p><a name="method-logger"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">logger<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">logger</code> function can be used to write a <code class=" language-php">debug</code> level message to the <a href="/docs/5.7/errors#logging">log</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">logger<span class="token punctuation">(</span></span><span class="token string">'Debug message'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">logger()</h4>
+	<p>The logger function can be used to write a debug level message to the <a href="/docs/5.7/errors#logging">log</a>:</p>
+	<?php echo Code::getHtmlStatic('logger(\'Debug message\');'); ?>
 	<p>An array of contextual data may also be passed to the function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">logger<span class="token punctuation">(</span></span><span class="token string">'User has logged in.'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">id</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('logger(\'User has logged in.\', [\'id\' =&gt; $user-&gt;id]);'); ?>
 	<p>A <a href="/docs/5.7/errors#logging">logger</a> instance will be returned if no value is passed to the function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">logger<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">error<span class="token punctuation">(</span></span><span class="token string">'You are not allowed here.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('logger()-&gt;error(\'You are not allowed here.\');'); ?>
 	<p><a name="method-method-field"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">method_field<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">method_field</code> function generates an HTML <code class=" language-php">hidden</code> input field containing the spoofed value of the form's HTTP verb. For example, using <a href="/docs/5.7/blade">Blade syntax</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
-    <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">method_field<span class="token punctuation">(</span></span><span class="token string">'DELETE'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
-<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+	<h4 id="collection-method">method_field()</h4>
+	<p>The method_field function generates an HTML hidden input field containing the spoofed value of the form's HTTP verb. For example, using <a href="/docs/5.7/blade">Blade syntax</a>:</p>
+	<?php echo Code::getHtmlStatic('&lt;form method="POST"&gt;
+    {{ method_field(\'DELETE\') }}
+&lt;/form&gt;'); ?>
 	<p><a name="method-now"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">now<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">now</code> function creates a new <code class=" language-php">Illuminate\<span class="token package">Support<span class="token punctuation">\</span>Carbon</span></code> instance for the current time:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$now</span> <span class="token operator">=</span> <span class="token function">now<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">now()</h4>
+	<p>The now function creates a new Illuminate\Support\Carbon instance for the current time:</p>
+	<?php echo Code::getHtmlStatic('$now = now();'); ?>
 	<p><a name="method-old"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">old<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">old</code> function <a href="/docs/5.7/requests#retrieving-input">retrieves</a> an <a href="/docs/5.7/requests#old-input">old input</a> value flashed into the session:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">old<span class="token punctuation">(</span></span><span class="token string">'value'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">old()</h4>
+	<p>The old function <a href="/docs/5.7/requests#retrieving-input">retrieves</a> an <a href="/docs/5.7/requests#old-input">old input</a> value flashed into the session:</p>
+	<?php echo Code::getHtmlStatic('$value = old(\'value\');
 
-<span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">old<span class="token punctuation">(</span></span><span class="token string">'value'</span><span class="token punctuation">,</span> <span class="token string">'default'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$value = old(\'value\', \'default\');'); ?>
 	<p><a name="method-optional"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">optional<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">optional</code> function accepts any argument and allows you to access properties or call methods on that object. If the given object is <code class=" language-php"><span class="token keyword">null</span></code>, properties and methods will return <code class=" language-php"><span class="token keyword">null</span></code> instead of causing an error:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">optional<span class="token punctuation">(</span></span><span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">address</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">street</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">optional()</h4>
+	<p>The optional function accepts any argument and allows you to access properties or call methods on that object. If the given object is null, properties and methods will return null instead of causing an error:</p>
+	<?php echo Code::getHtmlStatic('return optional($user-&gt;address)-&gt;street;
 
-<span class="token punctuation">{</span><span class="token operator">!</span><span class="token operator">!</span> <span class="token function">old<span class="token punctuation">(</span></span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token function">optional<span class="token punctuation">(</span></span><span class="token variable">$user</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span><span class="token punctuation">)</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">}</span></code></pre>
-	<p>The <code class=" language-php">optional</code> function also accepts a Closure as its second argument. The Closure will be invoked if the value provided as the first argument is not null:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">optional<span class="token punctuation">(</span></span><span class="token scope">User<span class="token punctuation">::</span></span><span class="token function">find<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">DummyUser</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+{!! old(\'name\', optional($user)-&gt;name) !!}'); ?>
+	<p>The optional function also accepts a Closure as its second argument. The Closure will be invoked if the value provided as the first argument is not null:</p>
+	<?php echo Code::getHtmlStatic('return optional(User::find($id), function ($user) {
+    return new DummyUser;
+});'); ?>
 	<p><a name="method-policy"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">policy<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">policy</code> method retrieves a <a href="/docs/5.7/authorization#creating-policies">policy</a> instance for a given class:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$policy</span> <span class="token operator">=</span> <span class="token function">policy<span class="token punctuation">(</span></span><span class="token scope">App<span class="token punctuation">\</span>User<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">policy()</h4>
+	<p>The policy method retrieves a <a href="/docs/5.7/authorization#creating-policies">policy</a> instance for a given class:</p>
+	<?php echo Code::getHtmlStatic('$policy = policy(App\User::class);'); ?>
 	<p><a name="method-redirect"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">redirect<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">redirect</code> function returns a <a href="/docs/5.7/responses#redirects">redirect HTTP response</a>, or returns the redirector instance if called with no arguments:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">redirect<span class="token punctuation">(</span></span><span class="token variable">$to</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token variable">$status</span> <span class="token operator">=</span> <span class="token number">302</span><span class="token punctuation">,</span> <span class="token variable">$headers</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token variable">$secure</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">redirect()</h4>
+	<p>The redirect function returns a <a href="/docs/5.7/responses#redirects">redirect HTTP response</a>, or returns the redirector instance if called with no arguments:</p>
+	<?php echo Code::getHtmlStatic('return redirect($to = null, $status = 302, $headers = [], $secure = null);
 
-<span class="token keyword">return</span> <span class="token function">redirect<span class="token punctuation">(</span></span><span class="token string">'/home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+return redirect(\'/home\');
 
-<span class="token keyword">return</span> <span class="token function">redirect<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'route.name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return redirect()-&gt;route(\'route.name\');'); ?>
 	<p><a name="method-report"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">report<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">report</code> function will report an exception using your <a href="/docs/5.7/errors#the-exception-handler">exception handler</a>'s <code class=" language-php">report</code> method:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">report<span class="token punctuation">(</span></span><span class="token variable">$e</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">report()</h4>
+	<p>The report function will report an exception using your <a href="/docs/5.7/errors#the-exception-handler">exception handler</a>'s report method:</p>
+	<?php echo Code::getHtmlStatic('report($e);'); ?>
 	<p><a name="method-request"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">request<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">request</code> function returns the current <a href="/docs/5.7/requests">request</a> instance or obtains an input item:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$request</span> <span class="token operator">=</span> <span class="token function">request<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">request()</h4>
+	<p>The request function returns the current <a href="/docs/5.7/requests">request</a> instance or obtains an input item:</p>
+	<?php echo Code::getHtmlStatic('$request = request();
 
-<span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">request<span class="token punctuation">(</span></span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token variable">$default</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+$value = request(\'key\', $default);'); ?>
 	<p><a name="method-rescue"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">rescue<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">rescue</code> function executes the given Closure and catches any exceptions that occur during its execution. All exceptions that are caught will be sent to your <a href="/docs/5.7/errors#the-exception-handler">exception handler</a>'s <code class=" language-php">report</code> method; however, the request will continue processing:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">rescue<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">method<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>You may also pass a second argument to the <code class=" language-php">rescue</code> function. This argument will be the "default" value that should be returned if an exception occurs while executing the Closure:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">rescue<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">method<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">rescue()</h4>
+	<p>The rescue function executes the given Closure and catches any exceptions that occur during its execution. All exceptions that are caught will be sent to your <a href="/docs/5.7/errors#the-exception-handler">exception handler</a>'s report method; however, the request will continue processing:</p>
+	<?php echo Code::getHtmlStatic('return rescue(function () {
+    return $this-&gt;method();
+});'); ?>
+	<p>You may also pass a second argument to the rescue function. This argument will be the "default" value that should be returned if an exception occurs while executing the Closure:</p>
+	<?php echo Code::getHtmlStatic('return rescue(function () {
+    return $this-&gt;method();
+}, false);
 
-<span class="token keyword">return</span> <span class="token function">rescue<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">method<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">failure<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return rescue(function () {
+    return $this-&gt;method();
+}, function () {
+    return $this-&gt;failure();
+});'); ?>
 	<p><a name="method-resolve"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">resolve<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">resolve</code> function resolves a given class or interface name to its instance using the <a href="/docs/5.7/container">service container</a>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$api</span> <span class="token operator">=</span> <span class="token function">resolve<span class="token punctuation">(</span></span><span class="token string">'HelpSpot\API'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">resolve()</h4>
+	<p>The resolve function resolves a given class or interface name to its instance using the <a href="/docs/5.7/container">service container</a>:</p>
+	<?php echo Code::getHtmlStatic('$api = resolve(\'HelpSpot\API\');'); ?>
 	<p><a name="method-response"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">response<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">response</code> function creates a <a href="/docs/5.7/responses">response</a> instance or obtains an instance of the response factory:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">response<span class="token punctuation">(</span></span><span class="token string">'Hello World'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token variable">$headers</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">response()</h4>
+	<p>The response function creates a <a href="/docs/5.7/responses">response</a> instance or obtains an instance of the response factory:</p>
+	<?php echo Code::getHtmlStatic('return response(\'Hello World\', 200, $headers);
 
-<span class="token keyword">return</span> <span class="token function">response<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">json<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'foo'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'bar'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> <span class="token variable">$headers</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+return response()-&gt;json([\'foo\' =&gt; \'bar\'], 200, $headers);'); ?>
 	<p><a name="method-retry"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">retry<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">retry</code> function attempts to execute the given callback until the given maximum attempt threshold is met. If the callback does not throw an exception, its return value will be returned. If the callback throws an exception, it will automatically be retried. If the maximum attempt count is exceeded, the exception will be thrown:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">retry<span class="token punctuation">(</span></span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> // Attempt 5 times while resting 100ms in between attempts...
-</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">retry()</h4>
+	<p>The retry function attempts to execute the given callback until the given maximum attempt threshold is met. If the callback does not throw an exception, its return value will be returned. If the callback throws an exception, it will automatically be retried. If the maximum attempt count is exceeded, the exception will be thrown:</p>
+	<?php echo Code::getHtmlStatic('return retry(5, function () {
+    // Attempt 5 times while resting 100ms in between attempts...
+}, 100);'); ?>
 	<p><a name="method-session"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">session<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">session</code> function may be used to get or set <a href="/docs/5.7/session">session</a> values:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">session<span class="token punctuation">(</span></span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">session()</h4>
+	<p>The session function may be used to get or set <a href="/docs/5.7/session">session</a> values:</p>
+	<?php echo Code::getHtmlStatic('$value = session(\'key\');'); ?>
 	<p>You may set values by passing an array of key / value pairs to the function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">session<span class="token punctuation">(</span></span><span class="token punctuation">[</span><span class="token string">'chairs'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token string">'instruments'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<?php echo Code::getHtmlStatic('session([\'chairs\' =&gt; 7, \'instruments\' =&gt; 3]);'); ?>
 	<p>The session store will be returned if no value is passed to the function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$value</span> <span class="token operator">=</span> <span class="token function">session<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get<span class="token punctuation">(</span></span><span class="token string">'key'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<?php echo Code::getHtmlStatic('$value = session()-&gt;get(\'key\');
 
-<span class="token function">session<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">put<span class="token punctuation">(</span></span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token variable">$value</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+session()-&gt;put(\'key\', $value);'); ?>
 	<p><a name="method-tap"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">tap<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">tap</code> function accepts two arguments: an arbitrary <code class=" language-php"><span class="token variable">$value</span></code> and a Closure. The <code class=" language-php"><span class="token variable">$value</span></code> will be passed to the Closure and then be returned by the <code class=" language-php">tap</code> function. The return value of the Closure is irrelevant:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token function">tap<span class="token punctuation">(</span></span><span class="token scope">User<span class="token punctuation">::</span></span><span class="token function">first<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span> <span class="token operator">=</span> <span class="token string">'taylor'</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">tap()</h4>
+	<p>The tap function accepts two arguments: an arbitrary $value and a Closure. The $value will be passed to the Closure and then be returned by the tap function. The return value of the Closure is irrelevant:</p>
+	<?php echo Code::getHtmlStatic('$user = tap(User::first(), function ($user) {
+    $user-&gt;name = \'taylor\';
 
-    <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">save<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p>If no Closure is passed to the <code class=" language-php">tap</code> function, you may call any method on the given <code class=" language-php"><span class="token variable">$value</span></code>. The return value of the method you call will always be <code class=" language-php"><span class="token variable">$value</span></code>, regardless of what the method actually returns in its definition. For example, the Eloquent <code class=" language-php">update</code> method typically returns an integer. However, we can force the method to return the model itself by chaining the <code class=" language-php">update</code> method call through the <code class=" language-php">tap</code> function:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token function">tap<span class="token punctuation">(</span></span><span class="token variable">$user</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">update<span class="token punctuation">(</span></span><span class="token punctuation">[</span>
-    <span class="token string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$name</span><span class="token punctuation">,</span>
-    <span class="token string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$email</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+    $user-&gt;save();
+});'); ?>
+	<p>If no Closure is passed to the tap function, you may call any method on the given $value. The return value of the method you call will always be $value, regardless of what the method actually returns in its definition. For example, the Eloquent update method typically returns an integer. However, we can force the method to return the model itself by chaining the update method call through the tap function:</p>
+	<?php echo Code::getHtmlStatic('$user = tap($user)-&gt;update([
+    \'name\' =&gt; $name,
+    \'email\' =&gt; $email,
+]);'); ?>
 	<p><a name="method-today"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">today<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">today</code> function creates a new <code class=" language-php">Illuminate\<span class="token package">Support<span class="token punctuation">\</span>Carbon</span></code> instance for the current date:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$today</span> <span class="token operator">=</span> <span class="token function">today<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">today()</h4>
+	<p>The today function creates a new Illuminate\Support\Carbon instance for the current date:</p>
+	<?php echo Code::getHtmlStatic('$today = today();'); ?>
 	<p><a name="method-throw-if"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">throw_if<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">throw_if</code> function throws the given exception if a given boolean expression evaluates to <code class=" language-php"><span class="token boolean">true</span></code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">throw_if<span class="token punctuation">(</span></span><span class="token operator">!</span> <span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAdmin<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token scope">AuthorizationException<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">throw_if()</h4>
+	<p>The throw_if function throws the given exception if a given boolean expression evaluates to true:</p>
+	<?php echo Code::getHtmlStatic('throw_if(! Auth::user()-&gt;isAdmin(), AuthorizationException::class);
 
-<span class="token function">throw_if<span class="token punctuation">(</span></span>
-    <span class="token operator">!</span> <span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAdmin<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token scope">AuthorizationException<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">,</span>
-    <span class="token string">'You are not allowed to access this page'</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+throw_if(
+    ! Auth::user()-&gt;isAdmin(),
+    AuthorizationException::class,
+    \'You are not allowed to access this page\'
+);'); ?>
 	<p><a name="method-throw-unless"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">throw_unless<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">throw_unless</code> function throws the given exception if a given boolean expression evaluates to <code class=" language-php"><span class="token boolean">false</span></code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token function">throw_unless<span class="token punctuation">(</span></span><span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAdmin<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token scope">AuthorizationException<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">throw_unless()</h4>
+	<p>The throw_unless function throws the given exception if a given boolean expression evaluates to false:</p>
+	<?php echo Code::getHtmlStatic('throw_unless(Auth::user()-&gt;isAdmin(), AuthorizationException::class);
 
-<span class="token function">throw_unless<span class="token punctuation">(</span></span>
-    <span class="token scope">Auth<span class="token punctuation">::</span></span><span class="token function">user<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">isAdmin<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token scope">AuthorizationException<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">,</span>
-    <span class="token string">'You are not allowed to access this page'</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+throw_unless(
+    Auth::user()-&gt;isAdmin(),
+    AuthorizationException::class,
+    \'You are not allowed to access this page\'
+);'); ?>
 	<p><a name="method-trait-uses-recursive"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">trait_uses_recursive<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">trait_uses_recursive</code> function returns all traits used by a trait:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$traits</span> <span class="token operator">=</span> <span class="token function">trait_uses_recursive<span class="token punctuation">(</span></span>\<span class="token scope">Illuminate<span class="token punctuation">\</span>Notifications<span class="token punctuation">\</span>Notifiable<span class="token punctuation">::</span></span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">trait_uses_recursive()</h4>
+	<p>The trait_uses_recursive function returns all traits used by a trait:</p>
+	<?php echo Code::getHtmlStatic('$traits = trait_uses_recursive(\Illuminate\Notifications\Notifiable::class);'); ?>
 	<p><a name="method-transform"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">transform<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">transform</code> function executes a <code class=" language-php">Closure</code> on a given value if the value is not <a href="#method-blank">blank</a> and returns the result of the <code class=" language-php">Closure</code>:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$callback</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token variable">$value</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">transform()</h4>
+	<p>The transform function executes a Closure on a given value if the value is not <a href="#method-blank">blank</a> and returns the result of the Closure:</p>
+	<?php echo Code::getHtmlStatic('$callback = function ($value) {
+    return $value * 2;
+};
 
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">transform<span class="token punctuation">(</span></span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 10</span></code></pre>
-	<p>A default value or <code class=" language-php">Closure</code> may also be passed as the third parameter to the method. This value will be returned if the given value is blank:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">transform<span class="token punctuation">(</span></span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">,</span> <span class="token string">'The value is blank'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// The value is blank</span></code></pre>
+$result = transform(5, $callback);
+
+// 10'); ?>
+	<p>A default value or Closure may also be passed as the third parameter to the method. This value will be returned if the given value is blank:</p>
+	<?php echo Code::getHtmlStatic('$result = transform(null, $callback, \'The value is blank\');
+
+// The value is blank'); ?>
 	<p><a name="method-validator"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">validator<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">validator</code> function creates a new <a href="/docs/5.7/validation">validator</a> instance with the given arguments. You may use it instead of the <code class=" language-php">Validator</code> facade for convenience:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$validator</span> <span class="token operator">=</span> <span class="token function">validator<span class="token punctuation">(</span></span><span class="token variable">$data</span><span class="token punctuation">,</span> <span class="token variable">$rules</span><span class="token punctuation">,</span> <span class="token variable">$messages</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h4 id="collection-method">validator()</h4>
+	<p>The validator function creates a new <a href="/docs/5.7/validation">validator</a> instance with the given arguments. You may use it instead of the Validator facade for convenience:</p>
+	<?php echo Code::getHtmlStatic('$validator = validator($data, $rules, $messages);'); ?>
 	<p><a name="method-value"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">value<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">value</code> function returns the value it is given. However, if you pass a <code class=" language-php">Closure</code> to the function, the <code class=" language-php">Closure</code> will be executed then its result will be returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">value<span class="token punctuation">(</span></span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// true
-</span>
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">value<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// false</span></code></pre>
-	<p><a name="method-view"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">view<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">view</code> function retrieves a <a href="/docs/5.7/views">view</a> instance:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token function">view<span class="token punctuation">(</span></span><span class="token string">'auth.login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p><a name="method-with"></a></p>
-	<h4 id="collection-method"><code class=" language-php"><span class="token function">with<span class="token punctuation">(</span></span><span class="token punctuation">)</span></code></h4>
-	<p>The <code class=" language-php">with</code> function returns the value it is given. If a <code class=" language-php">Closure</code> is passed as the second argument to the function, the <code class=" language-php">Closure</code> will be executed and its result will be returned:</p>
-	<pre class=" language-php"><code class=" language-php"><span class="token variable">$callback</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token function">is_numeric<span class="token punctuation">(</span></span><span class="token variable">$value</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token variable">$value</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<h4 id="collection-method">value()</h4>
+	<p>The value function returns the value it is given. However, if you pass a Closure to the function, the Closure will be executed then its result will be returned:</p>
+	<?php echo Code::getHtmlStatic('$result = value(true);
 
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">with<span class="token punctuation">(</span></span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+// true
+
+$result = value(function () {
+    return false;
+});
+
+// false'); ?>
+	<p><a name="method-view"></a></p>
+	<h4 id="collection-method">view()</h4>
+	<p>The view function retrieves a <a href="/docs/5.7/views">view</a> instance:</p>
+	<?php echo Code::getHtmlStatic('return view(\'auth.login\');'); ?>
+	<p><a name="method-with"></a></p>
+	<h4 id="collection-method">with()</h4>
+	<p>The with function returns the value it is given. If a Closure is passed as the second argument to the function, the Closure will be executed and its result will be returned:</p>
+	<?php echo Code::getHtmlStatic('$callback = function ($value) {
+    return (is_numeric($value)) ? $value * 2 : 0;
+};
+
+$result = with(5, $callback);
+
 // 10
-</span>
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">with<span class="token punctuation">(</span></span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token variable">$callback</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
+
+$result = with(null, $callback);
+
 // 0
-</span>
-<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">with<span class="token punctuation">(</span></span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">
-// 5</span></code></pre>
+
+$result = with(5, null);
+
+// 5'); ?>
 </article>
