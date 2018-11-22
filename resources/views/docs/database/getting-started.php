@@ -1,6 +1,6 @@
 <div class="wiki">
 
-	<h1>Database ORM</h1>
+	<h1>Database : ORM</h1>
 
 	<h3 id="Quick-Start">Getting Started</h3>
 

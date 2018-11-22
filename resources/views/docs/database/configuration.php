@@ -1,5 +1,5 @@
 <div class="wiki">
-	<h2 id="Configuration-Setup">Configuration  Setup</h2>
+	<h2 id="Configuration-Setup">Database : Configuration</h2>
 
 
 	<ul id="topic-list">

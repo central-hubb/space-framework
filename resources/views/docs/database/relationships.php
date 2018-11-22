@@ -1,5 +1,5 @@
 <div class="wiki">
-	<h2 id="Associations">Associations</h2>
+	<h2 id="Associations">Database : Relationships</h2>
 
 	<ul id="topic-list">
 		<li><a href="/docs/database/relationships#common-options">Common options</a></li>

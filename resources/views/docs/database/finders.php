@@ -1,5 +1,5 @@
 <div class="wiki">
-	<h2 id="Finders">Finders</h2>
+	<h2 id="Finders">Database : Finders</h2>
 
 
 	<ul id="topic-list">

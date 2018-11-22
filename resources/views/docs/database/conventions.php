@@ -1,5 +1,5 @@
 <div class="wiki">
-	<h2 id="Conventions">Conventions</h2>
+	<h2 id="Conventions">Database : Conventions</h2>
 
 
 	<p>Because we have embraced a convention over configuration philosophy, using our library is not painful. The conventions are easy to remember which will also contribute to stream-lining your productivity as a developer.</p>
