@@ -1,23 +1,25 @@
+<?php use App\Library\Framework\Component\Code; ?>
+
 <article>
     <h1>Directory Structure</h1>
     <ul>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#the-root-directory">The Root Directory</a>
             <ul>
-                <li><a href="#the-root-app-directory">The <code class=" language-php">app</code> Directory</a></li>
-                <li><a href="#the-config-directory">The <code class=" language-php">config</code> Directory</a></li>
-                <li><a href="#the-database-directory">The <code class=" language-php">database</code> Directory</a></li>
-                <li><a href="#the-public-directory">The <code class=" language-php">public</code> Directory</a></li>
-                <li><a href="#the-resources-directory">The <code class=" language-php">resources</code> Directory</a>
+                <li><a href="#the-root-app-directory">The app Directory</a></li>
+                <li><a href="#the-config-directory">The config Directory</a></li>
+                <li><a href="#the-database-directory">The database Directory</a></li>
+                <li><a href="#the-public-directory">The public Directory</a></li>
+                <li><a href="#the-resources-directory">The resources Directory</a>
                 </li>
-                <li><a href="#the-routes-directory">The <code class=" language-php">routes</code> Directory</a></li>
-                <li><a href="#the-storage-directory">The <code class=" language-php">storage</code> Directory</a></li>
-                <li><a href="#the-tests-directory">The <code class=" language-php">tests</code> Directory</a></li>
-                <li><a href="#the-vendor-directory">The <code class=" language-php">vendor</code> Directory</a></li>
-                <li><a href="#the-listeners-directory">The <code class=" language-php">Models</code> Directory</a></li>
-                <li><a href="#the-listeners-directory">The <code class=" language-php">Requests</code> Directory</a></li>
-                <li><a href="#the-events-directory">The <code class=" language-php">Events</code> Directory</a></li>
-                <li><a href="#the-listeners-directory">The <code class=" language-php">Listeners</code> Directory</a></li>
+                <li><a href="#the-routes-directory">The routes Directory</a></li>
+                <li><a href="#the-storage-directory">The storage Directory</a></li>
+                <li><a href="#the-tests-directory">The tests Directory</a></li>
+                <li><a href="#the-vendor-directory">The vendor Directory</a></li>
+                <li><a href="#the-listeners-directory">The Models Directory</a></li>
+                <li><a href="#the-listeners-directory">The Requests Directory</a></li>
+                <li><a href="#the-events-directory">The Events Directory</a></li>
+                <li><a href="#the-listeners-directory">The Listeners Directory</a></li>
             </ul>
         </li>
     </ul>
