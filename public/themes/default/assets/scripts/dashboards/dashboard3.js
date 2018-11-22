@@ -188,20 +188,6 @@ $(function() {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        // visits table
-        var exportTable = $('#datatable-data-export').DataTable({
-            sDom: "T<'clearfix'>" +
-                "<'row'<'col-sm-6'l><'col-sm-6'f>r>"+
-                "t"+
-                "<'row'<'col-sm-6'i><'col-sm-6'p>>",
-            "tableTools": {
-                //"sSwfPath": "/themes/default/assets/vendor/datatables-tabletools/swf/copy_csv_xls_pdf.swf"
-            },
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
-        });
-
 	}
 
 });
