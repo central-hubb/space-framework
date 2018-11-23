@@ -268,11 +268,6 @@ return [
 		'action' => 'bootstrap',
 	],
 	[
-		'uri' => '/theme/ui/social-buttons',
-		'controller' => 'Theme\UIController',
-		'action' => 'socialButtons',
-	],
-	[
 		'uri' => '/theme/ui/icons',
 		'controller' => 'Theme\UIController',
 		'action' => 'icons',

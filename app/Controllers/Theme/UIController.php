@@ -138,16 +138,6 @@ class UIController extends Controller
 	}
 
 	/**
-	 * socialButtons.
-	 */
-	public function socialButtons()
-	{
-		$this->di->layout()->set('page_title', 'Social Buttons');
-		$this->di->layout()->set('page_description', 'Social Sign-In Buttons made in pure CSS based on Bootstrap and Font Awesome!');
-		return $this->di->view('theme.ui.social-buttons');
-	}
-
-	/**
 	 * icons.
 	 */
 	public function icons()

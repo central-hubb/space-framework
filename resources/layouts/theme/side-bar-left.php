@@ -98,7 +98,6 @@
 						<li><a href="/theme/ui/tabs">Tabs</a></li>
 						<li><a href="/theme/ui/buttons">Buttons <span class="label label-info">UPDATED</span></a></li>
 						<li><a href="/theme/ui/bootstrap">Bootstrap UI</a></li>
-						<li><a href="/theme/ui/social-buttons">Social Buttons</a></li>
 						<li><a href="/theme/ui/icons">Icons</a></li>
 					</ul>
 				</div>
