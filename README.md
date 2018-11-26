@@ -35,7 +35,7 @@ Thank you for considering contributing to the Space MVC framework! The contribut
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Space MVC, please send an e-mail to Daniel Lee via [mrdaniellee2020@gmail.com](mailto:mrdaniellee2020@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Space MVC, please send an e-mail to Daniel Lee via [space-mvc@outlook.com](mailto:space-mvc@outlook.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
