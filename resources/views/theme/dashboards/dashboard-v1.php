@@ -1,41 +1,35 @@
 <!-- TOP METRICS -->
 <div class="row">
-    <div class="col-md-3 col-sm-6">
-        <div class="widget widget-metric_1 animate">
-            <span class="icon-wrapper custom-bg-orange"><i class="fa fa-area-chart"></i></span>
-            <div class="right">
-                <span class="value">$3642 <i class="change-icon change-up fa fa-sort-up text-indicator-green"></i></span>
-                <span class="title">PROFIT <span class="change text-indicator-green">(+ $254)</span></span>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <div class="widget widget-metric_1 animate">
-            <span class="icon-wrapper custom-bg-lightseagreen"><i class="fa fa-shopping-cart"></i></span>
-            <div class="right">
-                <span class="value">$8740 <i class="change-icon change-up fa fa-sort-up text-indicator-green"></i></span>
-                <span class="title">REVENUE <span class="change text-indicator-green">(+ $364)</span></span>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <div class="widget widget-metric_1 animate">
-            <span class="icon-wrapper custom-bg-blue2"><i class="fa fa-user"></i></span>
-            <div class="right">
-                <span class="value">132567 <i class="change-icon change-down fa fa-sort-down text-indicator-red"></i></span>
-                <span class="title">TOTAL USER <span class="change text-indicator-red">(- 23)</span></span>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <div class="widget widget-metric_1 animate">
-            <span class="icon-wrapper custom-bg-purple"><i class="fa fa-envelope"></i></span>
-            <div class="right">
-                <span class="value">56.72% <i class="change-icon change-up fa fa-sort-up text-indicator-green"></i></span>
-                <span class="title">CLICK <span class="change text-indicator-green">(+ 12.64%)</span></span>
-            </div>
-        </div>
-    </div>
+    <?php
+    use App\Library\Framework\Component\widgetMetric;
+    $metric = new widgetMetric();
+    $metric->setTitle('PROFIT');
+    $metric->setBackground('custom-bg-orange');
+    $metric->setImage('fa-area-chart');
+    $metric->setValue('$3642');
+    $metric->setChangeValue('$254');
+    echo $metric->getHtml();
+    $metric->setTitle('REVENUE');
+    $metric->setBackground('custom-bg-lightseagreen');
+    $metric->setImage('fa-shopping-cart');
+    $metric->setValue('$8740');
+    $metric->setChangeValue('$364');
+    echo $metric->getHtml();
+    $metric->setTitle('TOTAL USER');
+    $metric->setChange(false);
+    $metric->setBackground('custom-bg-blue2');
+    $metric->setImage('fa-user');
+    $metric->setValue('132567');
+    $metric->setChangeValue('23');
+    echo $metric->getHtml();
+    $metric->setTitle('CLICK');
+    $metric->setChange(true);
+    $metric->setBackground('custom-bg-purple');
+    $metric->setImage('fa-envelope');
+    $metric->setValue('56.72%');
+    $metric->setChangeValue('12.64%');
+    echo $metric->getHtml();
+    ?>
 </div>
 <!-- END TOP METRICS -->
 
