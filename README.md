@@ -31,7 +31,8 @@ application framework, making it a breeze to get started learning the framework.
 
 ## Contributing
 
-Thank you for considering contributing to the Space MVC framework! The contribution guide can be found in the [Space MVC documentation](http://space-mvc.com).
+Thank you for considering contributing to the Space MVC framework! 
+The contribution guide can be found in the [Space MVC documentation](http://space-mvc.com).
 
 ## Security Vulnerabilities
 
