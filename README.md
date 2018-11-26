@@ -31,11 +31,11 @@ application framework, making it a breeze to get started learning the framework.
 
 ## Contributing
 
-Thank you for considering contributing to the Space MVC framework! The contribution guide can be found in the [Space MVC documentation].
+The contribution guide can be found in the [Space MVC documentation](http://space-mvc.com).
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Space MVC, please send an e-mail to Daniel Lee via [mrdaniellee2020@gmail.com](mailto:mrdaniellee2020@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Space MVC, please send an e-mail to Space MVC via [space-mvc@outlook.com](mailto:space-mvc@outlook.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
