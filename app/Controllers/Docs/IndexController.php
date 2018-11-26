@@ -20,7 +20,7 @@ class IndexController extends Controller
 	public function __construct(Space $di)
 	{
 		parent::__construct($di);
-		$this->di->layout()->setLayoutName('docs');
+		$this->di->layout()->setLayoutName('docs-beta');
 	}
 
 	/**
